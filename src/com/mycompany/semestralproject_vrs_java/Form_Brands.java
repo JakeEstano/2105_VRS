@@ -6,7 +6,7 @@ package com.mycompany.semestralproject_vrs_java;
 
 /**
  * @author Jake
- * @author PC
+ * @author Saipoden
  */
 public class Form_Brands extends javax.swing.JFrame {
 
