@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,7 +57,7 @@ public class Brand {
     // function to add, edit, and remove brand
     public void addBrand(String _name, byte[] _logo){
         String insertQuery = "INSERT INTO `brands`( `name`, `logo`) VALUES (?,?)";
-        PreparedStatement ps;;
+        PreparedStatement ps;
         
         try {
             
@@ -65,10 +66,11 @@ public class Brand {
             ps.setBytes(2, _logo);
             
             if(ps.executeUpdate()!=0){
-                System.out.println("Brand Added!");
+                JOptionPane.showMessageDialog(null , "The Brand has been Added" , "Add Brand", 1);
+                
             }
             else{
-                System.out.println("Brand Not Added!");
+                JOptionPane.showMessageDialog(null , "Brand Not been Added" , "Add Brand", 2);
             }
             
         } catch (SQLException ex) {
@@ -90,10 +92,11 @@ public class Brand {
             ps.setInt(3, _id);
             
             if(ps.executeUpdate()!=0){
-                System.out.println("Brand Edited!");
+                JOptionPane.showMessageDialog(null , "The brand has been edited" , "Edit brand", 1);
+                
             }
             else{
-                System.out.println("Brand Not Edited!");
+                JOptionPane.showMessageDialog(null , "Brand not been edited" , "Edit brand", 2);
             }
             
         } catch (SQLException ex) {
@@ -114,10 +117,12 @@ public class Brand {
             ps.setInt(1, _id);
             
             if(ps.executeUpdate()!=0){
-                System.out.println("Brand Removed!");
+                JOptionPane.showMessageDialog(null , "The brand has been Removed" , "Remove brand", 1);
+                
             }
             else{
-                System.out.println("Brand Not Removed!");
+                JOptionPane.showMessageDialog(null , "Brand Not been Removed" , "Remove brand", 2);
+                //System.out.println("Brand Not Removed!");
             }
             
         } catch (SQLException ex) {

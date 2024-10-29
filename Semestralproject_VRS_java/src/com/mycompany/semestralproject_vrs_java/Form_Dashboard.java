@@ -79,16 +79,16 @@ public class Form_Dashboard extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MENU ITEM 1");
 
-        jLabel_Brand.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel_Brand.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_Brand.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_Brand.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel_Brand.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Brand.setText("Brand");
         jLabel_Brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -98,18 +98,18 @@ public class Form_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MENU ITEM 1");
 
-        jLabel5.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("MENU ITEM 1");
 
-        jLabel4.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel4.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel4.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MENU ITEM 1");
 
@@ -328,7 +328,7 @@ public class Form_Dashboard extends javax.swing.JFrame {
         );
 
         jLabel_username.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel_username.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel_username.setForeground(new java.awt.Color(204, 255, 0));
         jLabel_username.setText("loged user username");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -349,11 +349,9 @@ public class Form_Dashboard extends javax.swing.JFrame {
                                 .addGap(27, 27, 27)
                                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
-                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel_username)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel_username))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
