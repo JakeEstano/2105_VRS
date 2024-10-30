@@ -134,8 +134,7 @@ public class Location {
         
     }
     
-    // function to return a restulset
-     
+        // function to return a restulset
      public ResultSet getData(String query){
          
          PreparedStatement ps;
@@ -146,30 +145,30 @@ public class Location {
              ps = DB.getConnection().prepareStatement(query);
              rs = ps.executeQuery();
                      } catch (SQLException ex) {
-             Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
          }
          return rs;
      }
     
     
-    //function to get all brand, return in array an list
-     public ArrayList<Brand> brandsList(){
-         ArrayList<Brand> brdList = new ArrayList<>();
+    //function to get all Locations, return in array an list
+     public ArrayList<Location> locationList(){
+         ArrayList<Location> locList = new ArrayList<>();
          
-         ResultSet rs = getData("SELECT * FROM `brands`");
+         ResultSet rs = getData("SELECT * FROM `locations`");
          
          try {
              while(rs.next()){
                  System.out.println(rs.getInt(1));
                  System.out.println(rs.getString(2));
-                 Brand brand = new Brand(rs.getInt(1),rs.getString(2),rs.getBytes(3));
-                 brdList.add(brand);
+                 Location location = new Location(rs.getInt(1),rs.getString(2),rs.getString(3));
+                 locList.add(location);
                  
              }
          } catch (SQLException ex) {
-             Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
          }
-         return brdList;
+         return locList;
      }
     
   
