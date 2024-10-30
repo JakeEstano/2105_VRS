@@ -31,7 +31,7 @@ public class Form_Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         // create border
-        Border title_border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.lightGray);
+        Border title_border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED);
         jLabel_title.setBorder(title_border);
     }
 
@@ -45,17 +45,16 @@ public class Form_Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jTextField_username = new javax.swing.JTextField();
-        jLabel_title = new javax.swing.JLabel();
-        jCheckBox_password = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jLabel_username = new javax.swing.JLabel();
-        jLabel_password = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         jLabel_close = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel_title = new javax.swing.JLabel();
+        jLabel_username = new javax.swing.JLabel();
+        jTextField_username = new javax.swing.JTextField();
+        jLabel_password = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jCheckBox_password = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -71,7 +70,31 @@ public class Form_Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel_close.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_close.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_close.setText("X");
+        jLabel_close.setToolTipText("");
+        jLabel_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_closeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 30, 33));
+
+        jLabel_title.setFont(new java.awt.Font("Trebuchet MS", 1, 55)); // NOI18N
+        jLabel_title.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_title.setText("Login");
+        jPanel1.add(jLabel_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, -1, -1));
+
+        jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel_username.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel_username.setText("Email");
+        jPanel1.add(jLabel_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
 
         jTextField_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField_username.setForeground(new java.awt.Color(153, 153, 153));
@@ -89,39 +112,12 @@ public class Form_Login extends javax.swing.JFrame {
                 jTextField_usernameActionPerformed(evt);
             }
         });
-
-        jLabel_title.setFont(new java.awt.Font("Trebuchet MS", 1, 55)); // NOI18N
-        jLabel_title.setForeground(new java.awt.Color(204, 255, 0));
-        jLabel_title.setText("Login");
-
-        jCheckBox_password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox_password.setText("Show Password");
-        jCheckBox_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCheckBox_password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_passwordActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
-        jButton1.setText("Login");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
-            }
-        });
-
-        jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_username.setText("Email");
+        jPanel1.add(jTextField_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 347, -1));
 
         jLabel_password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel_password.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_password.setText("Password");
+        jPanel1.add(jLabel_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
@@ -139,61 +135,36 @@ public class Form_Login extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, 347, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_password)
-                    .addComponent(jLabel_username, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField_username, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox_password)
-                        .addComponent(jPasswordField1)
-                        .addComponent(jLabel_title)))
-                .addContainerGap(230, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel_title)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel_username)
-                .addGap(4, 4, 4)
-                .addComponent(jTextField_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel_password)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox_password)
-                .addGap(42, 42, 42)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel_close.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_close.setText("X");
-        jLabel_close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_closeMouseClicked(evt);
+        jCheckBox_password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBox_password.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox_password.setText("Show Password");
+        jCheckBox_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCheckBox_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox_passwordActionPerformed(evt);
             }
         });
-        jPanel1.add(jLabel_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 6, 30, 33));
+        jPanel1.add(jCheckBox_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginWhiteBackground.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 620));
+        jButton1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        jButton1.setText("Login");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 390, 347, 43));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/blackCar.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,18 +172,14 @@ public class Form_Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -399,14 +366,13 @@ public class Form_Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox_password;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel_close;
     private javax.swing.JLabel jLabel_password;
     private javax.swing.JLabel jLabel_title;
     private javax.swing.JLabel jLabel_username;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField_username;
     // End of variables declaration//GEN-END:variables
