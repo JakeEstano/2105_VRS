@@ -33,6 +33,7 @@ public class Form_Login extends javax.swing.JFrame {
         // create border
         Border title_border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED);
         jLabel_title.setBorder(title_border);
+        
     }
 
     /**

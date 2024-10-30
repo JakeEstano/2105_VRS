@@ -4,7 +4,9 @@
  */
 package GUI;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,10 +19,38 @@ public class Form_Locations extends javax.swing.JFrame {
      */
     
     Classes.Location location = new Classes.Location();
-    
+    ArrayList<Classes.Location>locations_list = location.locationList();
     public Form_Locations() {
         initComponents();
+        populateJtableWithLocations();
+        this.setLocationRelativeTo(null);
     }
+    
+    
+    // gagawa ng function para ipulate the jTable with brand (id & name )
+    public void populateJtableWithLocations(){
+        
+       // Clear array List
+       locations_list.clear();
+       // populated arrayList
+       locations_list = location.locationList();
+       // JTable Columns
+        String[] columnsName = {"ID", "City","Address"};
+       // Rows
+       Object[][] rows = new Object[locations_list.size()][columnsName.length];
+       
+       for (int i = 0; i < locations_list.size(); i++){
+           
+           rows[i][0] = locations_list.get(i).getId();
+           rows[i][1] = locations_list.get(i).getCity();
+           rows[i][2] = locations_list.get(i).getAddress();
+       }
+       DefaultTableModel model = new DefaultTableModel(rows,columnsName);
+       jTable_Locations.setModel(model);
+       
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,6 +87,7 @@ public class Form_Locations extends javax.swing.JFrame {
         jComboBox_City = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
