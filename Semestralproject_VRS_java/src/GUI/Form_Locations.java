@@ -19,6 +19,9 @@ public class Form_Locations extends javax.swing.JFrame {
      */
     
     Classes.Location location = new Classes.Location();
+    
+    
+    
     ArrayList<Classes.Location>locations_list = location.locationList();
     public Form_Locations() {
         initComponents();
@@ -272,7 +275,7 @@ public class Form_Locations extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea_Address);
 
         jComboBox_City.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "City 1", "City 2", "City 3", "City 4" }));
+        jComboBox_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Balayan", "Calaca", "Nasugbu", "Batangas" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
