@@ -17,6 +17,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,11 +33,11 @@ public class Home extends javax.swing.JFrame {
         tab1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         tab2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel_Vehicle = new javax.swing.JLabel();
         tab3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel_Brand = new javax.swing.JLabel();
         tab4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel_Location = new javax.swing.JLabel();
         tab5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -75,6 +76,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("HOME");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
         tab1.setLayout(tab1Layout);
@@ -101,9 +103,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VEHICLE");
+        jLabel_Vehicle.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Vehicle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Vehicle.setText("VEHICLE");
+        jLabel_Vehicle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
         tab2.setLayout(tab2Layout);
@@ -111,14 +114,14 @@ public class Home extends javax.swing.JFrame {
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel_Vehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tab2Layout.setVerticalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Vehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -130,9 +133,15 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("BRAND");
+        jLabel_Brand.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Brand.setText("BRAND");
+        jLabel_Brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Brand.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_BrandMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
         tab3.setLayout(tab3Layout);
@@ -140,14 +149,14 @@ public class Home extends javax.swing.JFrame {
             tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tab3Layout.setVerticalGroup(
             tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -159,9 +168,15 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("LOCATION");
+        jLabel_Location.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Location.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Location.setText("LOCATION");
+        jLabel_Location.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Location.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_LocationMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
         tab4.setLayout(tab4Layout);
@@ -169,14 +184,14 @@ public class Home extends javax.swing.JFrame {
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tab4Layout.setVerticalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -191,6 +206,7 @@ public class Home extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("TBD");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout tab5Layout = new javax.swing.GroupLayout(tab5);
         tab5.setLayout(tab5Layout);
@@ -278,14 +294,14 @@ public class Home extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
@@ -520,6 +536,19 @@ public class Home extends javax.swing.JFrame {
         jp4.setVisible(false);
     }//GEN-LAST:event_tab5MouseClicked
 
+    private void jLabel_BrandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_BrandMouseClicked
+        // TODO add your handling code here:
+        
+        Form_Brands frm_brd = new Form_Brands();
+        frm_brd.setVisible(true);
+    }//GEN-LAST:event_jLabel_BrandMouseClicked
+
+    private void jLabel_LocationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LocationMouseClicked
+        // TODO add your handling code here:
+        Form_Locations frm_location = new Form_Locations();
+        frm_location.setVisible(true);
+    }//GEN-LAST:event_jLabel_LocationMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -558,13 +587,13 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel_Brand;
+    private javax.swing.JLabel jLabel_Location;
+    private javax.swing.JLabel jLabel_Vehicle;
     private javax.swing.JLabel jLabel_cars_logo;
     private javax.swing.JLabel jLabel_cars_logo2;
     private javax.swing.JLabel jLabel_cars_logo3;
@@ -575,7 +604,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;

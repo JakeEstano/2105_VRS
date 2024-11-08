@@ -45,13 +45,14 @@ public class Form_Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel_cars_logo1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel_Locations = new javax.swing.JLabel();
         jLabel_Brand = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel_Car = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel_close = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -61,28 +62,32 @@ public class Form_Dashboard extends javax.swing.JFrame {
         jLabel_cars_count = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        jLabel_customers_logo = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel_cars_logo2 = new javax.swing.JLabel();
         jLabel_customers_count = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        jLabel_booked_logo = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jLabel_cars_logo3 = new javax.swing.JLabel();
         jLabel_booked_count = new javax.swing.JLabel();
         jLabel_username = new javax.swing.JLabel();
+
+        jLabel_cars_logo1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel_cars_logo1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo1.setForeground(new java.awt.Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel_Locations.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_Locations.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_Locations.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel_Locations.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Locations.setText("Locations");
@@ -93,7 +98,7 @@ public class Form_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel_Brand.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_Brand.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_Brand.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel_Brand.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Brand.setText("Brand");
@@ -104,17 +109,22 @@ public class Form_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MENU ITEM 1");
 
-        jLabel5.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Cars");
+        jLabel_Car.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel_Car.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        jLabel_Car.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Car.setText("Cars");
+        jLabel_Car.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_CarMouseClicked(evt);
+            }
+        });
 
-        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MENU ITEM 1");
@@ -126,7 +136,7 @@ public class Form_Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(jLabel_Car, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                     .addComponent(jLabel_Locations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -140,7 +150,7 @@ public class Form_Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel_Locations, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel_Car, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -158,39 +168,40 @@ public class Form_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setForeground(new java.awt.Color(255, 153, 51));
 
-        jPanel5.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel_cars_logo.setBackground(new java.awt.Color(87, 101, 116));
+        jLabel_cars_logo.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_cars_logo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_cars_logo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_cars_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
 
-        jLabel9.setBackground(new java.awt.Color(87, 101, 116));
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Cars");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jLabel_cars_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel_cars_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_cars_logo, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel_cars_logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel_cars_count.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_cars_count.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_cars_count.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_cars_count.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_cars_count.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_cars_count.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_cars_count.setText("100");
 
@@ -213,42 +224,43 @@ public class Form_Dashboard extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jPanel14.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel14.setForeground(new java.awt.Color(255, 153, 51));
 
-        jPanel15.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel_customers_logo.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel_customers_logo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_customers_logo.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel19.setBackground(new java.awt.Color(87, 101, 116));
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Customers");
+
+        jLabel_cars_logo2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_cars_logo2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel_customers_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel_cars_logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_customers_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jLabel_cars_logo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel_customers_count.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_customers_count.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_customers_count.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_customers_count.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_customers_count.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_customers_count.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_customers_count.setText("100");
 
@@ -266,51 +278,45 @@ public class Form_Dashboard extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel_customers_count, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel_customers_count, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
         );
 
-        jPanel16.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel16.setForeground(new java.awt.Color(255, 153, 51));
 
-        jPanel17.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel_booked_logo.setBackground(new java.awt.Color(87, 101, 116));
-        jLabel_booked_logo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_booked_logo.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel22.setBackground(new java.awt.Color(87, 101, 116));
+        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Booked");
+
+        jLabel_cars_logo3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_cars_logo3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addContainerGap(168, Short.MAX_VALUE)
-                .addComponent(jLabel_booked_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(35, 35, 35)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(121, Short.MAX_VALUE)))
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel_cars_logo3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_booked_logo, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(jLabel_cars_logo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel_booked_count.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel_booked_count.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_booked_count.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_booked_count.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_booked_count.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_booked_count.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_booked_count.setText("100");
 
@@ -333,8 +339,8 @@ public class Form_Dashboard extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jLabel_username.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel_username.setForeground(new java.awt.Color(204, 255, 0));
+        jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel_username.setForeground(new java.awt.Color(204, 0, 0));
         jLabel_username.setText("loged user username");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -350,13 +356,13 @@ public class Form_Dashboard extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_username)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
                                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
-                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel_username))
+                                .addGap(31, 31, 31)
+                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -367,12 +373,12 @@ public class Form_Dashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel_close, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jLabel_username, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel_username, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(209, 209, 209))
         );
 
@@ -413,17 +419,24 @@ public class Form_Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_closeMouseClicked
 
     private void jLabel_BrandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_BrandMouseClicked
-        // open the brands form
+        // Open the brands form
         Form_Brands frm_brd = new Form_Brands();
         frm_brd.setVisible(true);
     }//GEN-LAST:event_jLabel_BrandMouseClicked
 
     private void jLabel_LocationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LocationsMouseClicked
-        // TODO add your handling code here:
-        Form_Locations frm_location = new Form_Locations();
-        frm_location.setVisible(true);
+        // Open the Location form
+        Form_Locations frm_lct = new Form_Locations();
+        frm_lct.setVisible(true);
         
     }//GEN-LAST:event_jLabel_LocationsMouseClicked
+
+    private void jLabel_CarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_CarMouseClicked
+        // Open the Cars Pannel
+        
+        Form_Cars frm_crs = new Form_Cars();
+        frm_crs.setVisible(true);
+    }//GEN-LAST:event_jLabel_CarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -465,17 +478,18 @@ public class Form_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_Brand;
+    private javax.swing.JLabel jLabel_Car;
     private javax.swing.JLabel jLabel_Locations;
     private javax.swing.JLabel jLabel_booked_count;
-    private javax.swing.JLabel jLabel_booked_logo;
     private javax.swing.JLabel jLabel_cars_count;
     private javax.swing.JLabel jLabel_cars_logo;
+    private javax.swing.JLabel jLabel_cars_logo1;
+    private javax.swing.JLabel jLabel_cars_logo2;
+    private javax.swing.JLabel jLabel_cars_logo3;
     private javax.swing.JLabel jLabel_close;
     private javax.swing.JLabel jLabel_customers_count;
-    private javax.swing.JLabel jLabel_customers_logo;
     public static javax.swing.JLabel jLabel_username;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
