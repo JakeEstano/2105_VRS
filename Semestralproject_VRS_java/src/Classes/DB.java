@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+   
 /**
  *
- * @author PC
+ * @Saipo
  */
 public class DB {
     // Download the Java MySQL connector -> https://dev.mysql.com/downloads/connector/j/
