@@ -40,6 +40,7 @@ public class Home extends javax.swing.JFrame {
         jLabel_Location = new javax.swing.JLabel();
         tab5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel_username = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jp1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -55,9 +56,9 @@ public class Home extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel_cars_logo2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jp2 = new javax.swing.JPanel();
         jp3 = new javax.swing.JPanel();
         jp4 = new javax.swing.JPanel();
-        jp2 = new javax.swing.JPanel();
         jp5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -225,12 +226,17 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel_username.setText("loged user username");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(566, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel_username, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 393, Short.MAX_VALUE)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,6 +255,10 @@ public class Home extends javax.swing.JFrame {
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -418,6 +428,10 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.add(jp1);
 
+        jp2.setBackground(new java.awt.Color(204, 255, 204));
+        jp2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jp2);
+
         jp3.setBackground(new java.awt.Color(0, 255, 255));
 
         javax.swing.GroupLayout jp3Layout = new javax.swing.GroupLayout(jp3);
@@ -447,21 +461,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         jPanel2.add(jp4);
-
-        jp2.setBackground(new java.awt.Color(102, 255, 51));
-
-        javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
-        jp2.setLayout(jp2Layout);
-        jp2Layout.setHorizontalGroup(
-            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1132, Short.MAX_VALUE)
-        );
-        jp2Layout.setVerticalGroup(
-            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jp2);
 
         jp5.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -505,17 +504,17 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_tab1MouseClicked
 
     private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-        jp2.setVisible(true);
+        jp3.setVisible(true);
         jp1.setVisible(false);
-        jp3.setVisible(false);
+        jp2.setVisible(false);
         jp4.setVisible(false);
         jp5.setVisible(false);
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-        jp3.setVisible(true);
+        jp2.setVisible(true);
         jp1.setVisible(false);
-        jp2.setVisible(false);
+        jp3.setVisible(false);
         jp4.setVisible(false);
         jp5.setVisible(false);
     }//GEN-LAST:event_tab3MouseClicked
@@ -597,6 +596,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_cars_logo;
     private javax.swing.JLabel jLabel_cars_logo2;
     private javax.swing.JLabel jLabel_cars_logo3;
+    public static javax.swing.JLabel jLabel_username;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

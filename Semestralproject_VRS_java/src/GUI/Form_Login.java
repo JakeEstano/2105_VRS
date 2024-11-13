@@ -31,7 +31,7 @@ public class Form_Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         // create border
-        Border title_border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED);
+        Border title_border = BorderFactory.createMatteBorder(0, 2, 0, 0, Color.gray);
         jLabel_title.setBorder(title_border);
         
     }
@@ -85,21 +85,24 @@ public class Form_Login extends javax.swing.JFrame {
                 jLabel_closeMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 30, 33));
+        jPanel1.add(jLabel_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, 30, 33));
 
         jLabel_title.setFont(new java.awt.Font("Trebuchet MS", 1, 55)); // NOI18N
         jLabel_title.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_title.setText("Login");
-        jPanel1.add(jLabel_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, -1, -1));
+        jLabel_title.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 150, 60));
 
         jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_username.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel_username.setForeground(new java.awt.Color(204, 204, 204));
         jLabel_username.setText("Email");
-        jPanel1.add(jLabel_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
+        jPanel1.add(jLabel_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, -1, -1));
 
         jTextField_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField_username.setForeground(new java.awt.Color(153, 153, 153));
         jTextField_username.setText("username");
+        jTextField_username.setSelectionColor(new java.awt.Color(204, 204, 204));
         jTextField_username.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField_usernameFocusGained(evt);
@@ -113,12 +116,12 @@ public class Form_Login extends javax.swing.JFrame {
                 jTextField_usernameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 347, -1));
+        jPanel1.add(jTextField_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 220, -1));
 
         jLabel_password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_password.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel_password.setForeground(new java.awt.Color(204, 204, 204));
         jLabel_password.setText("Password");
-        jPanel1.add(jLabel_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+        jPanel1.add(jLabel_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, -1, -1));
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
@@ -136,10 +139,9 @@ public class Form_Login extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, 347, -1));
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 340, 220, -1));
 
-        jCheckBox_password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox_password.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox_password.setForeground(new java.awt.Color(204, 204, 204));
         jCheckBox_password.setText("Show Password");
         jCheckBox_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jCheckBox_password.addActionListener(new java.awt.event.ActionListener() {
@@ -147,11 +149,13 @@ public class Form_Login extends javax.swing.JFrame {
                 jCheckBox_passwordActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, -1, -1));
+        jPanel1.add(jCheckBox_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 380, 110, 20));
 
-        jButton1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jButton1.setText("Login");
+        jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setName(""); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -162,26 +166,20 @@ public class Form_Login extends javax.swing.JFrame {
                 jButton1KeyPressed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 390, 347, 43));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 80, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/blackCar.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 610));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/greenBG.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -254,7 +252,7 @@ public class Form_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1FocusLost
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        // TODO add your handling code here:
+ //        // TODO add your handling code here:
         String username = jTextField_username.getText();
         String password = String.valueOf(jPasswordField1.getPassword());
         
@@ -276,10 +274,10 @@ public class Form_Login extends javax.swing.JFrame {
             
             if (rs.next()){
                // System.out.println("Login");
-               Form_Dashboard frm_dsh = new Form_Dashboard();
-               frm_dsh.setVisible(true);
+               Home hp = new Home();
+               hp.setVisible(true);
                // display the username
-               Form_Dashboard.jLabel_username.setText(rs.getString("username"));
+               Home.jLabel_username.setText(rs.getString("username"));
                // hide login form
                this.dispose();
             }
