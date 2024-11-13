@@ -37,10 +37,9 @@ public class Home extends javax.swing.JFrame {
         tab3 = new javax.swing.JPanel();
         jLabel_Brand = new javax.swing.JLabel();
         tab4 = new javax.swing.JPanel();
-        jLabel_Location = new javax.swing.JLabel();
+        jLabel_Cars = new javax.swing.JLabel();
         tab5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel_username = new javax.swing.JLabel();
+        jLabel_Location = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jp1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -56,9 +55,9 @@ public class Home extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel_cars_logo2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jp2 = new javax.swing.JPanel();
         jp3 = new javax.swing.JPanel();
         jp4 = new javax.swing.JPanel();
+        jp2 = new javax.swing.JPanel();
         jp5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -169,13 +168,13 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel_Location.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel_Location.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Location.setText("LOCATION");
-        jLabel_Location.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_Location.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel_Cars.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Cars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Cars.setText("CARS");
+        jLabel_Cars.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Cars.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_LocationMouseClicked(evt);
+                jLabel_CarsMouseClicked(evt);
             }
         });
 
@@ -185,14 +184,14 @@ public class Home extends javax.swing.JFrame {
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tab4Layout.setVerticalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -204,10 +203,15 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("TBD");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Location.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Location.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Location.setText("LOCATION");
+        jLabel_Location.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Location.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_LocationMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab5Layout = new javax.swing.GroupLayout(tab5);
         tab5.setLayout(tab5Layout);
@@ -215,28 +219,23 @@ public class Home extends javax.swing.JFrame {
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tab5Layout.setVerticalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_username.setText("loged user username");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel_username, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 393, Short.MAX_VALUE)
+                .addContainerGap(566, Short.MAX_VALUE)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -255,10 +254,6 @@ public class Home extends javax.swing.JFrame {
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -428,10 +423,6 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.add(jp1);
 
-        jp2.setBackground(new java.awt.Color(204, 255, 204));
-        jp2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jp2);
-
         jp3.setBackground(new java.awt.Color(0, 255, 255));
 
         javax.swing.GroupLayout jp3Layout = new javax.swing.GroupLayout(jp3);
@@ -461,6 +452,21 @@ public class Home extends javax.swing.JFrame {
         );
 
         jPanel2.add(jp4);
+
+        jp2.setBackground(new java.awt.Color(102, 255, 51));
+
+        javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
+        jp2.setLayout(jp2Layout);
+        jp2Layout.setHorizontalGroup(
+            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1132, Short.MAX_VALUE)
+        );
+        jp2Layout.setVerticalGroup(
+            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jp2);
 
         jp5.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -504,17 +510,17 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_tab1MouseClicked
 
     private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-        jp3.setVisible(true);
+        jp2.setVisible(true);
         jp1.setVisible(false);
-        jp2.setVisible(false);
+        jp3.setVisible(false);
         jp4.setVisible(false);
         jp5.setVisible(false);
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-        jp2.setVisible(true);
+        jp3.setVisible(true);
         jp1.setVisible(false);
-        jp3.setVisible(false);
+        jp2.setVisible(false);
         jp4.setVisible(false);
         jp5.setVisible(false);
     }//GEN-LAST:event_tab3MouseClicked
@@ -541,6 +547,13 @@ public class Home extends javax.swing.JFrame {
         Form_Brands frm_brd = new Form_Brands();
         frm_brd.setVisible(true);
     }//GEN-LAST:event_jLabel_BrandMouseClicked
+
+    private void jLabel_CarsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_CarsMouseClicked
+        // TODO add your handling code here:
+        Form_Cars frm_crs = new Form_Cars();
+        frm_crs.setVisible(true);
+        
+    }//GEN-LAST:event_jLabel_CarsMouseClicked
 
     private void jLabel_LocationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LocationMouseClicked
         // TODO add your handling code here:
@@ -587,16 +600,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_Brand;
+    private javax.swing.JLabel jLabel_Cars;
     private javax.swing.JLabel jLabel_Location;
     private javax.swing.JLabel jLabel_Vehicle;
     private javax.swing.JLabel jLabel_cars_logo;
     private javax.swing.JLabel jLabel_cars_logo2;
     private javax.swing.JLabel jLabel_cars_logo3;
-    public static javax.swing.JLabel jLabel_username;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

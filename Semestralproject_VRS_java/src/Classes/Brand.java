@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -181,6 +182,28 @@ public class Brand {
              Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
          }
          return brand;
+     }
+     
+     // function to populate a hashmap with brands 
+
+    
+     public HashMap<String, Integer> brandsHashMap()
+     {
+         HashMap<String, Integer> brand_map =  new  HashMap <String, Integer>();
+         
+         ResultSet rs = getData("SELECT * FROM `brands`");
+         
+         
+         try {
+             while (rs.next())
+             {
+                 brand_map.put(rs.getString(2), rs.getInt(1));
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
+         }
+
+         return brand_map;
      }
     
 }
