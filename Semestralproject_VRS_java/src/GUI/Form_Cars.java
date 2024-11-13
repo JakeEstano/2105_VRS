@@ -4,14 +4,6 @@
  */
 package GUI;
 
-import Classes.Brand;
-import Classes.Car;
-import java.util.HashMap;
-import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
-import javax.swing.SpinnerModel;
-import javax.swing.SpinnerNumberModel;
-
 /**
  *
  * @author PC
@@ -21,58 +13,10 @@ public class Form_Cars extends javax.swing.JFrame {
     /**
      * Creates new form Form_Cars
      */
-    
-    Car car = new Car();
-    Brand brand = new Brand();
-    HashMap<String , Integer> map = brand.brandsHashMap();
-    
     public Form_Cars() {
-        
         initComponents();
-        
-        this.setLocationRelativeTo(null);
-        
-        //Radio button
-        
-        ButtonGroup btn_group = new ButtonGroup();
-        btn_group.add(jRadioButton_Automatic);
-        btn_group.add(jRadioButton_Manual);
-        
-        populateComboBoxBrands();
     }
-    
-    
-    // pupulated the jComboBox_brands
 
-    
-    public void populateComboBoxBrands()
-    {
-        for ( String s : map.keySet())
-        {
-            jComboBox_brand.addItem(s);
-        }
-    }
-    
-    public boolean verify()
-    { 
-        String model = jTextField_Model.getText();
-        String _plateNum = jTextField_Model.getText();
-
-        
-        
-        if(!model.trim().equals("") && !_plateNum.trim().equals(""))
-        {
-            return true;
-            
-        }
-        else 
-        {
-            JOptionPane.showMessageDialog(null , "Enter a Valid Model and Plate Number" , "Invalid Info", 2);
-             return false;
-        }
-    }
-        
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -89,10 +33,12 @@ public class Form_Cars extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel_brands_logo = new javax.swing.JLabel();
         jLabel_close1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton_Add_Car_ = new javax.swing.JButton();
         jButton_Add_images_ = new javax.swing.JButton();
+        jSpinner_id = new javax.swing.JSpinner();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -113,27 +59,14 @@ public class Form_Cars extends javax.swing.JFrame {
         jComboBox_brand = new javax.swing.JComboBox<>();
         jComboBox_Fuel = new javax.swing.JComboBox<>();
         jComboBox_Color = new javax.swing.JComboBox<>();
-        jRadioButton_Manual = new javax.swing.JRadioButton();
-        jRadioButton_Automatic = new javax.swing.JRadioButton();
-        int max_2 = 14;
-        int min_2 = 2;
-        int step_2 = 1;
-        int i_2 = 2;
-        SpinnerModel spinner_model_2 = new SpinnerNumberModel(i_2,min_2,max_2,step_2);
-        jSpinner_Passengers = new javax.swing.JSpinner(spinner_model_2);
+        jRadioButton_Gear_Manual = new javax.swing.JRadioButton();
+        jRadioButton_Gear_Auto = new javax.swing.JRadioButton();
+        jSpinner_Passengers = new javax.swing.JSpinner();
         jTextField_Class = new javax.swing.JTextField();
+        jTextField_Price = new javax.swing.JTextField();
         jButton_Add_Brands_List_ = new javax.swing.JButton();
-        jButton_Reset_ = new javax.swing.JButton();
-        jLabel_Brand_Id = new javax.swing.JLabel();
-        int max = 10000;
-        int min = 10;
-        int step = 1;
-        int i = 10;
-        SpinnerModel spinner_model = new SpinnerNumberModel(i,min,max,step);
-        jSpinner_Price = new javax.swing.JSpinner(spinner_model);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -186,6 +119,9 @@ public class Form_Cars extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("ID:");
+
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setText("Brand:");
 
@@ -214,6 +150,10 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
+        jSpinner_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jSpinner_id.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jSpinner_id.setPreferredSize(new java.awt.Dimension(100, 26));
+
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setText("Fuel:");
 
@@ -227,7 +167,7 @@ public class Form_Cars extends javax.swing.JFrame {
         jLabel8.setText("Transmission:");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel9.setText("Plate Number:");
+        jLabel9.setText("Class: ");
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabel10.setText("Features");
@@ -319,7 +259,7 @@ public class Form_Cars extends javax.swing.JFrame {
         );
 
         jTextField_Model.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField_Model.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextField_Model.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTextField_Model.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_ModelActionPerformed(evt);
@@ -327,12 +267,8 @@ public class Form_Cars extends javax.swing.JFrame {
         });
 
         jComboBox_brand.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jComboBox_brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox_brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jComboBox_brand.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_brandActionPerformed(evt);
-            }
-        });
 
         jComboBox_Fuel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox_Fuel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gas", "Diesel" }));
@@ -342,21 +278,21 @@ public class Form_Cars extends javax.swing.JFrame {
         jComboBox_Color.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "White", "Black", "Grey", "Red", "Dark Green" }));
         jComboBox_Color.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        buttonGroup1.add(jRadioButton_Manual);
-        jRadioButton_Manual.setText("Manual");
-        jRadioButton_Manual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton_Manual.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButton_Gear_Manual);
+        jRadioButton_Gear_Manual.setText("Manual");
+        jRadioButton_Gear_Manual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jRadioButton_Gear_Manual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_ManualActionPerformed(evt);
+                jRadioButton_Gear_ManualActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton_Automatic);
-        jRadioButton_Automatic.setText("Automatic");
-        jRadioButton_Automatic.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jRadioButton_Automatic.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButton_Gear_Auto);
+        jRadioButton_Gear_Auto.setText("Automatic");
+        jRadioButton_Gear_Auto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jRadioButton_Gear_Auto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton_AutomaticActionPerformed(evt);
+                jRadioButton_Gear_AutoActionPerformed(evt);
             }
         });
 
@@ -364,10 +300,18 @@ public class Form_Cars extends javax.swing.JFrame {
         jSpinner_Passengers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jTextField_Class.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField_Class.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextField_Class.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTextField_Class.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_ClassActionPerformed(evt);
+            }
+        });
+
+        jTextField_Price.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField_Price.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTextField_Price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_PriceActionPerformed(evt);
             }
         });
 
@@ -382,130 +326,112 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Reset_.setBackground(new java.awt.Color(34, 47, 62));
-        jButton_Reset_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Reset_.setForeground(new java.awt.Color(204, 204, 204));
-        jButton_Reset_.setText("Reset");
-        jButton_Reset_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Reset_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_Reset_ActionPerformed(evt);
-            }
-        });
-
-        jLabel_Brand_Id.setText("#");
-
-        jSpinner_Price.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jSpinner_Price.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(63, 63, 63)
                         .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_Add_images_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_Reset_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jSpinner_id, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(310, 310, 310)
+                                        .addComponent(jLabel9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jTextField_Model)
+                                            .addComponent(jComboBox_brand, 0, 180, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox_Color, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox_Fuel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11))
+                            .addComponent(jLabel10)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField_Model, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox_brand, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel_Brand_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox_Color, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox_Fuel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel10)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(33, 33, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner_Passengers, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_Class, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSpinner_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton_Automatic, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton_Manual, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jRadioButton_Gear_Auto, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton_Gear_Manual, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSpinner_Passengers, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Class, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                .addGap(65, 65, 65)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField_Class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox_brand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner_Passengers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jTextField_Class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jSpinner_Passengers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jRadioButton_Automatic)
-                            .addComponent(jRadioButton_Manual))
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jSpinner_Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(391, 391, 391))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox_brand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel_Brand_Id))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField_Model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox_Fuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox_Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Add_images_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Reset_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(jTextField_Model, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(jRadioButton_Gear_Auto)
+                        .addComponent(jRadioButton_Gear_Manual)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox_Fuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel11)
+                        .addComponent(jTextField_Price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox_Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Add_images_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(143, 143, 143))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -567,26 +493,25 @@ public class Form_Cars extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Add new Car
         // Car info
-        int brand = Integer.valueOf(jLabel_Brand_Id.getText());
+        String brand = jComboBox_brand.getSelectedItem().toString();
         String model = jTextField_Model.getText();
-        String fuel = jComboBox_Fuel.getSelectedItem().toString();
         String color = jComboBox_Color.getSelectedItem().toString();
-        String plateNum = jTextField_Class.getText();
-        int passengers = (int)jSpinner_Passengers .getValue();
+        String fuel = jComboBox_Fuel.getSelectedItem().toString();
+        String _class_ = jTextField_Class.getText();
         String gearbox = "automatic";
-        //int price = Integer.valueOf(jSpinner_Price.getValue());
-        int price = (int)(jSpinner_Price.getValue());
+        int passengers = (int)jSpinner_id.getValue();
+        int price = Integer.valueOf(jTextField_Price.getText());
         // car features
         String air_cond = "no";
         String airbags = "no";
         String sunroof = "no";
         String heated_seats = "no";
         String nav_sys = "no";
-        String bluetooth = "no";
         String elec_win = "no";
+        String bluetooth = "no";
         String gps = "no";
         
-        if (jRadioButton_Manual.isSelected()){gearbox = "manual";}
+        if (jRadioButton_Gear_Manual.isSelected()){gearbox = "manual";}
         
         if (jRadioButton_Features_AirBag.isSelected()){air_cond = "yes";}
         if (jRadioButton_Features_AirBag.isSelected()){airbags = "yes";}
@@ -597,13 +522,6 @@ public class Form_Cars extends javax.swing.JFrame {
         if (jRadioButton_Features_ElecWin.isSelected()){elec_win = "yes";}
         if (jRadioButton_Features_GPS.isSelected()){gps = "yes";}
         
-        
-        /*
-        */
-        if (verify()){
-        car.addCar(brand, model, fuel, color, plateNum, passengers, gearbox, price, air_cond, 
-                airbags, sunroof, heated_seats, nav_sys, bluetooth, elec_win, gps);
-        }
     }//GEN-LAST:event_jButton_Add_Car_ActionPerformed
 
     private void jLabel_close1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_close1MouseClicked
@@ -612,13 +530,13 @@ public class Form_Cars extends javax.swing.JFrame {
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }//GEN-LAST:event_jLabel_close1MouseClicked
 
-    private void jRadioButton_ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_ManualActionPerformed
+    private void jRadioButton_Gear_ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Gear_ManualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_ManualActionPerformed
+    }//GEN-LAST:event_jRadioButton_Gear_ManualActionPerformed
 
-    private void jRadioButton_AutomaticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_AutomaticActionPerformed
+    private void jRadioButton_Gear_AutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Gear_AutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton_AutomaticActionPerformed
+    }//GEN-LAST:event_jRadioButton_Gear_AutoActionPerformed
 
     private void jTextField_ModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_ModelActionPerformed
         // TODO add your handling code here:
@@ -628,43 +546,13 @@ public class Form_Cars extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_ClassActionPerformed
 
+    private void jTextField_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_PriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_PriceActionPerformed
+
     private void jButton_Add_Brands_List_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_Brands_List_ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_Add_Brands_List_ActionPerformed
-
-    private void jButton_Reset_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Reset_ActionPerformed
-        // TODO add your handling code here:
-        // To reset all fields
-        
-        jTextField_Class.setText("");
-        jTextField_Model.setText("");
-        jSpinner_Price.setValue(10);
-        jLabel_Brand_Id.setText("#");
-        jSpinner_Passengers.setValue(0);
-        jComboBox_Fuel.setSelectedIndex(0);
-        jComboBox_Color.setSelectedIndex(0);
-        jComboBox_brand.setSelectedIndex(0);
-        jRadioButton_Automatic.setSelected(true);
-        
-        jRadioButton_Features_AirBag.setSelected(false);
-        jRadioButton_Features_Aircond.setSelected(false);
-        jRadioButton_Features_Bluetooth.setSelected(false);
-        jRadioButton_Features_ElecWin.setSelected(false);
-        jRadioButton_Features_GPS.setSelected(false);
-        jRadioButton_Features_HeatedSeat.setSelected(false);
-        jRadioButton_Features_NavSys.setSelected(false);
-        jRadioButton_Features_Sunroof.setSelected(false);
-        
-        
-        
-    }//GEN-LAST:event_jButton_Reset_ActionPerformed
-
-    private void jComboBox_brandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_brandActionPerformed
-         // TODO add your handling code here:
-        // Get the selected brand id
-        jLabel_Brand_Id.setText(map.get(jComboBox_brand.getSelectedItem().toString()).toString());
-        
-    }//GEN-LAST:event_jComboBox_brandActionPerformed
 
     /**
      * @param args the command line arguments
@@ -706,10 +594,10 @@ public class Form_Cars extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Add_Brands_List_;
     private javax.swing.JButton jButton_Add_Car_;
     private javax.swing.JButton jButton_Add_images_;
-    private javax.swing.JButton jButton_Reset_;
     private javax.swing.JComboBox<String> jComboBox_Color;
     private javax.swing.JComboBox<String> jComboBox_Fuel;
     private javax.swing.JComboBox<String> jComboBox_brand;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -720,14 +608,12 @@ public class Form_Cars extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel_Brand_Id;
     private javax.swing.JLabel jLabel_brands_logo;
     private javax.swing.JLabel jLabel_close1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton_Automatic;
     private javax.swing.JRadioButton jRadioButton_Features_AirBag;
     private javax.swing.JRadioButton jRadioButton_Features_Aircond;
     private javax.swing.JRadioButton jRadioButton_Features_Bluetooth;
@@ -736,10 +622,12 @@ public class Form_Cars extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton_Features_HeatedSeat;
     private javax.swing.JRadioButton jRadioButton_Features_NavSys;
     private javax.swing.JRadioButton jRadioButton_Features_Sunroof;
-    private javax.swing.JRadioButton jRadioButton_Manual;
+    private javax.swing.JRadioButton jRadioButton_Gear_Auto;
+    private javax.swing.JRadioButton jRadioButton_Gear_Manual;
     private javax.swing.JSpinner jSpinner_Passengers;
-    private javax.swing.JSpinner jSpinner_Price;
+    private javax.swing.JSpinner jSpinner_id;
     private javax.swing.JTextField jTextField_Class;
     private javax.swing.JTextField jTextField_Model;
+    private javax.swing.JTextField jTextField_Price;
     // End of variables declaration//GEN-END:variables
 }

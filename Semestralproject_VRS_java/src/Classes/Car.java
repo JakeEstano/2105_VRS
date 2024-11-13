@@ -23,7 +23,7 @@ public class Car {
     private String model;
     private String fuel;
     private String color;
-    private String plateNum;
+    private String _class_;
     private int passengers;
     private String gearbox;
     private int price;
@@ -39,13 +39,13 @@ public class Car {
     public Car() {
     }
 
-    public Car(int id, int brand, String model, String fuel, String color, String plateNum, int passengers, String gearbox, int price, String air_cond, String airbag, String sunroof, String heated_seats, String nav_sys, String bluetooth, String elec_window, String gps) {
+    public Car(int id, int brand, String model, String fuel, String color, String _class_, int passengers, String gearbox, int price, String air_cond, String airbag, String sunroof, String heated_seats, String nav_sys, String bluetooth, String elec_window, String gps) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.fuel = fuel;
         this.color = color;
-        this.plateNum = plateNum;
+        this._class_ = _class_;
         this.passengers = passengers;
         this.gearbox = gearbox;
         this.price = price;
@@ -99,12 +99,12 @@ public class Car {
         this.color = color;
     }
 
-    public String getplateNum_() {
-        return plateNum;
+    public String getClass_() {
+        return _class_;
     }
 
-    public void setplateNum_(String plateNum) {
-        this.plateNum = plateNum;
+    public void setClass_(String _class_) {
+        this._class_ = _class_;
     }
 
     public int getPassengers() {
@@ -194,13 +194,33 @@ public class Car {
     public void setGps(String gps) {
         this.gps = gps;
     }
+
+    /*
+    this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.fuel = fuel;
+        this.color = color;
+        this._class_ = _class_;
+        this.passengers = passengers;
+        this.gearbox = gearbox;
+        this.price = price;
+        this.air_cond = air_cond;
+        this.airbag = airbag;
+        this.sunroof = sunroof;
+        this.heated_seats = heated_seats;
+        this.nav_sys = nav_sys;
+        this.bluetooth = bluetooth;
+        this.elec_window = elec_window;
+        this.gps = gps;
+    */
     
     // function to add new car
-    public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
+    public void addCar(int _brand, String _model, String _fuel, String _color, String _class, int _passengers, 
                         String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,
                         String _heated_seats, String _nav_sys, String _bluetooth, String _elec_window, String _gps){
         
-        String insertQuery = "INSERT INTO `cars`(`brand`, `model`, `fuel`, `color`, `plateNum`, `passengers`, `gearbox`, `price`, `air_conditioning`, `air_bag`, `sunroof`, `heated_seats`, `nav_system`, `bluetooth`, `electric_windows`, `gps`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String insertQuery = "INSERT INTO `cars`(`brand`, `model`, `fuel`, `color`, `class`, `passengers`, `gearbox`, `price`, `air_conditioning`, `air_bag`, `sunroof`, `heated_seats`, `nav_system`, `bluetooth`, `electric_windows`, `gps`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps;
        
         try {
@@ -210,10 +230,10 @@ public class Car {
             ps.setString(2, _model);
             ps.setString(3, _fuel);
             ps.setString(4, _color);
-            ps.setString(5, _plateNum);
+            ps.setString(5, _class);
             ps.setInt(6, _passengers);
             ps.setString(7, _gearbox);
-            ps.setInt(8, _price);
+            ps.setInt(8, price);
             ps.setString(9, _air_cond);
             ps.setString(10, _airbag);
             ps.setString(11, _sunroof);
@@ -221,20 +241,22 @@ public class Car {
             ps.setString(13, _nav_sys);
             ps.setString(14, _bluetooth);
             ps.setString(15, _elec_window);
-            ps.setString(16, _gps);
+            ps.setString(16, gps);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The new Car has been Added" , "Add Car", 1);
+                JOptionPane.showMessageDialog(null , "Location has been Added" , "Add Location", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Car Not been Added" , "Add Car", 2);
+                JOptionPane.showMessageDialog(null , "Location Not been Added" , "Add Location", 2);
             }
             
         } catch (SQLException ex) {
             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    
+    
     
 }

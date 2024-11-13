@@ -72,9 +72,11 @@ public class Form_Locations extends javax.swing.JFrame {
     
 // To Verify the empty fields
     public boolean verify()
-    { 
+    {
+        
         String address = jTextArea_Address.getText();
 
+        
         if(!address.trim().equals(""))
         {
             return true;
