@@ -112,12 +112,19 @@ public class Form_Dashboard extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("MENU ITEM 1");
+        jLabel3.setText("Car Brands");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel_Car.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_Car.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel_Car.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Car.setText("Cars");
+        jLabel_Car.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_Car.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_CarMouseClicked(evt);
@@ -437,6 +444,13 @@ public class Form_Dashboard extends javax.swing.JFrame {
         Form_Cars frm_crs = new Form_Cars();
         frm_crs.setVisible(true);
     }//GEN-LAST:event_jLabel_CarMouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        
+        Form_BrandsList frm_brndslist = new Form_BrandsList();
+        frm_brndslist.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments

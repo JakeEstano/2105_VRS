@@ -244,7 +244,7 @@ public class Form_Cars extends javax.swing.JFrame {
 
         jRadioButton_Features_AirBag.setText("Air Bags");
 
-        jRadioButton_Features_Sunroof.setText("Sunroof");
+        jRadioButton_Features_Sunroof.setText("Convertible");
         jRadioButton_Features_Sunroof.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton_Features_SunroofActionPerformed(evt);
@@ -550,7 +550,7 @@ public class Form_Cars extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton_Features_ElecWinActionPerformed
 
     private void jRadioButton_Features_SunroofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Features_SunroofActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton_Features_SunroofActionPerformed
 
     private void jRadioButton_Features_AircondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_Features_AircondActionPerformed

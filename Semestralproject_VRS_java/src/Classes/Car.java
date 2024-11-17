@@ -195,6 +195,54 @@ public class Car {
         this.gps = gps;
     }
     
+         
+     // function to return a restulset
+     
+     public ResultSet getData(String query){
+         
+         PreparedStatement ps;
+         ResultSet rs = null;
+         try {
+             
+             
+             ps = DB.getConnection().prepareStatement(query);
+             rs = ps.executeQuery();
+                     } catch (SQLException ex) {
+             Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return rs;
+     }
+     
+    
+    
+         //function to get all cars, return in array an list
+        public ArrayList<Car> carsList()
+        {
+         ArrayList<Car> carList = new ArrayList<>();
+         
+         ResultSet rs = getData("SELECT * FROM `cars`");
+         
+         try {
+             while(rs.next()){
+                 
+                 Car car = new Car(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),
+                                    rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
+                                    rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
+                                    rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
+                                    rs.getString(17)
+                 );
+                 
+                 carList.add(car);
+                 
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return carList;
+     }
+    
+    
+    
     // function to add new car
     public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
                         String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,

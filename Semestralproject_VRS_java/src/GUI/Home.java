@@ -31,15 +31,15 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         tab1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        tab2 = new javax.swing.JPanel();
-        jLabel_Vehicle = new javax.swing.JLabel();
-        tab3 = new javax.swing.JPanel();
-        jLabel_Brand = new javax.swing.JLabel();
-        tab4 = new javax.swing.JPanel();
-        jLabel_Cars = new javax.swing.JLabel();
-        tab5 = new javax.swing.JPanel();
         jLabel_Location = new javax.swing.JLabel();
+        jLabel_Cars = new javax.swing.JLabel();
+        tab2 = new javax.swing.JPanel();
+        jLabel_Car_Images = new javax.swing.JLabel();
+        tab3 = new javax.swing.JPanel();
+        jLabel_Brand1 = new javax.swing.JLabel();
+        tab5 = new javax.swing.JPanel();
+        jLabel_Brand = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jp1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -61,7 +61,6 @@ public class Home extends javax.swing.JFrame {
         jp5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1132, 622));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -70,136 +69,6 @@ public class Home extends javax.swing.JFrame {
         tab1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab1MouseClicked(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("HOME");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
-        tab1.setLayout(tab1Layout);
-        tab1Layout.setHorizontalGroup(
-            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tab1Layout.setVerticalGroup(
-            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        tab2.setBackground(new java.awt.Color(204, 204, 204));
-        tab2.setOpaque(false);
-        tab2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tab2MouseClicked(evt);
-            }
-        });
-
-        jLabel_Vehicle.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel_Vehicle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Vehicle.setText("VEHICLE");
-        jLabel_Vehicle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
-        tab2.setLayout(tab2Layout);
-        tab2Layout.setHorizontalGroup(
-            tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Vehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tab2Layout.setVerticalGroup(
-            tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Vehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        tab3.setBackground(new java.awt.Color(204, 204, 204));
-        tab3.setOpaque(false);
-        tab3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tab3MouseClicked(evt);
-            }
-        });
-
-        jLabel_Brand.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel_Brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Brand.setText("BRAND");
-        jLabel_Brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_Brand.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_BrandMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
-        tab3.setLayout(tab3Layout);
-        tab3Layout.setHorizontalGroup(
-            tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tab3Layout.setVerticalGroup(
-            tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        tab4.setBackground(new java.awt.Color(204, 204, 204));
-        tab4.setOpaque(false);
-        tab4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tab4MouseClicked(evt);
-            }
-        });
-
-        jLabel_Cars.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        jLabel_Cars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Cars.setText("CARS");
-        jLabel_Cars.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_Cars.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_CarsMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
-        tab4.setLayout(tab4Layout);
-        tab4Layout.setHorizontalGroup(
-            tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        tab4Layout.setVerticalGroup(
-            tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        tab5.setBackground(new java.awt.Color(204, 204, 204));
-        tab5.setOpaque(false);
-        tab5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tab5MouseClicked(evt);
             }
         });
 
@@ -213,47 +82,177 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel_Cars.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Cars.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Cars.setText("CARS");
+        jLabel_Cars.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Cars.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_CarsMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
+        tab1.setLayout(tab1Layout);
+        tab1Layout.setHorizontalGroup(
+            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        tab1Layout.setVerticalGroup(
+            tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(jLabel_Cars, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        tab2.setBackground(new java.awt.Color(204, 204, 204));
+        tab2.setOpaque(false);
+        tab2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab2MouseClicked(evt);
+            }
+        });
+
+        jLabel_Car_Images.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Car_Images.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Car_Images.setText("CUSTOMER");
+        jLabel_Car_Images.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Car_Images.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_Car_ImagesMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
+        tab2.setLayout(tab2Layout);
+        tab2Layout.setHorizontalGroup(
+            tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Car_Images, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        tab2Layout.setVerticalGroup(
+            tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Car_Images, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        tab3.setBackground(new java.awt.Color(204, 204, 204));
+        tab3.setOpaque(false);
+        tab3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab3MouseClicked(evt);
+            }
+        });
+
+        jLabel_Brand1.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Brand1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Brand1.setText("BOOK CAR");
+        jLabel_Brand1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Brand1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_Brand1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
+        tab3.setLayout(tab3Layout);
+        tab3Layout.setHorizontalGroup(
+            tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Brand1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        tab3Layout.setVerticalGroup(
+            tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel_Brand1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        tab5.setBackground(new java.awt.Color(204, 204, 204));
+        tab5.setOpaque(false);
+        tab5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tab5MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout tab5Layout = new javax.swing.GroupLayout(tab5);
         tab5.setLayout(tab5Layout);
         tab5Layout.setHorizontalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         tab5Layout.setVerticalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 40, Short.MAX_VALUE)
         );
+
+        jLabel_Brand.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel_Brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Brand.setText("BRAND");
+        jLabel_Brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel_Brand.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_BrandMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("HOME");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(566, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel_Brand, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(118, 118, 118)
                 .addComponent(tab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(tab5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Brand, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -429,7 +428,7 @@ public class Home extends javax.swing.JFrame {
         jp3.setLayout(jp3Layout);
         jp3Layout.setHorizontalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1132, Short.MAX_VALUE)
+            .addGap(0, 1263, Short.MAX_VALUE)
         );
         jp3Layout.setVerticalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +443,7 @@ public class Home extends javax.swing.JFrame {
         jp4.setLayout(jp4Layout);
         jp4Layout.setHorizontalGroup(
             jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1132, Short.MAX_VALUE)
+            .addGap(0, 1263, Short.MAX_VALUE)
         );
         jp4Layout.setVerticalGroup(
             jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,7 +458,7 @@ public class Home extends javax.swing.JFrame {
         jp2.setLayout(jp2Layout);
         jp2Layout.setHorizontalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1132, Short.MAX_VALUE)
+            .addGap(0, 1263, Short.MAX_VALUE)
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -474,7 +473,7 @@ public class Home extends javax.swing.JFrame {
         jp5.setLayout(jp5Layout);
         jp5Layout.setHorizontalGroup(
             jp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1132, Short.MAX_VALUE)
+            .addGap(0, 1263, Short.MAX_VALUE)
         );
         jp5Layout.setVerticalGroup(
             jp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,12 +486,16 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1263, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE))
@@ -501,37 +504,15 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
-        jp1.setVisible(true);
-        jp2.setVisible(false);
-        jp3.setVisible(false);
-        jp4.setVisible(false);
-        jp5.setVisible(false);
-    }//GEN-LAST:event_tab1MouseClicked
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-        jp2.setVisible(true);
-        jp1.setVisible(false);
-        jp3.setVisible(false);
-        jp4.setVisible(false);
-        jp5.setVisible(false);
-    }//GEN-LAST:event_tab2MouseClicked
-
-    private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-        jp3.setVisible(true);
-        jp1.setVisible(false);
-        jp2.setVisible(false);
-        jp4.setVisible(false);
-        jp5.setVisible(false);
-    }//GEN-LAST:event_tab3MouseClicked
-
-    private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
-        jp4.setVisible(true);
-        jp1.setVisible(false);
-        jp2.setVisible(false);
-        jp3.setVisible(false);
-        jp5.setVisible(false);
-    }//GEN-LAST:event_tab4MouseClicked
+    private void jLabel_BrandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_BrandMouseClicked
+        // TODO add your handling code here:
+        Form_Brands frm_brd = new Form_Brands();
+        frm_brd.setVisible(true);
+    }//GEN-LAST:event_jLabel_BrandMouseClicked
 
     private void tab5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab5MouseClicked
         jp5.setVisible(true);
@@ -541,18 +522,46 @@ public class Home extends javax.swing.JFrame {
         jp4.setVisible(false);
     }//GEN-LAST:event_tab5MouseClicked
 
-    private void jLabel_BrandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_BrandMouseClicked
+    private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
+        jp3.setVisible(true);
+        jp1.setVisible(false);
+        jp2.setVisible(false);
+        jp4.setVisible(false);
+        jp5.setVisible(false);
+    }//GEN-LAST:event_tab3MouseClicked
+
+    private void jLabel_Brand1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Brand1MouseClicked
         // TODO add your handling code here:
-        
-        Form_Brands frm_brd = new Form_Brands();
-        frm_brd.setVisible(true);
-    }//GEN-LAST:event_jLabel_BrandMouseClicked
+        //        Form_CarImages frm_carimges = new Form_CarImages();
+        //
+        //        frm_carimges.setVisible(true);
+    }//GEN-LAST:event_jLabel_Brand1MouseClicked
+
+    private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
+        jp2.setVisible(true);
+        jp1.setVisible(false);
+        jp3.setVisible(false);
+        jp4.setVisible(false);
+        jp5.setVisible(false);
+    }//GEN-LAST:event_tab2MouseClicked
+
+    private void jLabel_Car_ImagesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Car_ImagesMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel_Car_ImagesMouseClicked
+
+    private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
+        jp1.setVisible(true);
+        jp2.setVisible(false);
+        jp3.setVisible(false);
+        jp4.setVisible(false);
+        jp5.setVisible(false);
+    }//GEN-LAST:event_tab1MouseClicked
 
     private void jLabel_CarsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_CarsMouseClicked
         // TODO add your handling code here:
         Form_Cars frm_crs = new Form_Cars();
         frm_crs.setVisible(true);
-        
     }//GEN-LAST:event_jLabel_CarsMouseClicked
 
     private void jLabel_LocationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LocationMouseClicked
@@ -597,15 +606,16 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_Brand;
+    private javax.swing.JLabel jLabel_Brand1;
+    private javax.swing.JLabel jLabel_Car_Images;
     private javax.swing.JLabel jLabel_Cars;
     private javax.swing.JLabel jLabel_Location;
-    private javax.swing.JLabel jLabel_Vehicle;
     private javax.swing.JLabel jLabel_cars_logo;
     private javax.swing.JLabel jLabel_cars_logo2;
     private javax.swing.JLabel jLabel_cars_logo3;
@@ -625,7 +635,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;
     private javax.swing.JPanel tab3;
-    private javax.swing.JPanel tab4;
     private javax.swing.JPanel tab5;
     // End of variables declaration//GEN-END:variables
 }
