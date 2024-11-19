@@ -7,11 +7,16 @@ package GUI;
 import Classes.Car;
 import java.awt.Image;
 import java.io.File;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -84,6 +89,24 @@ public class Form_CarImages extends javax.swing.JFrame {
        jTable_Cars.setModel(model);
        
     }
+        
+            
+        // gagawa ng function para ipulate the jTable with car images (id )
+        public void populateJtableWithCarImages(int car_id){
+        ArrayList<Integer>imageList = car.carImagesList(car_id);
+       // JTable Columns
+        String[] columnsName = {"Image ID"};
+       // Rows
+       Object[][] rows = new Object[imageList.size()][columnsName.length];
+       
+       for (int i = 0; i < imageList.size(); i++){
+           
+           rows[i][0] = imageList.get(i);
+       }
+       DefaultTableModel model = new DefaultTableModel(rows,columnsName);
+       jTable_CarImages.setModel(model);
+       
+    }
     
 
     /**
@@ -95,6 +118,7 @@ public class Form_CarImages extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel_imagePath = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -112,6 +136,8 @@ public class Form_CarImages extends javax.swing.JFrame {
         jButton_Remove_Image_ = new javax.swing.JButton();
         jButton_Image_Slider_ = new javax.swing.JButton();
         jButton_Add_Image_ = new javax.swing.JButton();
+
+        jLabel_imagePath.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -228,10 +254,20 @@ public class Form_CarImages extends javax.swing.JFrame {
         jButton_Remove_Image_.setBackground(new java.awt.Color(0, 153, 255));
         jButton_Remove_Image_.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Remove_Image_.setText("Remove Image");
+        jButton_Remove_Image_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Remove_Image_ActionPerformed(evt);
+            }
+        });
 
         jButton_Image_Slider_.setBackground(new java.awt.Color(0, 153, 255));
         jButton_Image_Slider_.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Image_Slider_.setText("Images Slider");
+        jButton_Image_Slider_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Image_Slider_ActionPerformed(evt);
+            }
+        });
 
         jButton_Add_Image_.setBackground(new java.awt.Color(0, 153, 255));
         jButton_Add_Image_.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,19 +288,20 @@ public class Form_CarImages extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton_Select_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton_Remove_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton_Image_Slider_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jButton_Add_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton_Select_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton_Remove_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton_Image_Slider_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton_Add_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel_CarImage, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addGap(18, 18, 18)
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE))
@@ -279,12 +316,12 @@ public class Form_CarImages extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel_CarImage, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton_Select_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
                         .addComponent(jButton_Add_Image_, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -336,6 +373,8 @@ public class Form_CarImages extends javax.swing.JFrame {
         // get the selected brand
         int index = jTable_Cars.getSelectedRow();
         int id = Integer.valueOf(jTable_Cars.getValueAt(index,0).toString());
+        System.out.println(id);
+        populateJtableWithCarImages(id);
     }//GEN-LAST:event_jTable_CarsMouseClicked
 
     private void jTable_CarImagesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_CarImagesMouseClicked
@@ -348,12 +387,35 @@ public class Form_CarImages extends javax.swing.JFrame {
          String imagePath = selectImage();
          displayImage(jLabel_CarImage.getWidth(), jLabel_CarImage.getHeight(), imagePath, jLabel_CarImage);
          // Display image path
-         //jLabel_imagePath.setText(imagePath);
+          jLabel_imagePath.setText(imagePath);
     }//GEN-LAST:event_jButton_Select_Image_ActionPerformed
 
     private void jButton_Add_Image_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_Image_ActionPerformed
-        // TODO add your handling code here:
+        // Add image
+         try {
+             
+            int index = jTable_Cars.getSelectedRow();
+            int car_id = Integer.valueOf(jTable_Cars.getValueAt(index, 0).toString());
+            byte[] image = Files.readAllBytes(Paths.get(jLabel_imagePath.getText()));
+            
+            System.out.println(car_id);
+            car.addCarImage(car_id,image );
+            
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null , "Select Select an image" + ex.getMessage() , "Car Image", 2);
+           //Logger.get Logger(Form_CarImages.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton_Add_Image_ActionPerformed
+
+    private void jButton_Remove_Image_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Remove_Image_ActionPerformed
+        //  image
+        
+    }//GEN-LAST:event_jButton_Remove_Image_ActionPerformed
+
+    private void jButton_Image_Slider_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Image_Slider_ActionPerformed
+        // show images slider
+        
+    }//GEN-LAST:event_jButton_Image_Slider_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -401,6 +463,7 @@ public class Form_CarImages extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_CarImage;
     private javax.swing.JLabel jLabel_brands_logo;
     private javax.swing.JLabel jLabel_close1;
+    private javax.swing.JLabel jLabel_imagePath;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

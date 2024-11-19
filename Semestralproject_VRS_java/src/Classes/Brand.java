@@ -187,9 +187,9 @@ public class Brand {
      // function to populate a hashmap with brands 
 
     
-     public HashMap<String, Integer> brandsHashMap()
+     public HashMap<Integer ,String> brandsHashMap()
      {
-         HashMap<String, Integer> brand_map =  new  HashMap <String, Integer>();
+         HashMap<Integer ,String> brand_map =  new  HashMap <Integer ,String>();
          
          ResultSet rs = getData("SELECT * FROM `brands`");
          
@@ -197,7 +197,7 @@ public class Brand {
          try {
              while (rs.next())
              {
-                 brand_map.put(rs.getString(2), rs.getInt(1));
+                 brand_map.put( rs.getInt(1), rs.getString(2));
              }
          } catch (SQLException ex) {
              Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
