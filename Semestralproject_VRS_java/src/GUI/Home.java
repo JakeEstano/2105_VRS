@@ -6,7 +6,7 @@ package GUI;
 
 import java.awt.Color;
 
-/**
+/**  
  *
  * @author estan
  */
@@ -562,6 +562,8 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         Form_Cars frm_crs = new Form_Cars();
         frm_crs.setVisible(true);
+        
+        
     }//GEN-LAST:event_jLabel_CarsMouseClicked
 
     private void jLabel_LocationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LocationMouseClicked
