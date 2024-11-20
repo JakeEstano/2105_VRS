@@ -303,7 +303,7 @@
                       <Color blue="0" green="cc" red="cc" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Cars"/>
+                    <Property name="text" type="java.lang.String" value="Vehicle"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel_brands_logo">

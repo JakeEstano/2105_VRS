@@ -67,11 +67,11 @@ public class Brand {
             ps.setBytes(2, _logo);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The Brand has been Added" , "Add Brand", 1);
+                JOptionPane.showMessageDialog(null , "The Vehicle Brand has been Added" , "Add Vehicle Brand", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Brand Not been Added" , "Add Brand", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle Brand Not been Added" , "Add Vehicle Brand", 2);
             }
             
         } catch (SQLException ex) {
@@ -93,11 +93,11 @@ public class Brand {
             ps.setInt(3, _id);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The brand has been edited" , "Edit brand", 1);
+                JOptionPane.showMessageDialog(null , "The Vehicle brand has been edited" , "Edit Vehicle brand", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Brand not been edited" , "Edit brand", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle Brand not been edited" , "Edit Vehicle brand", 2);
             }
             
         } catch (SQLException ex) {
@@ -118,11 +118,11 @@ public class Brand {
             ps.setInt(1, _id);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The brand has been Removed" , "Remove brand", 1);
+                JOptionPane.showMessageDialog(null , "The Vehicle brand has been Removed" , "Remove Vehicle brand", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Brand Not been Removed" , "Remove brand", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle Brand Not been Removed" , "Remove Vehicle brand", 2);
                 //System.out.println("Brand Not Removed!");
             }
             

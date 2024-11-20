@@ -155,7 +155,7 @@ public class Form_Cars extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Cars");
+        jLabel4.setText("Vehicle");
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
@@ -782,9 +782,9 @@ public class Form_Cars extends javax.swing.JFrame {
         // Delete Car
         
         int id = (int)jSpinner_Id.getValue();
-        car.removeCar(id);
+        //car.removeCar(id);
         
-        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to delete this Car?" , "Confirm" , JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to delete this Vehicle?" , "Confirm" , JOptionPane.YES_NO_OPTION);
         
             if (confirm == JOptionPane.YES_OPTION){
             brand.removeBrand(id);   
@@ -835,8 +835,8 @@ public class Form_Cars extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_Edit_ActionPerformed
 
     private void jButton_Cars_List_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cars_List_ActionPerformed
-        Form_CarsList form_crlist = new Form_CarsList();
-        form_crlist.setVisible(true);
+        Form_CarsList form_carList = new Form_CarsList();
+        form_carList.setVisible(true);
     }//GEN-LAST:event_jButton_Cars_List_ActionPerformed
 
     private void jButton_Search_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_ActionPerformed
@@ -858,7 +858,8 @@ public class Form_Cars extends javax.swing.JFrame {
             jComboBox_Fuel.setSelectedItem(new_car.getFuel());
             jComboBox_Color.setSelectedItem(new_car.getColor());
             
-            if (new_car.getGearbox().equals("manual")){jRadioButton_Manual.setSelected(true);}
+            if (new_car.getGearbox().equals("manual")){jRadioButton_Manual.setSelected(true);
+            }System.out.println(new_car.getGearbox());
             if (new_car.getAir_cond().equals("yes")){jRadioButton_Features_Aircond.setSelected(true);}
             if (new_car.getAirbag().equals("yes")){jRadioButton_Features_AirBag.setSelected(true);}
             if (new_car.getElec_window().equals("yes")){jRadioButton_Features_ElecWin.setSelected(true);}

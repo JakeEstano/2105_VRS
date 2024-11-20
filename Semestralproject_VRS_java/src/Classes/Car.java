@@ -272,17 +272,19 @@ public class Car {
             ps.setString(16, _gps);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The new Car has been Added" , "Add Car", 1);
+                JOptionPane.showMessageDialog(null , "The new Vehicle has been Added" , "Add Vehicle", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Car Not been Added" , "Add Car", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle Not been Added" , "Add Vehicle", 2);
             }
             
         } catch (SQLException ex) {
             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
     // add car images
      public void addCarImage(int car_id, byte[] car_image){
         String insertQuery = "INSERT INTO `car_images`(`car_id`, `c_image`) VALUES (?,?)";
@@ -338,11 +340,11 @@ public class Car {
             ps.setInt(17, _id);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The Car has been edited" , "Edit Car info", 1);
+                JOptionPane.showMessageDialog(null , "The Vehicle has been edited" , "Edit Vehicle info", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Car not been edited" , "Edit Car info", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle not been edited" , "Edit Vehicle info", 2);
             }
             
         } catch (SQLException ex) {
@@ -363,11 +365,11 @@ public class Car {
             ps.setInt(1, _id);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The Car has been Removed" , "Remove Car", 1);
+                JOptionPane.showMessageDialog(null , "The Vehicle has been Removed" , "Remove Vehicle", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Car Not been Removed" , "Remove Car", 2);
+                JOptionPane.showMessageDialog(null , "Vehicle Not been Removed" , "Remove Vehicle", 2);
                 //System.out.println("Brand Not Removed!");
             }
             
@@ -377,20 +379,63 @@ public class Car {
         
     }
      
+     // START Class for image
      
+    public class CarImage{  
+    private int img_id;
+    private int car_id;
+    private byte[] car_img;
+    
+    public CarImage() {}
+    
+    public CarImage(int img_id, int car_id, byte[] car_img) {
+            this.img_id = img_id;
+            this.car_id = car_id;
+            this.car_img = car_img;
+        }
+
+        public int getImg_id() {
+            return img_id;
+        }
+
+        public void setImg_id(int img_id) {
+            this.img_id = img_id;
+        }
+
+        public int getCar_id() {
+            return car_id;
+        }
+
+        public void setCar_id(int car_id) {
+            this.car_id = car_id;
+        }
+
+        public byte[] getCar_img() {
+            return car_img;
+        }
+
+        public void setCar_img(byte[] car_img) {
+            this.car_img = car_img;
+        }
+    
+    } // END Class for image
      
       //function to get car images
-        public ArrayList<Integer> carImagesList(int car_id)
+        public ArrayList<CarImage> carImagesList(int car_id)
         {
-         ArrayList<Integer> images = new ArrayList<>();
+         ArrayList<CarImage> images = new ArrayList<>();
          
          ResultSet rs = getData("SELECT `id`, `car_id`, `c_image` FROM `car_images` WHERE `car_id` =" + car_id);
-         
+         CarImage car_image; 
          try {
+             
              while(rs.next()){
+                car_image = new CarImage();
+                car_image.setImg_id(rs.getInt(1));
+                car_image.setImg_id(rs.getInt(2));
+                car_image.setImg_id(rs.getByte(3));
+                images.add(car_image);
                 
-                 images.add(rs.getInt(1));
-                 
              }
          } catch (SQLException ex) {
              Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);

@@ -93,7 +93,7 @@ public class Form_CarImages extends javax.swing.JFrame {
             
         // gagawa ng function para ipulate the jTable with car images (id )
         public void populateJtableWithCarImages(int car_id){
-        ArrayList<Integer>imageList = car.carImagesList(car_id);
+        ArrayList<Car.CarImage>imageList = car.carImagesList(car_id);
        // JTable Columns
         String[] columnsName = {"Image ID"};
        // Rows
