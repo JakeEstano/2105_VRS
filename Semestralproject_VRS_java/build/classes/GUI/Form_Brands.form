@@ -187,14 +187,16 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton_Last" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="jButton_Previous" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="jButton_Next" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="jButton_First" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jButton_Refresh" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                               <Component id="jButton_Clear" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButton_Last" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="jButton_Previous" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="jButton_Next" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="jButton_First" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>

@@ -276,10 +276,8 @@ public class Form_Login extends javax.swing.JFrame {
             
             if (rs.next()){
                // System.out.println("Login");
-               Form_Dashboard frm_dsh = new Form_Dashboard();
-               frm_dsh.setVisible(true);
-               // display the username
-               Form_Dashboard.jLabel_username.setText(rs.getString("username"));
+               Home hm = new Home();
+               hm.setVisible(true);
                // hide login form
                this.dispose();
             }
