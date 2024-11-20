@@ -1837,7 +1837,7 @@ public class Home extends javax.swing.JFrame {
         int brand_id = 0;
         for (Map.Entry<Integer, String> entry : map.entrySet())
         {
-            if(entry.getValue().equals(jComboBox_brand.getSelectedItem().toString()))
+            if(entry.getValue().equals(jComboBox_brand.getSelectedItem()))
             {
                 brand_id = entry.getKey();
             }

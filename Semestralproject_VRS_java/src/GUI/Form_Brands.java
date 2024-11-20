@@ -557,6 +557,7 @@ public class Form_Brands extends javax.swing.JFrame {
         // remove brand
 
         int id = (int) jSpinner_id.getValue();
+        
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to delete this brand?" , "Confirm" , JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION){
             brand.removeBrand(id);   

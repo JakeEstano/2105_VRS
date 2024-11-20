@@ -15,6 +15,8 @@ public class Form_CarsList extends javax.swing.JFrame {
      */
     public Form_CarsList() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
