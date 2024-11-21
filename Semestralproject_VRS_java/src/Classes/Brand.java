@@ -60,23 +60,28 @@ public class Brand {
         String insertQuery = "INSERT INTO `brands`( `name`, `logo`) VALUES (?,?)";
         PreparedStatement ps;
         
-        try {
+        try 
+        {
             
             ps = DB.getConnection().prepareStatement(insertQuery);
             ps.setString(1, _name);
             ps.setBytes(2, _logo);
             
-            if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The Vehicle Brand has been Added" , "Add Vehicle Brand", 1);
-                
+            if(ps.executeUpdate()!=0)
+            {
+                JOptionPane.showMessageDialog(null , "The Vehicle Brand has been Added" , "Add Vehicle Brand", 1); 
             }
-            else{
+            else
+            {
                 JOptionPane.showMessageDialog(null , "Vehicle Brand Not been Added" , "Add Vehicle Brand", 2);
             }
             
-        } catch (SQLException ex) {
-            Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
+        catch (Exception ex) 
+        {
+            JOptionPane.showMessageDialog(null , "Use a smaller size image" , "Brand Logo", 2);
+                    
+        } 
         
     }
     

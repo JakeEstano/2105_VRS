@@ -101,7 +101,7 @@ public class Form_CarImages extends javax.swing.JFrame {
        
        for (int i = 0; i < imageList.size(); i++){
            
-           rows[i][0] = imageList.get(i);
+           rows[i][0] = imageList.get(i).getImg_id();
        }
        DefaultTableModel model = new DefaultTableModel(rows,columnsName);
        jTable_CarImages.setModel(model);
@@ -402,7 +402,7 @@ public class Form_CarImages extends javax.swing.JFrame {
             car.addCarImage(car_id,image );
             
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null , "Select Select an image" + ex.getMessage() , "Car Image", 2);
+            JOptionPane.showMessageDialog(null , "Select an image [" + ex.getMessage() + "]", "Car Image", 2);
            //Logger.get Logger(Form_CarImages.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_Add_Image_ActionPerformed
@@ -414,7 +414,12 @@ public class Form_CarImages extends javax.swing.JFrame {
 
     private void jButton_Image_Slider_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Image_Slider_ActionPerformed
         // show images slider
+        // get the selected car image
         
+        int index = jTable_Cars.getSelectedRow();
+        int id = Integer.valueOf(jTable_Cars.getValueAt(index,0).toString()); //  car id
+        Form_CarImages_Slider slider = new Form_CarImages_Slider(id);
+        slider.setVisible(true);
     }//GEN-LAST:event_jButton_Image_Slider_ActionPerformed
 
     /**
