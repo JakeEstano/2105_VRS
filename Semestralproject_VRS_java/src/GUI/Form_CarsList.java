@@ -5,7 +5,10 @@
 package GUI;
 
 import Classes.Car;
+import Classes.Car.CarImage;
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -87,6 +90,16 @@ public class Form_CarsList extends javax.swing.JFrame {
        DefaultTableModel model = new DefaultTableModel(rows,columnsName);
        jTable_Cars.setModel(model);
        
+    }
+    
+        public void displayByteImage(int width, int height, byte[] image_byte, JLabel label){
+
+        // get the image
+        ImageIcon imageIco = new ImageIcon(image_byte);
+        // resize the image
+        Image image = imageIco.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        // set the image into JLabel
+        label.setIcon(new ImageIcon(image));
     }
 
     /**
@@ -329,40 +342,16 @@ public class Form_CarsList extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_close1MouseClicked
 
     private void jTable_CarsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_CarsMouseClicked
-        
-        // clear images 
-        jLabel_Car_Image.setIcon(null);
-        
-        for(int i = 0; i < labels.length; i++)
-        {
-            labels[i].setIcon(null);
-        }
-        
-        // get the selected car image
-        
-        int index = jTable_Cars.getSelectedRow();
-        int id = Integer.valueOf(jTable_Cars.getValueAt(index,0).toString()); //  car id
-        carid = id; // we need this to use it in the images slider form
-        //Classes.Car brd = Cars.getBrandById(id);
-        
-        ArrayList<Car.CarImage> images = car.carImagesList(id);
-        // display the images on the jlabels                                        
-        
-        if(images.size() > 0)
-        {                                                                               // get the first image
-            displayByteImage(jLabel_Car_Image.getWidth(), jLabel_Car_Image.getHeight(), images.get(0).getCar_img(), jLabel_Car_Image);
-            
-            for(int i = 0; i < images.size(); i++)
-            {
-                if (i < labels.length)
-                    displayByteImage(labels[i].getWidth(), labels[i].getHeight(), images.get(2).getCar_img(), labels[i]);
-            }
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null , "This vehicle has no images!" , "No Image", 2);
-        }
-        
+         // get the selected car image
+         
+//         int index = jTable_Cars.getSelectedRow();
+//         int id = Integer.valueOf(jTable_Cars.getValueAt(index, 0).toString());
+//         ArrayList<Car.CarImage> images = car.carImagesList(id);     
+
+            int index = jTable_Cars.getSelectedRow();
+            int id = Integer.valueOf(jTable_Cars.getValueAt(index,0).toString());
+            ArrayList<Car.CarImage> images = car.carImagesList(id);
+            displayByteImage(jLabel_Car_Image.getWidth(), jLabel_Car_Image.getHeight(), images.get(id).getCar_img(), jLabel_Car_Image);
     }//GEN-LAST:event_jTable_CarsMouseClicked
 
     private void jButton1_showSliderForm_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_showSliderForm_ActionPerformed
@@ -433,7 +422,4 @@ public class Form_CarsList extends javax.swing.JFrame {
     private javax.swing.JTable jTable_Cars;
     // End of variables declaration//GEN-END:variables
 
-    private void displayByteImage(int width, int height, byte[] car_img, JLabel jLabel_Car_Image) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

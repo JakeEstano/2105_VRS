@@ -218,7 +218,7 @@ public class Car {
          //function to get all cars, return in array an list
         public ArrayList<Car> carsList()
         {
-         ArrayList<Car> carList = new ArrayList<>();
+         ArrayList<Car> carsList = new ArrayList<>();
          
          ResultSet rs = getData("SELECT * FROM `cars`");
          
@@ -232,13 +232,13 @@ public class Car {
                                     rs.getString(17)
                  );
                  
-                 carList.add(car);
+                 carsList.add(car);
                  
              }
          } catch (SQLException ex) {
              Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
          }
-         return carList;
+         return carsList;
      }
     
     
@@ -385,7 +385,15 @@ public class Car {
         private int img_id;
         private int car_id;
         private byte[] car_img; // Store binary image data
+         
+        public CarImage(){}   
 
+        public CarImage(int img_id, int car_id, byte[] car_img){
+            this.img_id = img_id;
+            this.car_id = car_id;
+            this.car_img = car_img;
+        }
+        
             // Getters and setters
             public int getImg_id() 
                 {
@@ -431,11 +439,11 @@ public class Car {
                         car_image = new CarImage();
                         car_image.setImg_id(rs.getInt(1)); // Image ID
                         car_image.setCar_id(rs.getInt(2)); // Car ID
-            
                         // Retrieve the image data as a byte array
-                        byte[] imageData = rs.getBytes(3); 
-                        car_image.setCar_img(imageData); // Set the image data in CarImage object
+                        car_image.setCar_img(rs.getBytes(3)); 
                         images.add(car_image);
+                        //car_image.setCar_img(imageData); // Set the image data in CarImage object
+                        
                         }
                     } 
                     catch (SQLException ex) 

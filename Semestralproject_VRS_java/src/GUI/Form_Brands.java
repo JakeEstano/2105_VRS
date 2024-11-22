@@ -55,10 +55,10 @@ public class Form_Brands extends javax.swing.JFrame {
     }
     
       // create resizable byte image to fit in jLabel
-    public void displayByteImage(int width, int height, byte[] image_byte, JLabel label){
+         public void displayByteImage(int width, int height, byte[] image_byte, JLabel label){
 
         // get the image
-        var imageIco = new ImageIcon(image_byte);
+        ImageIcon imageIco = new ImageIcon(image_byte);
         // resize the icon
         Image image = imageIco.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         // set the image into JLabel

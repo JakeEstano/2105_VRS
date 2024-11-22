@@ -56,8 +56,8 @@ public class Form_CarImages extends javax.swing.JFrame {
     public void displayByteImage(int width, int height, byte[] image_byte, JLabel label){
 
         // get the image
-        var imageIco = new ImageIcon(image_byte);
-        // resize the icon
+        ImageIcon imageIco = new ImageIcon(image_byte);
+        // resize the image
         Image image = imageIco.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         // set the image into JLabel
         label.setIcon(new ImageIcon(image));
@@ -110,6 +110,8 @@ public class Form_CarImages extends javax.swing.JFrame {
 
             // JTable Columns
             String[] columnsName = {"Image ID", "Image"};
+            
+            
             Object[][] rows = new Object[imageList.size()][columnsName.length];
 
                 for (int i = 0; i < imageList.size(); i++) 
@@ -416,10 +418,20 @@ public class Form_CarImages extends javax.swing.JFrame {
     private void jTable_CarImagesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_CarImagesMouseClicked
         // display the selected image
         // get image from jtable
-        jLabel_CarImage.setIcon(null);
         int index = jTable_Cars.getSelectedRow();
-        int image_id = Integer.valueOf(jTable_Cars.getValueAt(index, 0).toString());
-        displayByteImage(jLabel_CarImage.getWidth(), jLabel_CarImage.getHeight(), carImages.get(image_id).getCar_img() , jLabel_CarImage);
+        System.out.println("index --> " + index);
+        int image_id = Integer.valueOf(jTable_CarImages.getValueAt(index, 0).toString());
+        System.out.println("index --> " + index);
+        
+        byte[] img = null;
+        
+        for (Car.CarImage cimg : carImages){
+            if(cimg.getImg_id () == image_id){
+                img = cimg.getCar_img();
+            }
+        }
+        
+        displayByteImage(jLabel_CarImage.getWidth(), jLabel_CarImage.getHeight(), img , jLabel_CarImage);
     }//GEN-LAST:event_jTable_CarImagesMouseClicked
 
     private void jButton_Select_Image_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Select_Image_ActionPerformed
@@ -445,7 +457,7 @@ public class Form_CarImages extends javax.swing.JFrame {
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null , "Select an image [" + ex.getMessage() + "]", "Car Image", 2);
-           //Logger.get Logger(Form_CarImages.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.get Logger(Form_CarImages.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_Add_Image_ActionPerformed
 

@@ -58,8 +58,7 @@ public class Form_Cars extends javax.swing.JFrame {
     public boolean verify()
     { 
         String model = jTextField_Model.getText();
-        String _plateNum = jTextField_Model.getText();
-
+        String _plateNum = jTextField_PlateNum.getText();
         
         
         if(!model.trim().equals("") && !_plateNum.trim().equals(""))
@@ -340,6 +339,7 @@ public class Form_Cars extends javax.swing.JFrame {
         });
 
         jComboBox_brand.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jComboBox_brand.setToolTipText("");
         jComboBox_brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox_brand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,6 +449,11 @@ public class Form_Cars extends javax.swing.JFrame {
         jButton_Cars_List_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Cars_List_.setText("Car List");
         jButton_Cars_List_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Cars_List_.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_Cars_List_MouseClicked(evt);
+            }
+        });
         jButton_Cars_List_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_Cars_List_ActionPerformed(evt);
@@ -835,8 +840,7 @@ public class Form_Cars extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_Edit_ActionPerformed
 
     private void jButton_Cars_List_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cars_List_ActionPerformed
-        Form_CarsList form_carList = new Form_CarsList();
-        form_carList.setVisible(true);
+        
     }//GEN-LAST:event_jButton_Cars_List_ActionPerformed
 
     private void jButton_Search_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_ActionPerformed
@@ -875,6 +879,12 @@ public class Form_Cars extends javax.swing.JFrame {
         // Delete Car
          int id = (int)jSpinner_Id.getValue();
     }//GEN-LAST:event_jButton_Remove_MouseClicked
+
+    private void jButton_Cars_List_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Cars_List_MouseClicked
+        // TODO add your handling code here:
+        Form_CarsList form_carList = new Form_CarsList();
+        form_carList.setVisible(true);
+    }//GEN-LAST:event_jButton_Cars_List_MouseClicked
 
     /**
      * @param args the command line arguments
