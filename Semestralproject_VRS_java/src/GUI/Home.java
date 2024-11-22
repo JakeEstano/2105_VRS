@@ -409,6 +409,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(192, 192, 83));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("HOME");
@@ -437,6 +438,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(192, 192, 83));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("VEHICLE");
@@ -465,6 +467,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(192, 192, 83));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("BRAND");
@@ -493,6 +496,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(192, 192, 83));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("LOCATION");
@@ -521,6 +525,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(192, 192, 83));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("CUSTOMER");
@@ -549,6 +554,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setBackground(new java.awt.Color(192, 192, 83));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("BOOK CAR");
