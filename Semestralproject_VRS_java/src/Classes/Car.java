@@ -382,66 +382,68 @@ public class Car {
      // START Class for image
      
     public class CarImage{  
-    private int img_id;
-    private int car_id;
-    private byte[] car_img;
-    
-    public CarImage() {}
-    
-    public CarImage(int img_id, int car_id, byte[] car_img) {
-            this.img_id = img_id;
-            this.car_id = car_id;
-            this.car_img = car_img;
-        }
+        private int img_id;
+        private int car_id;
+        private byte[] car_img; // Store binary image data
 
-        public int getImg_id() {
-            return img_id;
-        }
+            // Getters and setters
+            public int getImg_id() 
+                {
+                return img_id;
+                }
+                public void setImg_id(int img_id) 
+                {
+                this.img_id = img_id;
+                }
+                public int getCar_id() 
+                {
+                return car_id;
+                }
 
-        public void setImg_id(int img_id) {
-            this.img_id = img_id;
-        }
+            public void setCar_id(int car_id) 
+                {
+                this.car_id = car_id;
+                }
 
-        public int getCar_id() {
-            return car_id;
-        }
+            public byte[] getCar_img() 
+            {
+                return car_img;
+            }
 
-        public void setCar_id(int car_id) {
-            this.car_id = car_id;
-        }
-
-        public byte[] getCar_img() {
-            return car_img;
-        }
-
-        public void setCar_img(byte[] car_img) {
-            this.car_img = car_img;
-        }
-    
-    } // END Class for image
+            public void setCar_img(byte[] car_img) 
+            {
+                this.car_img = car_img;
+            }
+    }
+ // END Class for image
      
       //function to get car images
-        public ArrayList<CarImage> carImagesList(int car_id)
-        {
-         ArrayList<CarImage> images = new ArrayList<>();
-         
-         ResultSet rs = getData("SELECT `id`, `car_id`, `c_image` FROM `car_images` WHERE `car_id` =" + car_id);
-         CarImage car_image; 
-         try {
-             
-             while(rs.next()){
-                car_image = new CarImage();
-                car_image.setImg_id(rs.getInt(1));
-                car_image.setImg_id(rs.getInt(2));
-                car_image.setImg_id(rs.getByte(3));
-                images.add(car_image);
-                
-             }
-         } catch (SQLException ex) {
-             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return images;
-     }
+            public ArrayList<CarImage> carImagesList(int car_id) 
+                {
+                ArrayList<CarImage> images = new ArrayList<>();
+                ResultSet rs = getData("SELECT `id`, `car_id`, `c_image` FROM `car_images` WHERE `car_id` =" + car_id);
+                CarImage car_image;
+
+                    try 
+                    {
+                        while (rs.next()) 
+                        {
+                        car_image = new CarImage();
+                        car_image.setImg_id(rs.getInt(1)); // Image ID
+                        car_image.setCar_id(rs.getInt(2)); // Car ID
+            
+                        // Retrieve the image data as a byte array
+                        byte[] imageData = rs.getBytes(3); 
+                        car_image.setCar_img(imageData); // Set the image data in CarImage object
+                        images.add(car_image);
+                        }
+                    } 
+                    catch (SQLException ex) 
+                    {
+                        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    return images;
+                    }
         
         //function to search Id
         
