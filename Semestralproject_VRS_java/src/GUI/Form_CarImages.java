@@ -92,21 +92,44 @@ public class Form_CarImages extends javax.swing.JFrame {
         
             
         // gagawa ng function para ipulate the jTable with car images (id )
-        public void populateJtableWithCarImages(int car_id){
-        ArrayList<Car.CarImage>imageList = car.carImagesList(car_id);
-       // JTable Columns
-        String[] columnsName = {"Image ID"};
-       // Rows
-       Object[][] rows = new Object[imageList.size()][columnsName.length];
-       
-       for (int i = 0; i < imageList.size(); i++){
-           
-           rows[i][0] = imageList.get(i).getImg_id();
-       }
-       DefaultTableModel model = new DefaultTableModel(rows,columnsName);
-       jTable_CarImages.setModel(model);
-       
-    }
+        public void populateJtableWithCarImages(int car_id) 
+        {
+            ArrayList<Car.CarImage> imageList = car.carImagesList(car_id);
+
+            // JTable Columns
+            String[] columnsName = {"Image ID", "Image"};
+            Object[][] rows = new Object[imageList.size()][columnsName.length];
+
+                for (int i = 0; i < imageList.size(); i++) 
+                {
+                    rows[i][0] = imageList.get(i).getImg_id();
+
+                    // Convert the byte array to an ImageIcon for rendering
+                    byte[] imgData = imageList.get(i).getCar_img();
+                    if (imgData != null) 
+                    {
+                    ImageIcon imgIcon = new ImageIcon(new ImageIcon(imgData).getImage()
+                    .getScaledInstance(100, 100, Image.SCALE_SMOOTH));
+                    rows[i][1] = imgIcon;
+                    } 
+                    else 
+                    {
+                    rows[i][1] = "No Image";
+                    }
+            }
+
+    // Use a custom DefaultTableModel
+    DefaultTableModel model = new DefaultTableModel(rows, columnsName) {
+        @Override
+        public Class<?> getColumnClass(int columnIndex) {
+            return columnIndex == 1 ? ImageIcon.class : Object.class; // Render the second column as ImageIcon
+        }
+    };
+
+    jTable_CarImages.setModel(model);
+    jTable_CarImages.setRowHeight(100); // Adjust row height for images
+}
+
     
 
     /**
