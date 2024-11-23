@@ -85,6 +85,7 @@ public class Customer {
         this.address = address;
     }
     
+    // create a function to add a customer
     public void addCustomer (String _fullname, String _birthdate, String _phone, String _email, String _address){
         
         String insertQuery = "INSERT INTO `customers`(`fullnamme`, `birth_date`, `phone`, `email`, `address`) VALUES (?,?,?,?,?)";
@@ -105,15 +106,15 @@ public class Customer {
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Customer Not been Added" , "Add Customer", 2);
+                JOptionPane.showMessageDialog(null , "Customer Not Added" , "Add Customer", 2);
             }
             
         } catch (SQLException ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    // create a function to edit location
-    public void editCustomer(int id, String _fullname, String _birthdate, String _phone, String _email, String _address){
+    // create a function to edit customer
+    public void editCustomer(int _id, String _fullname, String _birthdate, String _phone, String _email, String _address){
                              
          String editQuery = "UPDATE `customers` SET `fullnamme`=?,`birth_date`=?,`phone`=?,`email`=?,`address`=? WHERE `id` = ?";
         PreparedStatement ps;
@@ -122,18 +123,18 @@ public class Customer {
             
             ps = DB.getConnection().prepareStatement(editQuery);
             ps.setString(1, _fullname);
-            ps.setString(2, _fullname);
-            ps.setString(3, _birthdate);
-            ps.setString(4, _phone);
-            ps.setString(5, _email);
-            ps.setString(6, _address);
+            ps.setString(2, _birthdate);
+            ps.setString(3, _phone);
+            ps.setString(4, _email);
+            ps.setString(5, _address);
+            ps.setInt(6, _id);
             
             if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "Customer has been edited" , "Edit Customer", 1);
+                JOptionPane.showMessageDialog(null , "Customer's information has been edited" , "Edit Customer", 1);
                 
             }
             else{
-                JOptionPane.showMessageDialog(null , "Customer not been edited" , "Edit Customer", 2);
+                JOptionPane.showMessageDialog(null , "Customer's information remain unchanged" , "Edit Customer", 2);
             }
             
         } catch (SQLException ex) {
@@ -142,7 +143,7 @@ public class Customer {
         
     }
     
-    // create a function to remove location
+    // create a function to remove customer
     public void removeCustomer(int _id){
         
         String removeQuery = "DELETE FROM `customers` WHERE `id` = ?";
@@ -179,14 +180,14 @@ public class Customer {
              
              ps = DB.getConnection().prepareStatement(query);
              rs = ps.executeQuery();
-                     } catch (SQLException ex) {
+            } catch (SQLException ex) {
              Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
          }
          return rs;
      }
     
     
-    //function to get all Locations, return in array an list
+    //function to get all customers and return an array list
      public ArrayList<Customer> CustomerList(){
          ArrayList<Customer> customerList = new ArrayList<>();
          

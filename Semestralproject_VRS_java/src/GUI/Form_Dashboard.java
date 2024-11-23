@@ -4,7 +4,9 @@
  */
 package  GUI;
 
+import java.awt.Color;
 import java.awt.Image;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -17,14 +19,21 @@ public class Form_Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Form_Dashboard
      */
+    
+    //Border white_border = BorderFactory.createMatteBorder(0, 0, 0, 0, Color.white);
+    //Border empty_border = BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(153.153.255 ));
+    
     public Form_Dashboard() {
         initComponents();
         this.setLocationRelativeTo(null);
         
         //set images 
-//        displayImage(jLabel_cars_logo.getWidth(),jLabel_cars_logo.getHeight(),"images/driving.png",jLabel_cars_logo);
-//        displayImage(jLabel_customers_logo.getWidth(),jLabel_customers_logo.getHeight(),"images/person.png",jLabel_customers_logo);
-//        displayImage(jLabel_booked_logo.getWidth(),jLabel_booked_logo.getHeight(),"images/calendar.png",jLabel_booked_logo);
+//      displayImage(jLabel_cars_logo.getWidth(),jLabel_cars_logo.getHeight(),"images/driving.png",jLabel_cars_logo);
+//      displayImage(jLabel_customers_logo.getWidth(),jLabel_customers_logo.getHeight(),"images/person.png",jLabel_customers_logo);
+//      displayImage(jLabel_booked_logo.getWidth(),jLabel_booked_logo.getHeight(),"images/calendar.png",jLabel_booked_logo);
+
+        // set borders
+            
     }
         // create resizable image to fit in jLabel
 //    public void displayImage(int width, int height, String image_path, JLabel label){
