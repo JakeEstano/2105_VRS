@@ -88,7 +88,7 @@ public class Customer {
     // create a function to add a customer
     public void addCustomer (String _fullname, String _birthdate, String _phone, String _email, String _address){
         
-        String insertQuery = "INSERT INTO `customers`(`fullnamme`, `birth_date`, `phone`, `email`, `address`) VALUES (?,?,?,?,?)";
+        String insertQuery = "INSERT INTO `customers`(`fullname`, `birth_date`, `phone`, `email`, `address`) VALUES (?,?,?,?,?)";
         PreparedStatement ps;
         
         try {
@@ -116,7 +116,7 @@ public class Customer {
     // create a function to edit customer
     public void editCustomer(int _id, String _fullname, String _birthdate, String _phone, String _email, String _address){
                              
-         String editQuery = "UPDATE `customers` SET `fullnamme`=?,`birth_date`=?,`phone`=?,`email`=?,`address`=? WHERE `id` = ?";
+         String editQuery = "UPDATE `customers` SET `fullname`=?,`birth_date`=?,`phone`=?,`email`=?,`address`=? WHERE `id` = ?";
         PreparedStatement ps;
         
         try {

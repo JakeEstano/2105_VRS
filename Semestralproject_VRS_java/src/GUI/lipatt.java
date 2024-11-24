@@ -47,6 +47,7 @@ public class lipatt extends javax.swing.JFrame {
         jTextField_customer = new javax.swing.JTextField();
         jLabel_customer_id = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButto_Selec_Customer = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel_pickup = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -60,24 +61,24 @@ public class lipatt extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel_select_car.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel_select_car.setForeground(new java.awt.Color(209, 209, 108));
         jLabel_select_car.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_select_car.setText("Select a Car");
+        jLabel_select_car.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel_select_car.setForeground(new java.awt.Color(209, 209, 108));
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel31.setText("Brand:");
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel32.setText("Car:");
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_select_car, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+            .addComponent(jLabel_select_car, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,26 +98,26 @@ public class lipatt extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jLabel_dropoff.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel_dropoff.setForeground(new java.awt.Color(209, 209, 108));
         jLabel_dropoff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_dropoff.setText("Drop Off Location & Date");
+        jLabel_dropoff.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel_dropoff.setForeground(new java.awt.Color(209, 209, 108));
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel39.setText("City:");
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel40.setText("Address:");
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel41.setText("Date:");
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel42.setText("Time:");
+        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -166,18 +167,18 @@ public class lipatt extends javax.swing.JFrame {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        jLabel_select_customer.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel_select_customer.setForeground(new java.awt.Color(209, 209, 108));
         jLabel_select_customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_select_customer.setText("Select Customer");
+        jLabel_select_customer.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel_select_customer.setForeground(new java.awt.Color(209, 209, 108));
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel28.setText("Cutomer Name:");
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel29.setText("Customer ID:");
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jTextField_customer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,14 +186,21 @@ public class lipatt extends javax.swing.JFrame {
             }
         });
 
-        jLabel_customer_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_customer_id.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_customer_id.setText("000");
+        jLabel_customer_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton1.setText("Enter Customer Details");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButto_Selec_Customer.setText("Select Customer");
+        jButto_Selec_Customer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButto_Selec_CustomerActionPerformed(evt);
             }
         });
 
@@ -211,7 +219,9 @@ public class lipatt extends javax.swing.JFrame {
                     .addComponent(jLabel_customer_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButto_Selec_Customer))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -227,30 +237,31 @@ public class lipatt extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jLabel_customer_id))
+                    .addComponent(jLabel_customer_id)
+                    .addComponent(jButto_Selec_Customer))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jLabel_pickup.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel_pickup.setForeground(new java.awt.Color(209, 209, 108));
         jLabel_pickup.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_pickup.setText("Rent Details");
+        jLabel_pickup.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel_pickup.setForeground(new java.awt.Color(209, 209, 108));
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel34.setText("City:");
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel35.setText("Address:");
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel36.setText("Date:");
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel37.setText("Time:");
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -340,7 +351,14 @@ public class lipatt extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // will show the Form_Customer so that
+        Form_Customer form_cstmr = new Form_Customer();
+        form_cstmr.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButto_Selec_CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButto_Selec_CustomerActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButto_Selec_CustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,6 +396,7 @@ public class lipatt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButto_Selec_Customer;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
