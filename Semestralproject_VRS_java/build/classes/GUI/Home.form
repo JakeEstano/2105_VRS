@@ -808,7 +808,7 @@
                                       <Component id="jTextField_Model" min="-2" pref="180" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="353" max="32767" attributes="0"/>
+                              <EmptySpace pref="378" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -1537,13 +1537,13 @@
                               <Component id="jLabel_imagePath" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="866" max="32767" attributes="0"/>
+                      <EmptySpace pref="891" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="109" pref="594" max="32767" attributes="0"/>
+                                  <EmptySpace min="109" pref="619" max="32767" attributes="0"/>
                                   <Component id="jButton_First" min="-2" pref="114" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jButton_Next" min="-2" pref="114" max="-2" attributes="0"/>
@@ -1572,7 +1572,7 @@
                                       <Component id="jButton_Edit" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                                       <Component id="jButton_Remove" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="96" max="32767" attributes="0"/>
+                                  <EmptySpace pref="121" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" pref="650" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1930,7 +1930,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="527" max="32767" attributes="0"/>
+                      <EmptySpace pref="552" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane3" alignment="1" min="-2" pref="652" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
@@ -1980,7 +1980,7 @@
                                   <Component id="jScrollPane2" alignment="1" min="-2" pref="367" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="781" max="32767" attributes="0"/>
+                          <EmptySpace pref="806" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -2322,7 +2322,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1240" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1265" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2335,7 +2335,7 @@
         <Container class="javax.swing.JPanel" name="bookCarPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="66" red="33" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -2347,7 +2347,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1240" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1265" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

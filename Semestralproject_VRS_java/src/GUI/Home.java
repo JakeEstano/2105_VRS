@@ -22,10 +22,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -50,6 +52,8 @@ public class Home extends javax.swing.JFrame {
     ArrayList<Classes.Location>locations_list = location.locationList();
     int index = 0;
     
+    Border border = BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(209,209,108));
+    
     public Home() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -63,6 +67,12 @@ public class Home extends javax.swing.JFrame {
         populateComboBoxBrands();
         populateJtableWithBrands();
         populateJtableWithLocations();
+        
+        //set border in bookcarpanel
+        jLabel_select_car.setBorder(border);
+        jLabel_select_customer.setBorder(border);
+        jLabel_pickup.setBorder(border);
+        jLabel_dropoff.setBorder(border);
     }
     
     // pupulated the jComboBox_brands
@@ -1147,7 +1157,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField_Model, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -1396,12 +1406,12 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(brandPanelLayout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(jLabel_imagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(866, Short.MAX_VALUE))
+                .addContainerGap(891, Short.MAX_VALUE))
             .addGroup(brandPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(brandPanelLayout.createSequentialGroup()
                     .addGroup(brandPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, brandPanelLayout.createSequentialGroup()
-                            .addGap(109, 594, Short.MAX_VALUE)
+                            .addGap(109, 619, Short.MAX_VALUE)
                             .addComponent(jButton_First, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jButton_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1426,7 +1436,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jButton_Add, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton_Remove, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(76, 76, 76)))
         );
@@ -1622,7 +1632,7 @@ public class Home extends javax.swing.JFrame {
         locationPanelLayout.setHorizontalGroup(
             locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locationPanelLayout.createSequentialGroup()
-                .addContainerGap(527, Short.MAX_VALUE)
+                .addContainerGap(552, Short.MAX_VALUE)
                 .addGroup(locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locationPanelLayout.createSequentialGroup()
@@ -1662,7 +1672,7 @@ public class Home extends javax.swing.JFrame {
                                     .addComponent(jSpinner_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox_City, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(781, Short.MAX_VALUE)))
+                    .addContainerGap(806, Short.MAX_VALUE)))
         );
         locationPanelLayout.setVerticalGroup(
             locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1710,7 +1720,7 @@ public class Home extends javax.swing.JFrame {
         customerPanel.setLayout(customerPanelLayout);
         customerPanelLayout.setHorizontalGroup(
             customerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1240, Short.MAX_VALUE)
+            .addGap(0, 1265, Short.MAX_VALUE)
         );
         customerPanelLayout.setVerticalGroup(
             customerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1719,13 +1729,13 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.add(customerPanel, "card6");
 
-        bookCarPanel.setBackground(new java.awt.Color(51, 102, 0));
+        bookCarPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout bookCarPanelLayout = new javax.swing.GroupLayout(bookCarPanel);
         bookCarPanel.setLayout(bookCarPanelLayout);
         bookCarPanelLayout.setHorizontalGroup(
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1240, Short.MAX_VALUE)
+            .addGap(0, 1265, Short.MAX_VALUE)
         );
         bookCarPanelLayout.setVerticalGroup(
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
