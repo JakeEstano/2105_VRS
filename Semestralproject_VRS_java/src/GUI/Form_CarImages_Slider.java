@@ -74,15 +74,13 @@ public class Form_CarImages_Slider extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Car images");
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

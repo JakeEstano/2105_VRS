@@ -145,7 +145,7 @@ public class Form_Drivers extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1142, 592));
 
-        jPanel3.setBackground(java.awt.Color.black);
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel4.setBackground(java.awt.Color.black);
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N

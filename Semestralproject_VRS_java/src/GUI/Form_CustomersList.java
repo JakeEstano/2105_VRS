@@ -52,7 +52,7 @@ public class Form_CustomersList extends javax.swing.JFrame {
        DefaultTableModel customer = new DefaultTableModel(rows,columnsName);
        jTable_Customers_.setModel(customer);
        
-    }
+    }   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,23 +75,21 @@ public class Form_CustomersList extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1142, 592));
 
-        jPanel3.setBackground(java.awt.Color.black);
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
-        jLabel4.setBackground(java.awt.Color.black);
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Customers List");
+        jLabel4.setBackground(java.awt.Color.black);
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         jLabel_brands_logo.setBackground(java.awt.Color.black);
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -146,8 +144,8 @@ public class Form_CustomersList extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_Customers_);
 
-        jButton_Select_Customer_.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton_Select_Customer_.setText("Select Customer");
+        jButton_Select_Customer_.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton_Select_Customer_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_Select_Customer_ActionPerformed(evt);

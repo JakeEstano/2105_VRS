@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -485,5 +486,50 @@ public class Car {
          }
          return car;
      }
+        
+        public HashMap<Integer ,String> VehicleHashMap()
+     {
+         HashMap<Integer ,String> vehicle_map =  new  HashMap <Integer ,String>();
+         
+         ResultSet rs = getData("SELECT * FROM `cars`");
+         
+         
+         try {
+             while (rs.next())
+             {
+                 vehicle_map.put( rs.getInt(1), rs.getString(2));
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+         }
+
+         return vehicle_map;
+     }
     
+        //function to get cars by id
+        public ArrayList<Car> carsByBrandList(int brand_id)
+        {
+         ArrayList<Car> carsList = new ArrayList<>();
+         
+         ResultSet rs = getData("SELECT * FROM `cars` WHERE brand = " + brand_id);
+         
+         try {
+             while(rs.next())
+             {
+                 
+                 Car car  = new Car(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),
+                                    rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
+                                    rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
+                                    rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
+                                    rs.getString(17)
+            );
+                 
+                 carsList.add(car);
+                 
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return carsList;
+     }
 }

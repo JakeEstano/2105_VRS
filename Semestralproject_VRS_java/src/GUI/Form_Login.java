@@ -30,9 +30,6 @@ public class Form_Login extends javax.swing.JFrame {
         // center the form
         this.setLocationRelativeTo(null);
         
-        // create border
-        Border title_border = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.RED);
-        jLabel_title.setBorder(title_border);
         
     }
 
@@ -75,7 +72,6 @@ public class Form_Login extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel_close.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close.setText("X");
         jLabel_close.setToolTipText("");
@@ -88,14 +84,13 @@ public class Form_Login extends javax.swing.JFrame {
         jPanel1.add(jLabel_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 30, 33));
 
         jLabel_title.setFont(new java.awt.Font("Trebuchet MS", 1, 55)); // NOI18N
-        jLabel_title.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_title.setForeground(new java.awt.Color(255, 212, 60));
         jLabel_title.setText("Login");
-        jPanel1.add(jLabel_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, -1, -1));
+        jPanel1.add(jLabel_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, -1, -1));
 
         jLabel_username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_username.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_username.setText("Email");
-        jPanel1.add(jLabel_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, -1, -1));
+        jPanel1.add(jLabel_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, -1, -1));
 
         jTextField_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField_username.setForeground(new java.awt.Color(153, 153, 153));
@@ -113,12 +108,11 @@ public class Form_Login extends javax.swing.JFrame {
                 jTextField_usernameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 347, -1));
+        jPanel1.add(jTextField_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 260, 347, -1));
 
         jLabel_password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel_password.setForeground(new java.awt.Color(255, 153, 51));
         jLabel_password.setText("Password");
-        jPanel1.add(jLabel_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, -1, -1));
+        jPanel1.add(jLabel_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, -1, -1));
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
@@ -136,10 +130,9 @@ public class Form_Login extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, 347, -1));
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, 347, -1));
 
         jCheckBox_password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox_password.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox_password.setText("Show Password");
         jCheckBox_password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jCheckBox_password.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +140,7 @@ public class Form_Login extends javax.swing.JFrame {
                 jCheckBox_passwordActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, -1, -1));
+        jPanel1.add(jCheckBox_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jButton1.setText("Login");
@@ -162,9 +155,9 @@ public class Form_Login extends javax.swing.JFrame {
                 jButton1KeyPressed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 390, 347, 43));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 347, 43));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/blackCar.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wothoutlogo.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

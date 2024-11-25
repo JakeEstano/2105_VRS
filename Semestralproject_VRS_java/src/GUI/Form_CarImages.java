@@ -183,15 +183,13 @@ public class Form_CarImages extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Car images");
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -208,7 +206,7 @@ public class Form_CarImages extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel_brands_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(378, 378, 378)
+                .addGap(394, 394, 394)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_close1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,8 +250,8 @@ public class Form_CarImages extends javax.swing.JFrame {
         jLabel_CarImage.setBackground(new java.awt.Color(204, 204, 204));
         jLabel_CarImage.setOpaque(true);
 
-        jButton_Select_Image_.setBackground(new java.awt.Color(0, 153, 255));
-        jButton_Select_Image_.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_Select_Image_.setBackground(new java.awt.Color(255, 212, 60));
+        jButton_Select_Image_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_Select_Image_.setText("Select image");
         jButton_Select_Image_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,8 +286,8 @@ public class Form_CarImages extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Verdana", 2, 24)); // NOI18N
         jLabel2.setText("Selected Car Images");
 
-        jButton_Remove_Image_.setBackground(new java.awt.Color(0, 153, 255));
-        jButton_Remove_Image_.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_Remove_Image_.setBackground(new java.awt.Color(255, 212, 60));
+        jButton_Remove_Image_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_Remove_Image_.setText("Remove Image");
         jButton_Remove_Image_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,8 +295,8 @@ public class Form_CarImages extends javax.swing.JFrame {
             }
         });
 
-        jButton_Image_Slider_.setBackground(new java.awt.Color(0, 153, 255));
-        jButton_Image_Slider_.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_Image_Slider_.setBackground(new java.awt.Color(255, 212, 60));
+        jButton_Image_Slider_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_Image_Slider_.setText("Images Slider");
         jButton_Image_Slider_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,8 +304,8 @@ public class Form_CarImages extends javax.swing.JFrame {
             }
         });
 
-        jButton_Add_Image_.setBackground(new java.awt.Color(0, 153, 255));
-        jButton_Add_Image_.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_Add_Image_.setBackground(new java.awt.Color(255, 212, 60));
+        jButton_Add_Image_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_Add_Image_.setText("Add image");
         jButton_Add_Image_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

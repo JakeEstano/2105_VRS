@@ -149,15 +149,15 @@ public class Form_Cars extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(1130, 580));
         jPanel2.setVerifyInputWhenFocusTarget(false);
 
-        jPanel3.setBackground(new java.awt.Color(87, 101, 116));
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
+        jLabel4.setBackground(new java.awt.Color(255, 212, 60));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Vehicle");
 
+        jLabel_close1.setBackground(new java.awt.Color(255, 212, 60));
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -199,9 +199,8 @@ public class Form_Cars extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Model:");
 
-        jButton_Add_Car_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Add_Car_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Add_Car_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Add_Car_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Add_Car_.setText("Add");
         jButton_Add_Car_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add_Car_.addActionListener(new java.awt.event.ActionListener() {
@@ -210,9 +209,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Add_images_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Add_images_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Add_images_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Add_images_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Add_images_.setText("Add Car Images");
         jButton_Add_images_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add_images_.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -384,9 +382,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Add_Brands_List_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Add_Brands_List_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Add_Brands_List_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Add_Brands_List_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Add_Brands_List_.setText("Brands");
         jButton_Add_Brands_List_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add_Brands_List_.addActionListener(new java.awt.event.ActionListener() {
@@ -395,9 +392,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Reset_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Reset_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Reset_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Reset_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Reset_.setText("Reset");
         jButton_Reset_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Reset_.addActionListener(new java.awt.event.ActionListener() {
@@ -417,9 +413,8 @@ public class Form_Cars extends javax.swing.JFrame {
         jSpinner_Id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jSpinner_Id.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton_Remove_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Remove_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Remove_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Remove_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Remove_.setText("Remove");
         jButton_Remove_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Remove_.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -433,9 +428,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Edit_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Edit_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Edit_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Edit_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Edit_.setText("Edit");
         jButton_Edit_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Edit_.addActionListener(new java.awt.event.ActionListener() {
@@ -444,9 +438,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Cars_List_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Cars_List_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Cars_List_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Cars_List_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Cars_List_.setText("Car List");
         jButton_Cars_List_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Cars_List_.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -460,9 +453,8 @@ public class Form_Cars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Search_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Search_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Search_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Search_.setForeground(new java.awt.Color(204, 204, 204));
         jButton_Search_.setText("Search");
         jButton_Search_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Search_.addActionListener(new java.awt.event.ActionListener() {
