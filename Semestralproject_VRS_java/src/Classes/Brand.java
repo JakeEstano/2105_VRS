@@ -137,7 +137,7 @@ public class Brand {
         
     }
      
-     // function to return a restulset
+     // function to return a resultset
      
      public ResultSet getData(String query){
          

@@ -21,8 +21,9 @@ public class Form_CustomersList extends javax.swing.JFrame {
     
     Classes.Customer customer = new Classes.Customer();
     ArrayList<Classes.Customer>customer_list = customer.CustomerList();
+    String originaform;
     
-    public Form_CustomersList() {
+    public Form_CustomersList(String add_or_edit) {
         initComponents();
         
         this.setLocationRelativeTo(null);
@@ -30,6 +31,8 @@ public class Form_CustomersList extends javax.swing.JFrame {
         populateJtableWithCustomers();
         
         jTable_Customers_.setRowHeight(40);
+        
+       originaform = add_or_edit;
     }
 
     // gagawa ng function para ipulate the jTable with brand (id & name )
@@ -269,6 +272,8 @@ if (jTable_Customers_.getRowCount() > 0) {
         String fullname = jTable_Customers_.getValueAt(index, 1).toString();
         
         // set the customer id & name in book a car tab in home.java
+        if(originaform.equals("add")){Home.displayCustomer(id,  fullname);}
+        else if(originaform.equals("edit")){Form_Booking_Edit_Remove.displayCustomer(id,  fullname);}
         Home.displayCustomer(id, fullname);
         
         // close this form
@@ -305,7 +310,7 @@ if (jTable_Customers_.getRowCount() > 0) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form_CustomersList().setVisible(true);
+                new Form_CustomersList("").setVisible(true);
             }
         });
     }

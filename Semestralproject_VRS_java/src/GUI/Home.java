@@ -579,6 +579,7 @@ public class Home extends javax.swing.JFrame {
         jButton_BookCar_ = new javax.swing.JButton();
         jLabel47 = new javax.swing.JLabel();
         jLabel_totalFee = new javax.swing.JLabel();
+        jButton_BookingLIst_ = new javax.swing.JButton();
         jPanel_select_car = new javax.swing.JPanel();
         jLabel_select_car = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -2199,6 +2200,17 @@ public class Home extends javax.swing.JFrame {
         jLabel_totalFee.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_totalFee.setText("###");
 
+        jButton_BookingLIst_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_BookingLIst_.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_BookingLIst_.setForeground(new java.awt.Color(204, 204, 204));
+        jButton_BookingLIst_.setText("Booking List");
+        jButton_BookingLIst_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_BookingLIst_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BookingLIst_ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_rent_detailsLayout = new javax.swing.GroupLayout(jPanel_rent_details);
         jPanel_rent_details.setLayout(jPanel_rent_detailsLayout);
         jPanel_rent_detailsLayout.setHorizontalGroup(
@@ -2207,26 +2219,27 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jLabel_dropoff1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel_dropoff, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
-                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
-                                .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel47))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser_dropoff, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel_totalFee, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                        .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel47))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooser_dropoff, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel_totalFee, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(157, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_rent_detailsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(109, 109, 109))
         );
         jPanel_rent_detailsLayout.setVerticalGroup(
             jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2249,9 +2262,11 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
                     .addComponent(jLabel_totalFee))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(18, 18, 18)
+                .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jLabel_select_car.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -2332,7 +2347,7 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel30)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel_car_id))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(142, 142, 142))
         );
         jPanel_select_carLayout.setVerticalGroup(
             jPanel_select_carLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2468,7 +2483,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel_select_customerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox_DriverList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel_select_customerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jRadioButton_withDriver))
@@ -2496,13 +2511,13 @@ public class Home extends javax.swing.JFrame {
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookCarPanelLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bookCarPanelLayout.createSequentialGroup()
                         .addComponent(jPanel_select_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel_rent_details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                    .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel2.add(bookCarPanel, "card7");
@@ -3022,7 +3037,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton_Select_CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Select_CustomerActionPerformed
         // show customers list
-        Form_CustomersList frm_cst_list = new Form_CustomersList();
+        Form_CustomersList frm_cst_list = new Form_CustomersList("add");
         frm_cst_list.setVisible(true);
 
     }//GEN-LAST:event_jButton_Select_CustomerActionPerformed
@@ -3190,7 +3205,7 @@ public class Home extends javax.swing.JFrame {
         int brand_id = Integer.valueOf(jLabel_Brand_Id.getText());
         
         // show the cars list form
-        Form_CarsListByBrand frm_cars_brand = new Form_CarsListByBrand(brand_id);
+        Form_CarsListByBrand frm_cars_brand = new Form_CarsListByBrand(brand_id, "add");
         frm_cars_brand.setVisible(true);
     }//GEN-LAST:event_jButton_select_car_ActionPerformed
 
@@ -3204,11 +3219,9 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton_BookCar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookCar_ActionPerformed
         // Add new Booking
-       
-        // Extract values from the UI components
-    // Get car and customer details from the UI
+
  try {
-    // Step 1: Retrieve input data from form fields
+    
     int car_id = Integer.valueOf(jLabel_car_id.getText());
     int customer_id = Integer.valueOf(jLabel_customer_id.getText());
 
@@ -3219,32 +3232,21 @@ public class Home extends javax.swing.JFrame {
     Date pickupDate = dateFormat.parse(pickup_date);
     Date dropoffDate = dateFormat.parse(dropoff_date);
 
-    // Calculate the difference in days
     long diffInMillis = dropoffDate.getTime() - pickupDate.getTime();
     long diffInDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
-
-    // Validate rental period (pickup date should be before dropoff date)
     if (diffInDays <= 0) {
         JOptionPane.showMessageDialog(null, "Invalid rental period. Drop-off date must be after the pick-up date.");
         return;
     }
-
-    // Step 2: Fetch car details and validate price per day
     Car car = new Car();
-    car = car.getCarById(car_id);  // Fetch car details by ID
+    car = car.getCarById(car_id);  
     int pricePerDay = car.getPrice();
     if (pricePerDay <= 0) {
         JOptionPane.showMessageDialog(null, "Invalid price per day for the selected car.");
         return;
     }
-
-    // Step 3: Display the price per day on the label
     jLabel_pricePerDay.setText("" + pricePerDay);
-
-    // Step 4: Calculate total price
     int totalPrice = (int) diffInDays * pricePerDay;
-
-    // Step 5: Validate customer ID
     Customer customer = new Customer();
     ArrayList<Customer> customerList = customer.CustomerList();
     boolean validCustomer = customerList.stream().anyMatch(c -> c.getId() == customer_id);
@@ -3252,8 +3254,6 @@ public class Home extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Invalid Customer ID!");
         return;
     }
-
-    // Step 6: Handle driver selection
     String driver = "";
     String driverName = "";
 
@@ -3268,28 +3268,19 @@ public class Home extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Driver list is empty or not loaded!");
             return;
         }
-
-        // If needed, validate driver name here
-        // boolean validDriver = driverList.stream().anyMatch(d -> d.getFullname().equals(driverName));
-        // if (!validDriver) {
-        //     JOptionPane.showMessageDialog(null, "Invalid Driver Name!");
-        //     return;
-        // }
     } else if (jRadioButton_selfDrive.isSelected()) {
         driver = "Self Drive";
-        driverName = ""; // No driver name for self-drive
+        driverName = ""; 
     }
-
-    // Step 7: Add booking using the Booking class
     Booking booking = new Booking();
     booking.addNewBooking(
-        car_id,              // Car ID
-        customer_id,         // Customer ID
-        pickup_date,         // Start date
-        dropoff_date,        // End date
-        totalPrice,          // Total price
-        driver,              // Driver option
-        driverName           // Driver name
+        car_id,              
+        customer_id,         
+        pickup_date,         
+        dropoff_date,       
+        totalPrice,        
+        driver,            
+        driverName          
     );
 
     JOptionPane.showMessageDialog(null, "Booking Successfully Added! Total Price: $" + totalPrice);
@@ -3303,6 +3294,12 @@ public class Home extends javax.swing.JFrame {
     private void jButton_select_car_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_select_car_MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_select_car_MouseClicked
+
+    private void jButton_BookingLIst_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookingLIst_ActionPerformed
+        // display  the  booking  list
+        Form_BookingList bookinglist = new Form_BookingList();
+        bookinglist.setVisible(true);
+    }//GEN-LAST:event_jButton_BookingLIst_ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3357,6 +3354,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Add_Car_;
     private javax.swing.JButton jButton_Add_images_;
     private javax.swing.JButton jButton_BookCar_;
+    private javax.swing.JButton jButton_BookingLIst_;
     private javax.swing.JButton jButton_Cars_List_;
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_Clear1;

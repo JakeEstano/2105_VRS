@@ -203,7 +203,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jButton_Refresh" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
                                   <Component id="jButton_Clear" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
                               </Group>

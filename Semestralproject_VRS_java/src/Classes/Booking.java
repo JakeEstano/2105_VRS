@@ -5,7 +5,9 @@
 package Classes;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -22,9 +24,12 @@ public class Booking {
     private String driverName;
 
     // Constructor
-    public Booking() {
+    public Booking(){
     }
 
+   public Booking(int id, int car_id, int customer_id, String start_date, String end_date, int total_price, String driver, String driverName){
+       
+   }
     // Getters and Setters
     public int getId() {
         return id;
@@ -90,38 +95,174 @@ public class Booking {
         this.driverName = driverName;
     }
 
-    // Add New Booking Method
     public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
-                              String driver, String driverName) {
-        // SQL query to insert booking data
-        String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement ps;
+                          String driver, String driverName) {
+    // SQL query to insert booking data
+    String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
+                       + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement ps;
 
-        try {
-            // Get database connection
-            ps = DB.getConnection().prepareStatement(insertQuery);
+    try {
+        // Get database connection
+        ps = DB.getConnection().prepareStatement(insertQuery);
 
-            // Set the parameters in the query
-            ps.setInt(1, carId);
-            ps.setInt(2, customerId);
-            ps.setString(3, startDate);      // Booking start date
-            ps.setString(4, endDate);        // Booking end date
-            ps.setInt(5, totalPrice);        // Total rental price
-            ps.setString(6, driver);         // Driver option ("With Driver" or "Self Drive")
-            ps.setString(7, driverName);     // Driver name (if applicable)
+        // Set the parameters in the query
+        ps.setInt(1, carId);
+        ps.setInt(2, customerId);
+        ps.setString(3, startDate);  
+        ps.setString(4, endDate);    
+        ps.setInt(5, totalPrice);   
+        ps.setString(6, driver);     
+        ps.setString(7, driverName); 
 
-            // Execute the query and check the result
-            if (ps.executeUpdate() != 0) {
-                JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
+        // Execute the query and check the result
+        if (ps.executeUpdate() != 0) {
+            JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
         }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
     }
 }
+    
+    
+    public void editBooking(int id, int carId, int customerId, String startDate, String endDate, int totalPrice, 
+                          String driver, String driverName) {
+    // SQL query to insert booking data
+    String editQuery = "UPDATE `reservation` SET `car_id`= ?,`customer_id`= ?,`start_date`= ?,`end_date`= ?,`total_price`= ?,`driver`= ?,`driverName`= ? WHERE `id`= ?";
+    PreparedStatement ps;
+
+    try {
+        // Get database connection
+        ps = DB.getConnection().prepareStatement(editQuery);
+
+        // Set the parameters in the query
+        ps.setInt(1, carId);
+        ps.setInt(2, customerId);
+        ps.setString(3, startDate);  
+        ps.setString(4, endDate);    
+        ps.setInt(5, totalPrice);   
+        ps.setString(6, driver);     
+        ps.setString(7, driverName); 
+        ps.setInt(8, id); 
+
+        // Execute the query and check the result
+        if (ps.executeUpdate() != 0) {
+            JOptionPane.showMessageDialog(null, "Edited", "Booking", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Unable To Edit", "Booking", JOptionPane.ERROR_MESSAGE);
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+         // function to return a resultset
+     
+     public ResultSet getData(String query){
+         
+         PreparedStatement ps;
+         ResultSet rs = null;
+         try {
+             
+             
+             ps = DB.getConnection().prepareStatement(query);
+             rs = ps.executeQuery();
+                     } catch (SQLException ex) {
+             Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return rs;
+     }
+     
+    // Function to get all bookings and return an array list
+     public ArrayList<Booking> bookingList() {
+    ArrayList<Booking> bookList = new ArrayList<>();
+    ResultSet rs = getData("SELECT * FROM `reservation`"); // Assume this method fetches the data from DB
+
+    try {
+        if (rs == null) {
+            System.out.println("No data returned from the query.");
+            return bookList;
+        }
+
+        while (rs.next()) {
+            // Debugging: Print the data being fetched from the ResultSet
+            System.out.println("Booking Retrieved: " +
+                "ID: " + rs.getInt(1) +
+                ", Car ID: " + rs.getInt(2) +
+                ", Customer ID: " + rs.getInt(3) +
+                ", Start Date: " + rs.getString(4) +
+                ", End Date: " + rs.getString(5) +
+                ", Total Price: " + rs.getInt(6) +
+                ", Driver: " + rs.getString(7) +
+                ", Driver Name: " + rs.getString(8)
+            );
+
+            // Create a booking object
+            Booking booking = new Booking(rs.getInt(1),
+                                          rs.getInt(2),
+                                          rs.getInt(3),
+                                          rs.getString(4),
+                                          rs.getString(5),
+                                          rs.getInt(6),
+                                          rs.getString(7),
+                                          rs.getString(8));
+                                
+            bookList.add(booking);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
+        JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Return the list of bookings
+    System.out.println("Total bookings retrieved: " + bookList.size());
+    return bookList;
+    
+}
+
+
+     
+     
+     
+     
+     
+//public ArrayList<Booking> bookingList() {
+//    ArrayList<Booking> bookList = new ArrayList<>();
+//    ResultSet rs = getData("SELECT * FROM `reservation`");
+//    try {
+//        if (rs == null) {
+//            System.out.println("No data returned from the query.");
+//            return bookList;
+//        }
+//        while (rs.next()) {
+//            Booking booking = new Booking(rs.getInt(1),
+//                                            rs.getInt(2),
+//                                            rs.getInt(3),
+//                                            rs.getString(4),
+//                                            rs.getString(5),
+//                                            rs.getInt(6),
+//                                            rs.getString(7),
+//                                            rs.getString(8));
+//            bookList.add(booking);
+//        }
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
+//        JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+//    }
+//
+//    //System.out.println("Total bookings retrieved: " + bookList.size());
+//    return bookList;
+//    }
+
+    public void removeBooking(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
+
 

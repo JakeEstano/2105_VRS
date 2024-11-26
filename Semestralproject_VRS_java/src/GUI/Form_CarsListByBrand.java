@@ -22,13 +22,16 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
     Classes.Car car = new Classes.Car();
     ArrayList<Classes.Car> carsList  = car.carsByBrandList(0);
     int id = 0;
+    String originform;
     
-    public Form_CarsListByBrand(int brand_id) {
+    public Form_CarsListByBrand(int brand_id, String ad_or_edit) {
         initComponents();
         
         this.setLocationRelativeTo(null);
         
         id = brand_id;
+        
+        originform = ad_or_edit;
         
         populateJtableWithCars();
         
@@ -57,7 +60,6 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
        }
        DefaultTableModel model = new DefaultTableModel(rows,columnsName);
        jTable_Cars_.setModel(model);
-       
     }
 
     /**
@@ -231,8 +233,8 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
         String model = jTable_Cars_.getValueAt(index, 1).toString();
         String price = jTable_Cars_.getValueAt(index, 5).toString();
         
-        Home.displayCarInfo(id, model, price);
-        
+        if(originform.equals("add")) {Home.displayCarInfo(id, model, price);}
+        else if(originform.equals("edit")) {Form_Booking_Edit_Remove.displayCarInfo(id, model, price);}
             this.dispose();
 // Ensure a row is selected
 //if (index != -1) {
@@ -282,7 +284,7 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form_CarsListByBrand(0).setVisible(true);
+                new Form_CarsListByBrand(0, "").setVisible(true);
             }
         });
     }
