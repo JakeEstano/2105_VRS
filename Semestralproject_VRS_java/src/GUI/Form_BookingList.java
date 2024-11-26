@@ -82,15 +82,27 @@ public class Form_BookingList extends javax.swing.JFrame {
     // Prepare the rows for the table
     Object[][] rows = new Object[booking_list.size()][columnsName.length];
     for (int i = 0; i < booking_list.size(); i++) {
-        rows[i][0] = booking_list.get(i).getId();
-        rows[i][1] = booking_list.get(i).getCar_id();
-        rows[i][2] = booking_list.get(i).getCustomer_id();
-        rows[i][3] = booking_list.get(i).getStart_date();
-        rows[i][4] = booking_list.get(i).getEnd_date();
-        rows[i][5] = booking_list.get(i).getTotal_price();
-        rows[i][6] = booking_list.get(i).getDriver();
-        rows[i][7] = booking_list.get(i).getDriverName();
-    }
+    Classes.Booking booking = booking_list.get(i);
+    rows[i][0] = booking.getId();           // ID
+    rows[i][1] = booking.getCar_id();       // Car ID
+    rows[i][2] = booking.getCustomer_id();  // Customer ID
+    rows[i][3] = booking.getStart_date();   // Start Date
+    rows[i][4] = booking.getEnd_date();     // End Date
+    rows[i][5] = booking.getTotal_price();  // Total Price
+    rows[i][6] = booking.getDriver();       // Driver
+    rows[i][7] = booking.getDriverName();   // Driver Name
+}
+    
+//    for (int i = 0; i < booking_list.size(); i++) {
+//        rows[i][0] = booking_list.get(i).getId();
+//        rows[i][1] = booking_list.get(i).getCar_id();
+//        rows[i][2] = booking_list.get(i).getCustomer_id();
+//        rows[i][3] = booking_list.get(i).getStart_date();
+//        rows[i][4] = booking_list.get(i).getEnd_date();
+//        rows[i][5] = booking_list.get(i).getTotal_price();
+//        rows[i][6] = booking_list.get(i).getDriver();
+//        rows[i][7] = booking_list.get(i).getDriverName();
+//    }
 
     // Update the table model
     DefaultTableModel model = new DefaultTableModel(rows, columnsName);
@@ -273,21 +285,6 @@ public class Form_BookingList extends javax.swing.JFrame {
         Form_Booking_Edit_Remove.displayBooking(id, car_id, customer_id, start_date, end_date, total_price, driver, driverName);
 
         this.dispose();
-        // Ensure a row is selected
-        //if (index != -1) {
-            //    // Retrieve car details from the selected row
-            //    String id = jTable_Cars_.getValueAt(index, 0).toString();
-            //    String model = jTable_Cars_.getValueAt(index, 1).toString();
-            //
-            //    // Display the car information in the "book a car" tab of Home
-            //    Home.displayCarInfo(id, model);
-            //
-            //    // Close this form
-            //    this.dispose();
-            //} else {
-            //    // Show an error message if no row is selected
-            //    JOptionPane.showMessageDialog(this, "Please select a car from the table.", "No Selection", JOptionPane.WARNING_MESSAGE);
-            //}
     }//GEN-LAST:event_jButton_Select_Booking_ActionPerformed
 
     /**

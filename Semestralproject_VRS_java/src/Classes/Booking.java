@@ -28,7 +28,14 @@ public class Booking {
     }
 
    public Booking(int id, int car_id, int customer_id, String start_date, String end_date, int total_price, String driver, String driverName){
-       
+       this.id = id;
+    this.car_id = car_id;
+    this.customer_id = customer_id;
+    this.start_date = start_date;
+    this.end_date = end_date;
+    this.total_price = total_price;
+    this.driver = driver;
+    this.driverName = driverName;
    }
     // Getters and Setters
     public int getId() {
@@ -191,30 +198,21 @@ public class Booking {
         }
 
         while (rs.next()) {
-            // Debugging: Print the data being fetched from the ResultSet
-            System.out.println("Booking Retrieved: " +
-                "ID: " + rs.getInt(1) +
-                ", Car ID: " + rs.getInt(2) +
-                ", Customer ID: " + rs.getInt(3) +
-                ", Start Date: " + rs.getString(4) +
-                ", End Date: " + rs.getString(5) +
-                ", Total Price: " + rs.getInt(6) +
-                ", Driver: " + rs.getString(7) +
-                ", Driver Name: " + rs.getString(8)
-            );
+    int id = rs.getInt("id"); // Replace with the actual column name
+    int car_id = rs.getInt("car_id");
+    int customer_id = rs.getInt("customer_id");
+    String start_date = rs.getString("start_date");
+    String end_date = rs.getString("end_date");
+    int total_price = rs.getInt("total_price");
+    String driver = rs.getString("driver");
+    String driverName = rs.getString("driverName");
 
-            // Create a booking object
-            Booking booking = new Booking(rs.getInt(1),
-                                          rs.getInt(2),
-                                          rs.getInt(3),
-                                          rs.getString(4),
-                                          rs.getString(5),
-                                          rs.getInt(6),
-                                          rs.getString(7),
-                                          rs.getString(8));
-                                
-            bookList.add(booking);
-        }
+    // Debugging: Ensure the fetched data is valid
+    System.out.println("Fetched Data: ID=" + id + ", Car ID=" + car_id + ", Customer ID=" + customer_id);
+
+    Booking booking = new Booking(id, car_id, customer_id, start_date, end_date, total_price, driver, driverName);
+    bookList.add(booking);
+}
     } catch (SQLException ex) {
         Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
         JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
