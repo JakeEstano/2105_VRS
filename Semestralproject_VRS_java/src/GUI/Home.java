@@ -4,6 +4,8 @@
  */
 package GUI;
 
+
+
 import java.awt.Color;
 import Classes.Brand;
 import Classes.Car;
@@ -44,7 +46,12 @@ public class Home extends javax.swing.JFrame {
     Border border = BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(255,212,60));
     Border upper_border = BorderFactory.createMatteBorder(2, 0, 0, 0, new Color(255,212,60));
     Border panel_border = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black);
-
+    
+    private javax.swing.JRadioButton jRadioButton_SelfDrive;
+    private javax.swing.JRadioButton jRadioButton_WithDriver;
+    private javax.swing.JPanel jPanel_Driver;
+    private javax.swing.JComboBox<String> jComboBox_Driver;
+    private javax.swing.JLabel jLabel_DriverFee;
     private static Object JTextField_customer;
     private static Object JTextField_customer_id;
 
@@ -104,7 +111,7 @@ public class Home extends javax.swing.JFrame {
         // create a static function to display customer id and name
         public static void displayCarInfo(String id, String model)
         {
-        jLabel_car_id1.setText(id);
+        jLabel_car_id.setText(id);
         jLabel_car_model.setText(model);
         }
     
@@ -534,17 +541,15 @@ public class Home extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jComboBox_Pickup_City = new javax.swing.JComboBox<>();
-        jComboBox2_Pickup_Address = new javax.swing.JComboBox<>();
+        jComboBox_Pickup_Address = new javax.swing.JComboBox<>();
         jDateChooser_Pickup_Date = new com.toedter.calendar.JDateChooser();
-        timePicker_Pickup_Time = new com.github.lgooddatepicker.components.TimePicker();
         jLabel_dropoff = new javax.swing.JLabel();
         jComboBox_Dropoff_City = new javax.swing.JComboBox<>();
         jLabel39 = new javax.swing.JLabel();
         jComboBox_Dropoff_Address = new javax.swing.JComboBox<>();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jDateChooser_Date1 = new com.toedter.calendar.JDateChooser();
-        timePicker2 = new com.github.lgooddatepicker.components.TimePicker();
+        jDateChooser_dropoff = new com.toedter.calendar.JDateChooser();
         jLabel42 = new javax.swing.JLabel();
         jLabel_dropoff1 = new javax.swing.JLabel();
         jPanel_select_car = new javax.swing.JPanel();
@@ -554,7 +559,7 @@ public class Home extends javax.swing.JFrame {
         jComboBox_Brands_ = new javax.swing.JComboBox<>();
         jButton_select_car_ = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
-        jLabel_car_id1 = new javax.swing.JLabel();
+        jLabel_car_id = new javax.swing.JLabel();
         jLabel_car_model = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jPanel_select_customer = new javax.swing.JPanel();
@@ -567,6 +572,7 @@ public class Home extends javax.swing.JFrame {
         jButton_Select_Customer = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        jButton_BookCar_ = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -592,10 +598,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("HOME");
         jLabel1.setBackground(new java.awt.Color(192, 192, 83));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("HOME");
 
         javax.swing.GroupLayout homeTabLayout = new javax.swing.GroupLayout(homeTab);
         homeTab.setLayout(homeTabLayout);
@@ -621,10 +627,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VEHICLE");
         jLabel2.setBackground(new java.awt.Color(192, 192, 83));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("VEHICLE");
 
         javax.swing.GroupLayout vehicleTabLayout = new javax.swing.GroupLayout(vehicleTab);
         vehicleTab.setLayout(vehicleTabLayout);
@@ -650,10 +656,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("BRAND");
         jLabel3.setBackground(new java.awt.Color(192, 192, 83));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("BRAND");
 
         javax.swing.GroupLayout brandTabLayout = new javax.swing.GroupLayout(brandTab);
         brandTab.setLayout(brandTabLayout);
@@ -679,10 +685,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("LOCATION");
         jLabel4.setBackground(new java.awt.Color(192, 192, 83));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("LOCATION");
 
         javax.swing.GroupLayout locationTabLayout = new javax.swing.GroupLayout(locationTab);
         locationTab.setLayout(locationTabLayout);
@@ -708,10 +714,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("CUSTOMER");
         jLabel5.setBackground(new java.awt.Color(192, 192, 83));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("CUSTOMER");
 
         javax.swing.GroupLayout customerTabLayout = new javax.swing.GroupLayout(customerTab);
         customerTab.setLayout(customerTabLayout);
@@ -737,10 +743,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("BOOK CAR");
         jLabel6.setBackground(new java.awt.Color(192, 192, 83));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("BOOK CAR");
 
         javax.swing.GroupLayout bookCarTabLayout = new javax.swing.GroupLayout(bookCarTab);
         bookCarTab.setLayout(bookCarTabLayout);
@@ -806,15 +812,15 @@ public class Home extends javax.swing.JFrame {
         jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 212, 60), 2, true));
         jPanel9.setOpaque(false);
 
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Booked");
         jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Booked");
 
-        jLabel_cars_logo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_cars_logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3.png"))); // NOI18N
         jLabel_cars_logo3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_cars_logo3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_cars_logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/3.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -860,15 +866,15 @@ public class Home extends javax.swing.JFrame {
         jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 212, 60), 2, true));
         jPanel11.setOpaque(false);
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Vehicles");
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Vehicles");
 
-        jLabel_cars_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_cars_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
         jLabel_cars_logo.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_cars_logo.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_cars_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -918,15 +924,15 @@ public class Home extends javax.swing.JFrame {
         jPanel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 212, 60), 2, true));
         jPanel13.setOpaque(false);
 
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Customers");
         jLabel19.setBackground(new java.awt.Color(255, 255, 255));
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Customers");
 
-        jLabel_cars_logo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_cars_logo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.png"))); // NOI18N
         jLabel_cars_logo2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_cars_logo2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel_cars_logo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_cars_logo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -975,10 +981,10 @@ public class Home extends javax.swing.JFrame {
 
         vehiclePanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setText("ID:");
         jLabel12.setBackground(new java.awt.Color(102, 102, 102));
         jLabel12.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("ID:");
 
         jSpinner_Id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jSpinner_Id.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -993,10 +999,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Brand:");
         jLabel8.setBackground(new java.awt.Color(102, 102, 102));
         jLabel8.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Brand:");
 
         jComboBox_brand.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox_brand.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1006,10 +1012,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel_Brand_Id.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel_Brand_Id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_Brand_Id.setText("#");
         jLabel_Brand_Id.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel_Brand_Id.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
 
         jTextField_Model.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField_Model.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1019,15 +1025,15 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Model:");
         jLabel10.setBackground(new java.awt.Color(102, 102, 102));
         jLabel10.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Model:");
 
-        jLabel11.setText("Fuel:");
         jLabel11.setBackground(new java.awt.Color(102, 102, 102));
         jLabel11.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Fuel:");
 
         jComboBox_Fuel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jComboBox_Fuel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gas", "Diesel" }));
@@ -1037,15 +1043,15 @@ public class Home extends javax.swing.JFrame {
         jComboBox_Color.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "White", "Black", "Grey", "Red", "Dark Green" }));
         jComboBox_Color.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel13.setText("Color:");
         jLabel13.setBackground(new java.awt.Color(102, 102, 102));
         jLabel13.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Color:");
 
-        jLabel14.setText("Features");
         jLabel14.setBackground(new java.awt.Color(102, 102, 102));
         jLabel14.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Features");
 
         jRadioButton_Features_Aircond.setText("Air Conditioning");
         jRadioButton_Features_Aircond.addActionListener(new java.awt.event.ActionListener() {
@@ -1210,10 +1216,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setText("Plate Number:");
         jLabel15.setBackground(new java.awt.Color(102, 102, 102));
         jLabel15.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Plate Number:");
 
         jTextField_PlateNum.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField_PlateNum.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1223,18 +1229,18 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("Seats:");
         jLabel16.setBackground(new java.awt.Color(102, 102, 102));
         jLabel16.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("Seats:");
 
         jSpinner_Passengers.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jSpinner_Passengers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel17.setText("Transmission:");
         jLabel17.setBackground(new java.awt.Color(102, 102, 102));
         jLabel17.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setText("Transmission:");
 
         jRadioButton_Automatic.setText("Automatic");
         jRadioButton_Automatic.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1255,10 +1261,10 @@ public class Home extends javax.swing.JFrame {
         jSpinner_Price.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jSpinner_Price.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel18.setText("Price/Day:");
         jLabel18.setBackground(new java.awt.Color(102, 102, 102));
         jLabel18.setFont(new java.awt.Font("Arial", 1, 27)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel18.setText("Price/Day:");
 
         javax.swing.GroupLayout vehiclePanelLayout = new javax.swing.GroupLayout(vehiclePanel);
         vehiclePanel.setLayout(vehiclePanelLayout);
@@ -1370,7 +1376,6 @@ public class Home extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jComboBox_Color, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel13)))
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1413,8 +1418,8 @@ public class Home extends javax.swing.JFrame {
 
         jSpinner_id.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jLabel20.setText("ID:");
         jLabel20.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel20.setText("ID:");
 
         jTextField_name.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jTextField_name.addActionListener(new java.awt.event.ActionListener() {
@@ -1423,11 +1428,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel21.setText("Name:");
         jLabel21.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel21.setText("Name:");
 
-        jLabel23.setText("Logo:");
         jLabel23.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel23.setText("Logo:");
 
         jLabel_logo.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_logo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1653,17 +1658,17 @@ public class Home extends javax.swing.JFrame {
 
         jSpinner_id1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jLabel24.setText("ID:");
         jLabel24.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel24.setText("ID:");
 
-        jComboBox_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Balayan", "Calaca", "Nasugbu", "Batangas" }));
         jComboBox_City.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Balayan", "Calaca", "Nasugbu", "Batangas" }));
 
-        jLabel25.setText("City:");
         jLabel25.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel25.setText("City:");
 
-        jLabel26.setText("Address:");
         jLabel26.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel26.setText("Address:");
 
         jTextArea_Address.setColumns(20);
         jTextArea_Address.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -2126,25 +2131,25 @@ public class Home extends javax.swing.JFrame {
 
         bookCarPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel_rent_details.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel_rent_details.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_rent_details.setText("Rent Details");
-        jLabel_rent_details.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel34.setText("City:");
-        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel35.setText("Address:");
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel36.setText("Date:");
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel37.setText("Time:");
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox_Pickup_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Balayan", "Calaca", "Nasugbu", "Batangas" }));
         jComboBox_Pickup_City.addActionListener(new java.awt.event.ActionListener() {
@@ -2153,27 +2158,27 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel_dropoff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel_dropoff.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_dropoff.setText("     Drop Off Location & Date");
-        jLabel_dropoff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         jComboBox_Dropoff_City.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Balayan", "Calaca", "Nasugbu", "Batangas" }));
 
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel39.setText("City:");
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel40.setText("Address:");
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel41.setText("Date:");
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel42.setText("Time:");
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabel_dropoff1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel_dropoff1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -2197,8 +2202,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox_Dropoff_Address, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser_Date1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                            .addComponent(timePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooser_dropoff, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                             .addComponent(jComboBox_Dropoff_City, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -2210,9 +2214,8 @@ public class Home extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox_Pickup_City, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2_Pickup_Address, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                            .addComponent(timePicker_Pickup_Time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jComboBox_Pickup_Address, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))))
                 .addContainerGap(158, Short.MAX_VALUE))
             .addComponent(jLabel_dropoff1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -2229,16 +2232,14 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jComboBox_Pickup_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2_Pickup_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox_Pickup_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(timePicker_Pickup_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel37)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel_dropoff, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2251,26 +2252,24 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jComboBox_Dropoff_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser_Date1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateChooser_dropoff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel41))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel42)
-                    .addComponent(timePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel42)
                 .addGap(14, 14, 14))
         );
 
+        jLabel_select_car.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel_select_car.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_select_car.setText("Select a Car");
-        jLabel_select_car.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel31.setText("Brand:");
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel32.setText("Vehicle:");
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jComboBox_Brands_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2288,8 +2287,8 @@ public class Home extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel30.setText("ID:");
 
-        jLabel_car_id1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel_car_id1.setText("000");
+        jLabel_car_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel_car_id.setText("000");
 
         jLabel_car_model.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_car_model.setText("###");
@@ -2322,7 +2321,7 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel30)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel_car_id1)))
+                        .addComponent(jLabel_car_id)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel_select_carLayout.setVerticalGroup(
@@ -2341,7 +2340,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel32)
                     .addComponent(jButton_select_car_)
                     .addComponent(jLabel30)
-                    .addComponent(jLabel_car_id1))
+                    .addComponent(jLabel_car_id))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_select_carLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
@@ -2349,17 +2348,17 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
+        jLabel_select_customer.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel_select_customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_select_customer.setText("Select Customer");
-        jLabel_select_customer.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel28.setText("Cutomer Name:");
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel29.setText("Customer ID:");
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jTextField_customer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2367,9 +2366,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jLabel_customer_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel_customer_id.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel_customer_id.setText("000");
-        jLabel_customer_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jButton1.setText("Enter Customer Details");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -2387,6 +2386,11 @@ public class Home extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("With Driver");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Self Drive");
@@ -2446,15 +2450,28 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        jButton_BookCar_.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_BookCar_.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_BookCar_.setForeground(new java.awt.Color(204, 204, 204));
+        jButton_BookCar_.setText("Book This Car");
+        jButton_BookCar_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_BookCar_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BookCar_ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bookCarPanelLayout = new javax.swing.GroupLayout(bookCarPanel);
         bookCarPanel.setLayout(bookCarPanelLayout);
         bookCarPanelLayout.setHorizontalGroup(
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookCarPanelLayout.createSequentialGroup()
                 .addGap(91, 91, 91)
-                .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel_select_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel_select_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(73, 73, 73)
                 .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(246, Short.MAX_VALUE))
@@ -2469,7 +2486,9 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel2.add(bookCarPanel, "card7");
@@ -3163,6 +3182,31 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox_Pickup_CityActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jButton_BookCar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookCar_ActionPerformed
+        // Add new Booking
+       
+        int car_id = Integer.valueOf(jLabel_car_id.getText());
+        
+        int customer_id = Integer.valueOf(jLabel_customer_id.getText());
+
+        String pickup_city = jComboBox_Pickup_City.getSelectedItem().toString();
+        String pickup_address = jComboBox_Pickup_Address.getSelectedItem().toString();
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd");
+        dateFormat.format(jDateChooser_Pickup_Date.getDate());
+        
+        String dropoff_city = jComboBox_Dropoff_City.getSelectedItem().toString();
+        String dropoff_address = jComboBox_Dropoff_Address.getSelectedItem().toString();
+        
+        dateFormat.format(jDateChooser_dropoff.getDate());
+        
+    }//GEN-LAST:event_jButton_BookCar_ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3215,6 +3259,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Add_Brands_List_;
     private javax.swing.JButton jButton_Add_Car_;
     private javax.swing.JButton jButton_Add_images_;
+    private javax.swing.JButton jButton_BookCar_;
     private javax.swing.JButton jButton_Cars_List_;
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_Clear1;
@@ -3247,18 +3292,18 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Select_Customer;
     private javax.swing.JButton jButton_browse;
     private javax.swing.JButton jButton_select_car_;
-    private javax.swing.JComboBox<String> jComboBox2_Pickup_Address;
     private javax.swing.JComboBox<String> jComboBox_Brands_;
     private javax.swing.JComboBox<String> jComboBox_City;
     private javax.swing.JComboBox<String> jComboBox_Color;
     private javax.swing.JComboBox<String> jComboBox_Dropoff_Address;
     private javax.swing.JComboBox<String> jComboBox_Dropoff_City;
     private javax.swing.JComboBox<String> jComboBox_Fuel;
+    private javax.swing.JComboBox<String> jComboBox_Pickup_Address;
     private javax.swing.JComboBox<String> jComboBox_Pickup_City;
     private javax.swing.JComboBox<String> jComboBox_brand;
-    private com.toedter.calendar.JDateChooser jDateChooser_Date1;
     private com.toedter.calendar.JDateChooser jDateChooser_Pickup_Date;
     private com.toedter.calendar.JDateChooser jDateChooser_birthDate;
+    private com.toedter.calendar.JDateChooser jDateChooser_dropoff;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3306,7 +3351,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_Brand_Id;
-    private static javax.swing.JLabel jLabel_car_id1;
+    private static javax.swing.JLabel jLabel_car_id;
     private static javax.swing.JLabel jLabel_car_model;
     private javax.swing.JLabel jLabel_cars_logo;
     private javax.swing.JLabel jLabel_cars_logo2;
@@ -3369,8 +3414,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_phone;
     private javax.swing.JPanel locationPanel;
     private javax.swing.JPanel locationTab;
-    private com.github.lgooddatepicker.components.TimePicker timePicker2;
-    private com.github.lgooddatepicker.components.TimePicker timePicker_Pickup_Time;
     private javax.swing.JPanel vehiclePanel;
     private javax.swing.JPanel vehicleTab;
     // End of variables declaration//GEN-END:variables

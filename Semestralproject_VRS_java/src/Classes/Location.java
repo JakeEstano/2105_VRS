@@ -171,5 +171,24 @@ public class Location {
          return locList;
      }
     
+     //function to get all Locations, return in array an list
+     public ArrayList<Location> locationListByCity(String city){
+         ArrayList<Location> locList = new ArrayList<>();
+         
+         ResultSet rs = getData("SELECT * FROM `locations` WHERE `city` " + city);
+         
+         try {
+             while(rs.next()){
+                 System.out.println(rs.getInt(1));
+                 System.out.println(rs.getString(2));
+                 Location location = new Location(rs.getInt(1),rs.getString(2),rs.getString(3));
+                 locList.add(location);
+                 
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return locList;
+     }
   
 }
