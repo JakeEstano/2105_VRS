@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Classes;
 
 import java.sql.PreparedStatement;
@@ -244,7 +241,7 @@ public class Car {
     
     
     
-    // function to add new car
+    // function to add new car    
     public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
                         String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,
                         String _heated_seats, String _nav_sys, String _bluetooth, String _elec_window, String _gps){

@@ -6,6 +6,7 @@ package GUI;
 
 import Classes.Customer;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -214,12 +215,50 @@ public class Form_CustomersList extends javax.swing.JFrame {
 
     private void jTable_Customers_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_Customers_MouseClicked
         // get the selected customer
-        int index = jTable_Customers_.getSelectedRow();
-        int id = Integer.valueOf(jTable_Customers_.getValueAt(index, 0).toString());
-        String fullname = jTable_Customers_.getValueAt(index, 1).toString();
-        String phone = jTable_Customers_.getValueAt(index, 3).toString();
-        String email = jTable_Customers_.getValueAt(index, 4).toString();
-        String address = jTable_Customers_.getValueAt(index, 5).toString();
+       // Get the selected row index
+// Ensure the table has rows and a row is selected
+if (jTable_Customers_.getRowCount() > 0) {
+    int index = jTable_Customers_.getSelectedRow();
+
+    if (index != -1) {
+        try {
+            // Get the number of columns in the table
+            int columnCount = jTable_Customers_.getColumnCount();
+
+            // Safely retrieve data if the table has enough columns
+            int id = (columnCount > 0 && jTable_Customers_.getValueAt(index, 0) != null) 
+                     ? Integer.parseInt(jTable_Customers_.getValueAt(index, 0).toString()) : -1;
+            String fullname = (columnCount > 1 && jTable_Customers_.getValueAt(index, 1) != null) 
+                              ? jTable_Customers_.getValueAt(index, 1).toString() : "";
+            String phone = (columnCount > 3 && jTable_Customers_.getValueAt(index, 3) != null) 
+                           ? jTable_Customers_.getValueAt(index, 3).toString() : "";
+            String email = (columnCount > 4 && jTable_Customers_.getValueAt(index, 4) != null) 
+                           ? jTable_Customers_.getValueAt(index, 4).toString() : "";
+            String address = (columnCount > 5 && jTable_Customers_.getValueAt(index, 5) != null) 
+                             ? jTable_Customers_.getValueAt(index, 5).toString() : "";
+
+            // Process or display the retrieved details
+            System.out.println("ID: " + id);
+            System.out.println("Full Name: " + fullname);
+            System.out.println("Phone: " + phone);
+            System.out.println("Email: " + email);
+            System.out.println("Address: " + address);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error: Invalid ID format.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Unexpected error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // Show a warning if no row is selected
+        JOptionPane.showMessageDialog(null, "Please select a customer from the table.", "No Selection", JOptionPane.WARNING_MESSAGE);
+    }
+} else {
+    // Show a warning if the table has no rows
+    JOptionPane.showMessageDialog(null, "No data available in the table.", "Empty Table", JOptionPane.WARNING_MESSAGE);
+}
+
+
 
     }//GEN-LAST:event_jTable_Customers_MouseClicked
 

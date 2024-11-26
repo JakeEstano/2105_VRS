@@ -6,6 +6,7 @@ package GUI;
 
 import Classes.Car;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -40,7 +41,7 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
        // populated arrayList
        ArrayList<Car>cars_list = car.carsByBrandList(id);
        
-       String[] columnsName = {"ID","model", "fuel","color", "plateNum"};
+       String[] columnsName = {"ID","model", "fuel","color", "plateNum", "Price"};
        
        // Rows
        Object[][] rows = new Object[cars_list.size()][columnsName.length];
@@ -52,6 +53,7 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
            rows[i][2] = cars_list.get(i).getFuel();
            rows[i][3] = cars_list.get(i).getColor();
            rows[i][4] = cars_list.get(i).getplateNum_();
+           rows[i][5] = cars_list.get(i).getPrice();
        }
        DefaultTableModel model = new DefaultTableModel(rows,columnsName);
        jTable_Cars_.setModel(model);
@@ -227,12 +229,27 @@ public class Form_CarsListByBrand extends javax.swing.JFrame {
         int index = jTable_Cars_.getSelectedRow();
         String id = jTable_Cars_.getValueAt(index, 0).toString();
         String model = jTable_Cars_.getValueAt(index, 1).toString();
+        String price = jTable_Cars_.getValueAt(index, 5).toString();
+        
+        Home.displayCarInfo(id, model, price);
+        
+            this.dispose();
+// Ensure a row is selected
+//if (index != -1) {
+//    // Retrieve car details from the selected row
+//    String id = jTable_Cars_.getValueAt(index, 0).toString();
+//    String model = jTable_Cars_.getValueAt(index, 1).toString();
+//
+//    // Display the car information in the "book a car" tab of Home
+//    Home.displayCarInfo(id, model);
+//
+//    // Close this form
+//    this.dispose();
+//} else {
+//    // Show an error message if no row is selected
+//    JOptionPane.showMessageDialog(this, "Please select a car from the table.", "No Selection", JOptionPane.WARNING_MESSAGE);
+//}
 
-        // set the customer id & name in book a car tab in home.java
-        Home.displayCarInfo(id, model);
-
-        // close this form
-        this.dispose();
     }//GEN-LAST:event_jButton_Select_Customer_ActionPerformed
 
     /**

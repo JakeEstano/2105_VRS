@@ -658,6 +658,7 @@ public class Form_Cars extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Add new Car
         // Car info
+        
         int brand = (int)(jSpinner_Id.getValue());
         String model = jTextField_Model.getText();
         String fuel = jComboBox_Fuel.getSelectedItem().toString();
@@ -755,6 +756,30 @@ public class Form_Cars extends javax.swing.JFrame {
     private void jComboBox_brandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_brandActionPerformed
          // TODO add your handling code here:
         // Get the selected brand id
+        
+        // Assuming map is a HashMap<Integer, String> where the Integer is brand_id and String is brand name
+//int brand_id = -1;  // Default value to indicate "not found"
+
+//// Check if there is a valid selection in the ComboBox
+//String selectedBrand = (String) jComboBox_brand.getSelectedItem();
+//if (selectedBrand != null && !selectedBrand.isEmpty()) {
+//    // Iterate through the map to find the corresponding brand_id
+//    for (Map.Entry<Integer, String> entry : map.entrySet()) {
+//        if (entry.getValue().equals(selectedBrand)) {
+//            brand_id = entry.getKey();  // Set the brand_id
+//            break;  // Exit the loop once the brand is found
+//        }
+//    }
+//}
+//
+//// Update the label with the found brand_id
+//if (brand_id != -1) {
+//    jLabel_Brand_Id.setText(String.valueOf(brand_id));  // Display the brand_id in the label
+//} else {
+//    jLabel_Brand_Id.setText("Brand not found");
+//}
+
+        
         int brand_id = 0;
         for (Map.Entry<Integer, String> entry : map.entrySet())
         {

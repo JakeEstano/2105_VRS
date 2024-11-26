@@ -10,39 +10,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author PC
- */
 public class Booking {
-    
-    int id;
-    int car_id;
-    int customer_id;
-    String pickup_city;
-    String pickup_address;
-    String pickup_date;
-    String dropof_city;
-    String dropoff_address;
-    String dropoff_date;
-    int total_price;
 
+    private int id;
+    private int car_id;
+    private int customer_id;
+    private String start_date;
+    private String end_date;
+    private int total_price;
+    private String driver;
+    private String driverName;
+
+    // Constructor
     public Booking() {
     }
 
-    public Booking(int id, int car_id, int customer_id, String pickup_city, String pickup_address, String pickup_date, String dropof_city, String dropoff_address, String dropoff_date, int total_price) {
-        this.id = id;
-        this.car_id = car_id;
-        this.customer_id = customer_id;
-        this.pickup_city = pickup_city;
-        this.pickup_address = pickup_address;
-        this.pickup_date = pickup_date;
-        this.dropof_city = dropof_city;
-        this.dropoff_address = dropoff_address;
-        this.dropoff_date = dropoff_date;
-        this.total_price = total_price;
-    }
-
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -67,52 +50,20 @@ public class Booking {
         this.customer_id = customer_id;
     }
 
-    public String getPickup_city() {
-        return pickup_city;
+    public String getStart_date() {
+        return start_date;
     }
 
-    public void setPickup_city(String pickup_city) {
-        this.pickup_city = pickup_city;
+    public void setStart_date(String start_date) {
+        this.start_date = start_date;
     }
 
-    public String getPickup_address() {
-        return pickup_address;
+    public String getEnd_date() {
+        return end_date;
     }
 
-    public void setPickup_address(String pickup_address) {
-        this.pickup_address = pickup_address;
-    }
-
-    public String getPickup_date() {
-        return pickup_date;
-    }
-
-    public void setPickup_date(String pickup_date) {
-        this.pickup_date = pickup_date;
-    }
-
-    public String getDropof_city() {
-        return dropof_city;
-    }
-
-    public void setDropof_city(String dropof_city) {
-        this.dropof_city = dropof_city;
-    }
-
-    public String getDropoff_address() {
-        return dropoff_address;
-    }
-
-    public void setDropoff_address(String dropoff_address) {
-        this.dropoff_address = dropoff_address;
-    }
-
-    public String getDropoff_date() {
-        return dropoff_date;
-    }
-
-    public void setDropoff_date(String dropoff_date) {
-        this.dropoff_date = dropoff_date;
+    public void setEnd_date(String end_date) {
+        this.end_date = end_date;
     }
 
     public int getTotal_price() {
@@ -122,45 +73,55 @@ public class Booking {
     public void setTotal_price(int total_price) {
         this.total_price = total_price;
     }
-    
-    /*
-    int id;
-    int car_id;
-    int customer_id;
-    String pickup_city;
-    String pickup_address;
-    String pickup_date;
-    String dropof_city;
-    String dropoff_address;
-    String dropoff_date;
-    int total_price;
-    */
-    
-    public void addNewBooking(int id, int carid, int customerid, String pickCity, String pickAddress, String pickDate)
-    {
-    String insertQuery = "INSERT INTO `car_images`(`car_id`, `c_image`) VALUES (?,?)";
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
+
+    // Add New Booking Method
+    public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
+                              String driver, String driverName) {
+        // SQL query to insert booking data
+        String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement ps;
-        
+
         try {
-            
+            // Get database connection
             ps = DB.getConnection().prepareStatement(insertQuery);
-            ps.setInt(1, car_id);
-            ps.setBytes(2, car_image);
-            
-            if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The New Image has been Added" , "Add Image", 1);
-                
+
+            // Set the parameters in the query
+            ps.setInt(1, carId);
+            ps.setInt(2, customerId);
+            ps.setString(3, startDate);      // Booking start date
+            ps.setString(4, endDate);        // Booking end date
+            ps.setInt(5, totalPrice);        // Total rental price
+            ps.setString(6, driver);         // Driver option ("With Driver" or "Self Drive")
+            ps.setString(7, driverName);     // Driver name (if applicable)
+
+            // Execute the query and check the result
+            if (ps.executeUpdate() != 0) {
+                JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
             }
-            else{
-                JOptionPane.showMessageDialog(null , "(Image Not been Added" , "Add Image", 2);
-            }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
         }
-            
-        
     }
-    
-    
 }
+
