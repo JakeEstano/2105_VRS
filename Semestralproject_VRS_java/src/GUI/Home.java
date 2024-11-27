@@ -134,7 +134,7 @@ public class Home extends javax.swing.JFrame {
             jLabel_car_id.setText(id);
             jLabel_car_model.setText(model);
             jLabel_pricePerDay.setText(price);
-            jLabel_totalFee.setText(price);
+            jLabel_totalFee.setText("$" +price);
         }
     
     
@@ -593,6 +593,7 @@ public class Home extends javax.swing.JFrame {
         jLabel_totalFee = new javax.swing.JLabel();
         jButton_BookingLIst_ = new javax.swing.JButton();
         jButton_Edit_Remove_Booking = new javax.swing.JButton();
+        jButton_Edit_refresh_total_Price = new javax.swing.JButton();
         jPanel_select_car = new javax.swing.JPanel();
         jLabel_select_car = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -2248,11 +2249,22 @@ public class Home extends javax.swing.JFrame {
         jButton_Edit_Remove_Booking.setBackground(new java.awt.Color(34, 47, 62));
         jButton_Edit_Remove_Booking.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Edit_Remove_Booking.setForeground(new java.awt.Color(204, 204, 204));
-        jButton_Edit_Remove_Booking.setText("Booking List");
+        jButton_Edit_Remove_Booking.setText("Edit Booking");
         jButton_Edit_Remove_Booking.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Edit_Remove_Booking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_Edit_Remove_BookingActionPerformed(evt);
+            }
+        });
+
+        jButton_Edit_refresh_total_Price.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_Edit_refresh_total_Price.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_Edit_refresh_total_Price.setForeground(new java.awt.Color(204, 204, 204));
+        jButton_Edit_refresh_total_Price.setText("refresh");
+        jButton_Edit_refresh_total_Price.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Edit_refresh_total_Price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Edit_refresh_total_PriceActionPerformed(evt);
             }
         });
 
@@ -2269,11 +2281,6 @@ public class Home extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
                                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
                                 .addComponent(jDateChooser_Pickup_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2284,7 +2291,15 @@ public class Home extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jDateChooser_dropoff, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel_totalFee, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jLabel_totalFee, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jButton_Edit_refresh_total_Price))))
                     .addGroup(jPanel_rent_detailsLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(jButton_Edit_Remove_Booking, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2311,7 +2326,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
                     .addComponent(jLabel_totalFee))
-                .addGap(54, 54, 54)
+                .addGap(9, 9, 9)
+                .addComponent(jButton_Edit_refresh_total_Price)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel_rent_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_BookCar_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3269,7 +3286,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton_withDriverActionPerformed
 
     private void jButton_BookCar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookCar_ActionPerformed
-        // Add new Booking
+//        // Add new Booking
 
  try {
     
@@ -3357,6 +3374,52 @@ public class Home extends javax.swing.JFrame {
         frm_edt_rmv.setVisible(true);
     }//GEN-LAST:event_jButton_Edit_Remove_BookingActionPerformed
 
+    private void jButton_Edit_refresh_total_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Edit_refresh_total_PriceActionPerformed
+        try {
+        // Get the selected pickup and drop-off dates from the date pickers
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        
+        String pickup_date = dateFormat.format(jDateChooser_Pickup_Date.getDate());
+        String dropoff_date = dateFormat.format(jDateChooser_dropoff.getDate());
+
+        Date pickupDate = dateFormat.parse(pickup_date);
+        Date dropoffDate = dateFormat.parse(dropoff_date);
+
+        // Calculate the difference in milliseconds
+        long diffInMillis = dropoffDate.getTime() - pickupDate.getTime();
+        
+        // Convert milliseconds to days
+        long diffInDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
+        
+        // Validate the dates
+        if (diffInDays <= 0) {
+            JOptionPane.showMessageDialog(null, "Invalid rental period. Drop-off date must be after the pick-up date.");
+            return;
+        }
+
+        // Get the car price per day (ensure you already have car details, such as the price)
+        int car_id = Integer.valueOf(jLabel_car_id.getText());  // Example: get car id from a label
+        Car car = new Car();
+        car = car.getCarById(car_id);  // Get the car object by ID
+        
+        int pricePerDay = car.getPrice();  // Get the price per day of the car
+
+        if (pricePerDay <= 0) {
+            JOptionPane.showMessageDialog(null, "Invalid price per day for the selected car.");
+            return;
+        }
+
+        // Calculate the total price for the selected period
+        int totalPrice = (int) diffInDays * pricePerDay;
+
+        // Update the total price label or field
+        jLabel_totalFee.setText("$" + totalPrice);  // Assuming you have a label to show the total price
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+    }
+    }//GEN-LAST:event_jButton_Edit_refresh_total_PriceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3420,6 +3483,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Edit2;
     private javax.swing.JButton jButton_Edit_;
     private javax.swing.JButton jButton_Edit_Remove_Booking;
+    private javax.swing.JButton jButton_Edit_refresh_total_Price;
     private javax.swing.JButton jButton_First;
     private javax.swing.JButton jButton_First1;
     private javax.swing.JButton jButton_First2;

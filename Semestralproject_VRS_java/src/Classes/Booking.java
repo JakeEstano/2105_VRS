@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Classes;
 
 import java.sql.PreparedStatement;
@@ -101,8 +97,12 @@ public class Booking {
     public void setDriverName(String driverName) {
         this.driverName = driverName;
     }
+    
+    
 
-    public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
+    Car car = new Car();
+    boolean isAvailable = car.isCarAvailable(car_id, start_date, end_date);  // Using the modified method
+     public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
                           String driver, String driverName) {
     // SQL query to insert booking data
     String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
@@ -125,6 +125,9 @@ public class Booking {
         // Execute the query and check the result
         if (ps.executeUpdate() != 0) {
             JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
+            
+            // After successful booking, update the car's status to "not available"
+            updateCarStatus(carId, false); 
         } else {
             JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
         }
@@ -134,6 +137,28 @@ public class Booking {
         JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
     }
 }
+
+
+     
+     public void updateCarStatus(int carId, boolean status) {
+    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+    PreparedStatement ps;
+
+    try {
+        ps = DB.getConnection().prepareStatement(updateQuery);
+        ps.setBoolean(1, status); // Set the status (true = available, false = not available)
+        ps.setInt(2, carId); // Set the car ID
+        
+        if (ps.executeUpdate() != 0) {
+            System.out.println("Car status updated successfully.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to update car status.", "Update Status", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
     
     
     public void editBooking(int id, int carId, int customerId, String startDate, String endDate, int totalPrice, 
@@ -172,57 +197,49 @@ public class Booking {
          // function to return a resultset
      
      public ResultSet getData(String query){
-         
-         PreparedStatement ps;
-         ResultSet rs = null;
-         try {
-             
-             
-             ps = DB.getConnection().prepareStatement(query);
-             rs = ps.executeQuery();
-                     } catch (SQLException ex) {
-             Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return rs;
-     }
+        PreparedStatement ps;
+        ResultSet rs = null;
+        try {
+            ps = DB.getConnection().prepareStatement(query);
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
      
     // Function to get all bookings and return an array list
      public ArrayList<Booking> bookingList() {
-    ArrayList<Booking> bookList = new ArrayList<>();
-    ResultSet rs = getData("SELECT * FROM `reservation`"); // Assume this method fetches the data from DB
+        ArrayList<Booking> bookList = new ArrayList<>();
+        ResultSet rs = getData("SELECT * FROM `reservation`");
 
-    try {
-        if (rs == null) {
-            System.out.println("No data returned from the query.");
-            return bookList;
+        try {
+            if (rs == null) {
+                System.out.println("No data returned from the query.");
+                return bookList;
+            }
+
+            while (rs.next()) {
+                int id = rs.getInt("id"); 
+                int car_id = rs.getInt("car_id");
+                int customer_id = rs.getInt("customer_id");
+                String start_date = rs.getString("start_date");
+                String end_date = rs.getString("end_date");
+                int total_price = rs.getInt("total_price");
+                String driver = rs.getString("driver");
+                String driverName = rs.getString("driverName");
+
+                // Create and add booking to the list
+                Booking booking = new Booking(id, car_id, customer_id, start_date, end_date, total_price, driver, driverName);
+                bookList.add(booking);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
+            JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        while (rs.next()) {
-    int id = rs.getInt("id"); // Replace with the actual column name
-    int car_id = rs.getInt("car_id");
-    int customer_id = rs.getInt("customer_id");
-    String start_date = rs.getString("start_date");
-    String end_date = rs.getString("end_date");
-    int total_price = rs.getInt("total_price");
-    String driver = rs.getString("driver");
-    String driverName = rs.getString("driverName");
-
-    // Debugging: Ensure the fetched data is valid
-    System.out.println("Fetched Data: ID=" + id + ", Car ID=" + car_id + ", Customer ID=" + customer_id);
-
-    Booking booking = new Booking(id, car_id, customer_id, start_date, end_date, total_price, driver, driverName);
-    bookList.add(booking);
-}
-    } catch (SQLException ex) {
-        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
-        JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        return bookList;
     }
-
-    // Return the list of bookings
-    System.out.println("Total bookings retrieved: " + bookList.size());
-    return bookList;
-    
-}
 
 
      
@@ -261,6 +278,24 @@ public class Booking {
     public void removeBooking(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    
+
+
+    
+    
+//     public boolean isCarAvailable(int carId) {
+//        Car car = new Car();
+//        ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
+//        try {
+//            if (rs != null && rs.next()) {
+//                return rs.getBoolean("status"); // Return car status (true if available, false if unavailable)
+//            }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        return false; // Default to unavailable if there was an issue fetching the status
+//    }
 }
 
 

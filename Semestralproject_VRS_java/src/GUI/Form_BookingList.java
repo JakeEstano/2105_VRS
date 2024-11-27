@@ -6,6 +6,7 @@ package GUI;
 
 import Classes.Booking;
 import Classes.Car;
+import Classes.Customer;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -62,7 +63,6 @@ public class Form_BookingList extends javax.swing.JFrame {
 //    
     
     
-    
     public void populateJtableWithBooking() {
     // Get the list of bookings
     ArrayList<Classes.Booking> booking_list = booking.bookingList();
@@ -70,7 +70,7 @@ public class Form_BookingList extends javax.swing.JFrame {
     // Debugging: print the number of bookings fetched
     System.out.println("Number of bookings: " + booking_list.size());
 
-    String[] columnsName = {"ID", "Car ID", "Customer ID", "Start Date", "End Date", "Total Price", "Driver", "Driver Name"};
+    String[] columnsName = {"Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name"};
 
     // If there are no bookings, show a message and clear the table
     if (booking_list.isEmpty()) {
@@ -82,32 +82,88 @@ public class Form_BookingList extends javax.swing.JFrame {
     // Prepare the rows for the table
     Object[][] rows = new Object[booking_list.size()][columnsName.length];
     for (int i = 0; i < booking_list.size(); i++) {
-    Classes.Booking booking = booking_list.get(i);
-    rows[i][0] = booking.getId();           // ID
-    rows[i][1] = booking.getCar_id();       // Car ID
-    rows[i][2] = booking.getCustomer_id();  // Customer ID
-    rows[i][3] = booking.getStart_date();   // Start Date
-    rows[i][4] = booking.getEnd_date();     // End Date
-    rows[i][5] = booking.getTotal_price();  // Total Price
-    rows[i][6] = booking.getDriver();       // Driver
-    rows[i][7] = booking.getDriverName();   // Driver Name
-}
-    
-//    for (int i = 0; i < booking_list.size(); i++) {
-//        rows[i][0] = booking_list.get(i).getId();
-//        rows[i][1] = booking_list.get(i).getCar_id();
-//        rows[i][2] = booking_list.get(i).getCustomer_id();
-//        rows[i][3] = booking_list.get(i).getStart_date();
-//        rows[i][4] = booking_list.get(i).getEnd_date();
-//        rows[i][5] = booking_list.get(i).getTotal_price();
-//        rows[i][6] = booking_list.get(i).getDriver();
-//        rows[i][7] = booking_list.get(i).getDriverName();
-//    }
+        Classes.Booking booking = booking_list.get(i);
+        
+        // Get Car Model (assuming you have a method to fetch the car by ID)
+        Car car = new Car();
+        car = car.getCarById(booking.getCar_id());  // Assuming the booking has car_id
+        String carModel = car != null ? car.getModel() : "Unknown";
 
-    // Update the table model
-    DefaultTableModel model = new DefaultTableModel(rows, columnsName);
-    jTable_booking_.setModel(model);
+        // Get Customer Name (assuming you have a method to fetch the customer by ID)
+        Customer customer = new Customer();
+        customer = customer.getCustomerById(booking.getCustomer_id());  // Assuming the booking has customer_id
+        String customerName = customer != null ? customer.getFullname(): "Unknown";
+
+        // Get Driver Name (assuming the driver is a reference or ID that you can fetch)
+        String driverName = booking.getDriverName();
+        if (booking.getDriver().equals("With Driver") && driverName != null) {
+            driverName = driverName; // use driverName if available
+        } else {
+            driverName = "Self Drive";
+        }
+
+        // Populate rows for the table
+        rows[i][0] = carModel;           // Car Model
+        rows[i][1] = customerName;       // Customer Name
+        rows[i][2] = booking.getStart_date();   // Start Date
+        rows[i][3] = booking.getEnd_date();     // End Date
+        rows[i][4] = booking.getTotal_price();  // Total Price
+        rows[i][5] = booking.getDriver();       // Driver (Self Drive / With Driver)
+        rows[i][6] = driverName;   // Driver Name
+    }
+
+    // Set table model with the updated rows
+    jTable_booking_.setModel(new DefaultTableModel(rows, columnsName));
 }
+
+    
+    
+    
+//    public void populateJtableWithBooking() {
+//    // Get the list of bookings
+//    ArrayList<Classes.Booking> booking_list = booking.bookingList();
+//
+//    // Debugging: print the number of bookings fetched
+//    System.out.println("Number of bookings: " + booking_list.size());
+//
+//    String[] columnsName = {"ID", "Car ID", "Customer ID", "Start Date", "End Date", "Total Price", "Driver", "Driver Name"};
+//
+//    // If there are no bookings, show a message and clear the table
+//    if (booking_list.isEmpty()) {
+//        JOptionPane.showMessageDialog(null, "No bookings to display!", "Information", JOptionPane.INFORMATION_MESSAGE);
+//        jTable_booking_.setModel(new DefaultTableModel(new Object[0][columnsName.length], columnsName));
+//        return;
+//    }
+//
+//    // Prepare the rows for the table
+//    Object[][] rows = new Object[booking_list.size()][columnsName.length];
+//    for (int i = 0; i < booking_list.size(); i++) {
+//    Classes.Booking booking = booking_list.get(i);
+//    rows[i][0] = booking.getId();           // ID
+//    rows[i][1] = booking.getCar_id();       // Car ID
+//    rows[i][2] = booking.getCustomer_id();  // Customer ID
+//    rows[i][3] = booking.getStart_date();   // Start Date
+//    rows[i][4] = booking.getEnd_date();     // End Date
+//    rows[i][5] = booking.getTotal_price();  // Total Price
+//    rows[i][6] = booking.getDriver();       // Driver
+//    rows[i][7] = booking.getDriverName();   // Driver Name
+//}
+//    
+////    for (int i = 0; i < booking_list.size(); i++) {
+////        rows[i][0] = booking_list.get(i).getId();
+////        rows[i][1] = booking_list.get(i).getCar_id();
+////        rows[i][2] = booking_list.get(i).getCustomer_id();
+////        rows[i][3] = booking_list.get(i).getStart_date();
+////        rows[i][4] = booking_list.get(i).getEnd_date();
+////        rows[i][5] = booking_list.get(i).getTotal_price();
+////        rows[i][6] = booking_list.get(i).getDriver();
+////        rows[i][7] = booking_list.get(i).getDriverName();
+////    }
+//
+//    // Update the table model
+//    DefaultTableModel model = new DefaultTableModel(rows, columnsName);
+//    jTable_booking_.setModel(model);
+//}
 
     /**
      * This method is called from within the constructor to initialize the form.

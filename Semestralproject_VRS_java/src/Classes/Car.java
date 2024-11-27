@@ -33,11 +33,12 @@ public class Car {
     private String bluetooth;
     private String elec_window;
     private String gps;
+    private boolean status;
 
     public Car() {
     }
 
-    public Car(int id, int brand, String model, String fuel, String color, String plateNum, int passengers, String gearbox, int price, String air_cond, String airbag, String sunroof, String heated_seats, String nav_sys, String bluetooth, String elec_window, String gps) {
+    public Car(int id, int brand, String model, String fuel, String color, String plateNum, int passengers, String gearbox, int price, String air_cond, String airbag, String sunroof, String heated_seats, String nav_sys, String bluetooth, String elec_window, String gps, boolean status) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -55,8 +56,19 @@ public class Car {
         this.bluetooth = bluetooth;
         this.elec_window = elec_window;
         this.gps = gps;
+        this.status = status; // Initialize status
     }
 
+    // Getter and Setter for 'status'
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    // Other getters and setters...
     public int getId() {
         return id;
     }
@@ -193,51 +205,104 @@ public class Car {
         this.gps = gps;
     }
     
+         // START Class for image
+        public class CarImage{  
+        private int img_id;
+        private int car_id;
+        private byte[] car_img; // Store binary image data
+         
+        public CarImage(){}   
+
+        public CarImage(int img_id, int car_id, byte[] car_img){
+            this.img_id = img_id;
+            this.car_id = car_id;
+            this.car_img = car_img;
+        }
+        
+            // Getters and setters
+            public int getImg_id() 
+                {
+                return img_id;
+                }
+                public void setImg_id(int img_id) 
+                {
+                this.img_id = img_id;
+                }
+                public int getCar_id() 
+                {
+                return car_id;
+                }
+
+            public void setCar_id(int car_id) 
+                {
+                this.car_id = car_id;
+                }
+
+            public byte[] getCar_img() 
+            {
+                return car_img;
+            }
+
+            public void setCar_img(byte[] car_img) 
+            {
+                this.car_img = car_img;
+            }
+    }
+    // END Class for image
+    
+    
+    
          
      // function to return a restulset
-     
      public ResultSet getData(String query){
-         
-         PreparedStatement ps;
-         ResultSet rs = null;
-         try {
-             
-             
-             ps = DB.getConnection().prepareStatement(query);
-             rs = ps.executeQuery();
-                     } catch (SQLException ex) {
-             Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return rs;
-     }
+        PreparedStatement ps;
+        ResultSet rs = null;
+        try {
+            ps = DB.getConnection().prepareStatement(query);
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(Brand.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
      
     
     
          //function to get all cars, return in array an list
-        public ArrayList<Car> carsList()
-        {
-         ArrayList<Car> carsList = new ArrayList<>();
-         
-         ResultSet rs = getData("SELECT * FROM `cars`");
-         
-         try {
-             while(rs.next()){
-                 
-                 Car car = new Car(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),
-                                    rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
-                                    rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
-                                    rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
-                                    rs.getString(17)
-                 );
-                 
-                 carsList.add(car);
-                 
-             }
-         } catch (SQLException ex) {
-             Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
-         }
-         return carsList;
-     }
+        public ArrayList<Car> carsList() {
+        ArrayList<Car> carsList = new ArrayList<>();
+        ResultSet rs = getData("SELECT * FROM `cars`");
+
+        try {
+            while (rs.next()) {
+                Car car = new Car(
+                    rs.getInt(1), // id
+                    rs.getInt(2), // brand
+                    rs.getString(3), // model
+                    rs.getString(4), // fuel
+                    rs.getString(5), // color
+                    rs.getString(6), // plateNum
+                    rs.getInt(7), // passengers
+                    rs.getString(8), // gearbox
+                    rs.getInt(9), // price
+                    rs.getString(10), // air_cond
+                    rs.getString(11), // airbag
+                    rs.getString(12), // sunroof
+                    rs.getString(13), // heated_seats
+                    rs.getString(14), // nav_sys
+                    rs.getString(15), // bluetooth
+                    rs.getString(16), // elec_window
+                    rs.getString(17), // gps
+                    rs.getBoolean(18) // status (this column should be present in the database)
+                );
+
+                carsList.add(car);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return carsList;
+    }
     
     
     
@@ -377,52 +442,6 @@ public class Car {
         
     }
      
-     // START Class for image
-     
-    public class CarImage{  
-        private int img_id;
-        private int car_id;
-        private byte[] car_img; // Store binary image data
-         
-        public CarImage(){}   
-
-        public CarImage(int img_id, int car_id, byte[] car_img){
-            this.img_id = img_id;
-            this.car_id = car_id;
-            this.car_img = car_img;
-        }
-        
-            // Getters and setters
-            public int getImg_id() 
-                {
-                return img_id;
-                }
-                public void setImg_id(int img_id) 
-                {
-                this.img_id = img_id;
-                }
-                public int getCar_id() 
-                {
-                return car_id;
-                }
-
-            public void setCar_id(int car_id) 
-                {
-                this.car_id = car_id;
-                }
-
-            public byte[] getCar_img() 
-            {
-                return car_img;
-            }
-
-            public void setCar_img(byte[] car_img) 
-            {
-                this.car_img = car_img;
-            }
-    }
- // END Class for image
-     
       //function to get car images
             public ArrayList<CarImage> carImagesList(int car_id) 
                 {
@@ -472,7 +491,7 @@ public class Car {
                                     rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
                                     rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
                                     rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
-                                    rs.getString(17));
+                                    rs.getString(17), rs.getBoolean(18));
              }
              else
              {
@@ -518,8 +537,8 @@ public class Car {
                                     rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
                                     rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
                                     rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
-                                    rs.getString(17)
-            );
+                                    rs.getString(17), rs.getBoolean(18)
+                                    );
                  
                  carsList.add(car);
                  
@@ -529,4 +548,144 @@ public class Car {
          }
          return carsList;
      }
+        public boolean isCarAvailable(int carId, String startDate, String endDate) {
+        Car car = new Car();
+        ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
+
+        try {
+        // Check if the car status is available (status = true)
+        if (rs != null  && rs.next()) {
+            boolean isAvailable = rs.getBoolean("status");
+            if (!isAvailable) {
+                return false; // Car is not available if status is false
+            }
+        }
+
+        // Now check for any overlapping bookings
+        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
+
+        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
+        ps.setInt(1, carId); // Set car ID
+        ps.setString(2, startDate); // Start date of the new booking
+        ps.setString(3, endDate); // End date of the new booking
+        ps.setString(4, startDate); // Start date of the new booking
+        ps.setString(5, endDate); // End date of the new booking
+        ps.setString(6, startDate); // Start date of the new booking
+        ps.setString(7, endDate); // End date of the new booking
+
+        ResultSet bookingRS = ps.executeQuery();
+
+        // Check if any overlapping booking is found
+        return !bookingRS.next(); // Return true if no overlapping booking found, false otherwise
+
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+    return false; // Default to unavailable if there was an issue fetching the status
+}
+
+        
+        
+        
+        
+//       public boolean isCarAvailable(int carId, String startDate, String endDate) {
+//    Car car = new Car();
+//    ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
+//
+//    try {
+//        // Check if the car status is available (status = true)
+//        if (rs != null && rs.next()) {
+//            boolean isAvailable = rs.getBoolean("status");
+//            if (!isAvailable) {
+//                return false;  // Car is not available if status is false
+//            }
+//        }
+//
+//        // Now check for any overlapping bookings
+//        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
+//
+//        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
+//        ps.setInt(1, carId); // Set car ID
+//        ps.setString(2, startDate); // Start date of the new booking
+//        ps.setString(3, endDate); // End date of the new booking
+//        ps.setString(4, startDate); // Start date of the new booking
+//        ps.setString(5, endDate); // End date of the new booking
+//        ps.setString(6, startDate); // Start date of the new booking
+//        ps.setString(7, endDate); // End date of the new booking
+//
+//        ResultSet bookingRS = ps.executeQuery();
+//        if (bookingRS.next()) {
+//            // If any overlapping booking is found, car is not available
+//            return false;
+//        }
+//
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//
+//    return true;  // Car is available if no overlap and the car is marked as available
+//}
+        
+        
+//                public boolean isCarAvailable(int carId, String startDate, String endDate) {
+//                Car car = new Car();
+//                ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
+//    
+//    try {
+//        // Check if the car status is available (status = true)
+//        if (rs != null && rs.next()) {
+//            boolean isAvailable = rs.getBoolean("status");
+//            if (!isAvailable) {
+//                return false;  // Car is not available if status is false
+//            }
+//        }
+//        
+//        // Now check for any overlapping bookings
+//        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
+//        
+//        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
+//        ps.setInt(1, carId); // Set car ID
+//        ps.setString(2, startDate); // Start date of the new booking
+//        ps.setString(3, endDate); // End date of the new booking
+//        ps.setString(4, startDate); // Start date of the new booking
+//        ps.setString(5, endDate); // End date of the new booking
+//        ps.setString(6, startDate); // Start date of the new booking
+//        ps.setString(7, endDate); // End date of the new booking
+//
+//        ResultSet bookingRS = ps.executeQuery();
+//        if (bookingRS.next()) {
+//            // If any overlapping booking is found, car is not available
+//            return false;
+//        }
+//        
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//    
+//    return true;  // Car is available if no overlap and the car is marked as available
+//}
+    
+    public void updateCarStatus(int carId, boolean newStatus) {
+    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+    PreparedStatement ps;
+
+    try {
+        ps = DB.getConnection().prepareStatement(updateQuery);
+        ps.setBoolean(1, newStatus); // Set the new status
+        ps.setInt(2, carId); // Set the car ID
+        
+        if (ps.executeUpdate() != 0) {
+            System.out.println("Car status updated successfully.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to update car status.", "Update Status", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
+        
+        
+        
 }
