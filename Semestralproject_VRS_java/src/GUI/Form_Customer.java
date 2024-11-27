@@ -157,11 +157,11 @@ public class Form_Customer extends javax.swing.JFrame {
 
         jLabel_brands_logo.setBackground(java.awt.Color.black);
 
+        jLabel_close1.setBackground(new java.awt.Color(255, 212, 60));
+        jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
-        jLabel_close1.setBackground(new java.awt.Color(255, 212, 60));
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel_close1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_close1MouseClicked(evt);
@@ -226,90 +226,90 @@ public class Form_Customer extends javax.swing.JFrame {
 
         jTextField_fullname.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jButton_Previous.setText("<");
         jButton_Previous.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Previous.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton_Previous.setText("<");
+        jButton_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Previous.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_PreviousActionPerformed(evt);
             }
         });
 
-        jButton_First.setText("<<");
         jButton_First.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_First.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_First.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton_First.setText("<<");
+        jButton_First.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_First.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_FirstActionPerformed(evt);
             }
         });
 
-        jButton_Next.setText(">");
         jButton_Next.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Next.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton_Next.setText(">");
+        jButton_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_NextActionPerformed(evt);
             }
         });
 
-        jButton_Remove.setText("Remove");
         jButton_Remove.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Remove.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton_Remove.setText("Remove");
+        jButton_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Remove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_RemoveActionPerformed(evt);
             }
         });
 
-        jButton_Edit.setText("Edit");
         jButton_Edit.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Edit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton_Edit.setText("Edit");
+        jButton_Edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_EditActionPerformed(evt);
             }
         });
 
-        jButton_Add.setText("Add");
         jButton_Add.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton_Add.setText("Add");
+        jButton_Add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_AddActionPerformed(evt);
             }
         });
 
-        jButton_Last.setText(">>");
         jButton_Last.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Last.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Last.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton_Last.setText(">>");
+        jButton_Last.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Last.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_LastActionPerformed(evt);
             }
         });
 
-        jButton_Refresh.setText("Refresh");
         jButton_Refresh.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Refresh.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_Refresh.setText("Refresh");
+        jButton_Refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_RefreshActionPerformed(evt);
             }
         });
 
-        jButton_Clear.setText("Clear");
         jButton_Clear.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Clear.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_Clear.setText("Clear");
+        jButton_Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_ClearActionPerformed(evt);
@@ -383,8 +383,7 @@ public class Form_Customer extends javax.swing.JFrame {
                                 .addGap(13, 13, 13)
                                 .addComponent(jButton_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16)))
+                                .addComponent(jButton_Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(43, 43, 43)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
@@ -411,9 +410,9 @@ public class Form_Customer extends javax.swing.JFrame {
                             .addComponent(jDateChooser_birthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField_email)

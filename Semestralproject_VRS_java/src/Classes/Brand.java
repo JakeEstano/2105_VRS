@@ -79,7 +79,8 @@ public class Brand {
         } 
         catch (Exception ex) 
         {
-            JOptionPane.showMessageDialog(null , "Use a smaller size image" , "Brand Logo", 2);
+            JOptionPane.showMessageDialog(null , "Use a smaller size image" +ex.getMessage(), "Brand Logo", 2);
+            // Logger .getLogger(Brand.class.getName()).Log(Level.SEVERE,  nul, ex);
                     
         } 
         

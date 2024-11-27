@@ -97,9 +97,16 @@ public class Form_Booking_Edit_Remove extends javax.swing.JFrame {
             /*
             id, car_id, customer_id, start_date, end_date, total_price, driver, driverName
             */
-            //jTextField_customer.setText(name);
+            jTextField_customer.setText(new Customer().getCustomerById(Integer.valueOf(customer_id)).getFullname());
             jLabel_booking_id.setText(car_id);
             jLabel_car_id.setText(car_id);
+            
+            jLabel_car_model.setText(new Car().getCarById(Integer.valueOf(car_id)).getModel());
+            jLabel_pricePerDay.setText(String.valueOf(new Car().getCarById(Integer.valueOf(car_id)).getPrice()));
+            jLabel_Brand_Id.setText(String.valueOf(new Car().getCarById(Integer.valueOf(car_id)).getBrand()));
+            
+            jComboBox_Brands_.setSelectedItem(new Brand().getBrandById(new Car().getCarById(Integer.valueOf(car_id)).getBrand()));
+            
             jLabel_customer_id.setText(customer_id);
             jLabel_totalFee.setText(total_price);
             
@@ -616,22 +623,20 @@ public class Form_Booking_Edit_Remove extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addComponent(jButton_BookingLIst_, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel_booking_id)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel34)
-                        .addComponent(jLabel_booking_id))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                        .addComponent(jButton_BookingLIst_)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(jButton_BookingLIst_)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel_booking_id))
                 .addContainerGap())
         );
 
@@ -693,7 +698,12 @@ public class Form_Booking_Edit_Remove extends javax.swing.JFrame {
         // remove / cancel booking
         // booking id 
         int id = Integer.valueOf(jLabel_booking_id.getText());
-        booking.removeBooking(id);
+        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to delete this booking?" , "Confirm" , JOptionPane.YES_NO_OPTION);
+        
+        if (confirm == JOptionPane.YES_OPTION)
+        {
+           booking.removeBooking(id);
+        }
     }//GEN-LAST:event_jButton_RemoveBooking_ActionPerformed
 
     private void jButton_BookingLIst_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookingLIst_ActionPerformed
@@ -882,7 +892,7 @@ public class Form_Booking_Edit_Remove extends javax.swing.JFrame {
     private javax.swing.JButton jButton_RemoveBooking_;
     private javax.swing.JButton jButton_Select_Customer;
     private javax.swing.JButton jButton_select_car_;
-    private javax.swing.JComboBox<String> jComboBox_Brands_;
+    public static javax.swing.JComboBox<String> jComboBox_Brands_;
     private javax.swing.JComboBox<String> jComboBox_DriverList;
     public static com.toedter.calendar.JDateChooser jDateChooser_End_Date;
     public static com.toedter.calendar.JDateChooser jDateChooser_Start_Date;

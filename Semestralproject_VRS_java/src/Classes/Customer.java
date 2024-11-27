@@ -185,6 +185,21 @@ public class Customer {
          }
          return rs;
      }
+
+           // function to get customer ID
+     
+     public Customer getCustomerById(int customer_id){
+         String query = "SELECT * FROM `customers` WHERE `id` = "+ customer_id ;
+         ResultSet rs = getData(query);
+         Customer customer = null;
+         try {
+             rs.next();
+             customer = new Customer(rs.getInt(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+         } catch (SQLException ex) {
+             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return customer;
+     }
     
     
     //function to get all customers and return an array list
