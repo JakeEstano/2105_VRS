@@ -633,7 +633,10 @@ public class Car {
 //    return false;
 //}
 
-    
+
+
+
+        //okay na ito!
     public void updateCarStatus(int carId, boolean isAvailable) {
     String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
     try (PreparedStatement ps = DB.getConnection().prepareStatement(updateQuery)) {

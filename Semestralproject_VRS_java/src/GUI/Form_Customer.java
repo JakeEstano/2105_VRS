@@ -150,10 +150,10 @@ public class Form_Customer extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Customers");
         jLabel4.setBackground(new java.awt.Color(255, 212, 60));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Customers");
 
         jLabel_brands_logo.setBackground(java.awt.Color.black);
 
@@ -210,17 +210,20 @@ public class Form_Customer extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable_Customers_MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTable_Customers_MouseEntered(evt);
+            }
         });
         jScrollPane1.setViewportView(jTable_Customers_);
 
-        jLabel1.setText("ID:");
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("ID:");
 
-        jLabel2.setText("Name:");
         jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setText("Name:");
 
-        jLabel3.setText("Date of Birth:");
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setText("Date of Birth:");
 
         jSpinner_id.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
@@ -316,14 +319,14 @@ public class Form_Customer extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Email:");
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel5.setText("Email:");
 
-        jLabel6.setText("Phone:");
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel6.setText("Phone:");
 
-        jLabel7.setText("Address:");
         jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel7.setText("Address:");
 
         jTextField_phone.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
@@ -485,6 +488,7 @@ public class Form_Customer extends javax.swing.JFrame {
         String email = jTable_Customers_.getValueAt(index, 4).toString();
         String address = jTable_Customers_.getValueAt(index, 5).toString();
         
+        
         jSpinner_id.setValue(id);
         jTextField_fullname.setText(fullname);
         jTextField_phone.setText(phone);
@@ -613,6 +617,10 @@ public class Form_Customer extends javax.swing.JFrame {
 //        jLabel_logo.setIcon(null);
 //        jLabel_imagePath.setText("");
     }//GEN-LAST:event_jButton_ClearActionPerformed
+
+    private void jTable_Customers_MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_Customers_MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable_Customers_MouseEntered
 
     /**
      * @param args the command line arguments

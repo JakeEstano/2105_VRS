@@ -27,6 +27,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     
     Classes.Booking booking = new Classes.Booking();
     ArrayList<Classes.Booking> book_list = booking.bookingList();
+    Car car = new Car();
     public Form_ReturnCars() {
         initComponents();
         populateJtableWithBooking();
@@ -42,7 +43,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     // Debugging: print the number of bookings fetched
     System.out.println("Number of bookings: " + booking_list.size());
 
-    String[] columnsName = {"Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name", "Plate Number"};
+    String[] columnsName = {"booking id", "Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name", "Plate Number"};
 
     // If there are no bookings, show a message and clear the table
     if (booking_list.isEmpty()) {
@@ -57,10 +58,11 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         Classes.Booking booking = booking_list.get(i);
         
         // Get Car Model (assuming you have a method to fetch the car by ID)
-        Car car = new Car();
+        
         car = car.getCarById(booking.getCar_id());  // Assuming the booking has car_id
         String carModel = car != null ? car.getModel() : "Unknown";
         String plateNumber = car != null ? car.getplateNum_() : "Unknown";
+        
         // Get Customer Name (assuming you have a method to fetch the customer by ID)
         Customer customer = new Customer();
         customer = customer.getCustomerById(booking.getCustomer_id());  // Assuming the booking has customer_id
@@ -75,19 +77,29 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         }
 
         // Populate rows for the table
-        rows[i][0] = carModel;           // Car Model
-        rows[i][1] = customerName;       // Customer Name
-        rows[i][2] = booking.getStart_date();   // Start Date
-        rows[i][3] = booking.getEnd_date();     // End Date
-        rows[i][4] = booking.getTotal_price();  // Total Price
-        rows[i][5] = booking.getDriver();       // Driver (Self Drive / With Driver)
-        rows[i][6] = driverName;   // Driver Name
-        rows[i][7] = plateNumber;
+        rows[i][0] = booking.getId();
+        rows[i][1] = carModel;           // Car Model
+        rows[i][2] = customerName;       // Customer Name
+        rows[i][3] = booking.getStart_date();   // Start Date
+        rows[i][4] = booking.getEnd_date();     // End Date
+        rows[i][5] = booking.getTotal_price();  // Total Price
+        rows[i][6] = booking.getDriver();       // Driver (Self Drive / With Driver)
+        rows[i][7] = driverName;   // Driver Name
+        rows[i][8] = plateNumber;
     }
-
     // Set table model with the updated rows
     jTable_unavailable_vehicle_.setModel(new DefaultTableModel(rows, columnsName));
-}
+}   
+    
+    // Method in Form_ReturnCars class that updates car status after return
+
+ 
+    
+//    private void updateCarStatus(int carId) {
+//        Car car = new Car();
+//        car.updateCarStatus(carId, true);  // Set status to available (true)
+//        JOptionPane.showMessageDialog(null, "Car status has been updated to available.", "Car Returned", JOptionPane.INFORMATION_MESSAGE);
+//    }
 
 
     /**
@@ -116,7 +128,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         jButton_First = new javax.swing.JButton();
         jButton_Next = new javax.swing.JButton();
         jButton_Last = new javax.swing.JButton();
-        jButton_confirm = new javax.swing.JButton();
+        jButton_confirm_returnment = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jDateChooser_retrunmentDate = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -252,14 +264,14 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             }
         });
 
-        jButton_confirm.setBackground(new java.awt.Color(0, 0, 0));
-        jButton_confirm.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton_confirm.setForeground(new java.awt.Color(255, 255, 255));
-        jButton_confirm.setText("Confirm Returnment");
-        jButton_confirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_confirm.addActionListener(new java.awt.event.ActionListener() {
+        jButton_confirm_returnment.setBackground(new java.awt.Color(0, 0, 0));
+        jButton_confirm_returnment.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_confirm_returnment.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_confirm_returnment.setText("Confirm Returnment");
+        jButton_confirm_returnment.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_confirm_returnment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_confirmActionPerformed(evt);
+                jButton_confirm_returnmentActionPerformed(evt);
             }
         });
 
@@ -299,8 +311,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addComponent(jButton_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -348,7 +359,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                     .addComponent(jButton_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_First, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(124, 124, 124))
         );
 
@@ -394,13 +405,16 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         int index = jTable_unavailable_vehicle_.getSelectedRow();
         
         String PlateNumber = jTable_unavailable_vehicle_.getValueAt(index, 7).toString();
-
+        
+        
+        int id = Integer.valueOf(jTable_unavailable_vehicle_.getValueAt(index, 0).toString());
+        jSpinner_carId.setValue(id);
         
         jTextField_plateNumber.setText(PlateNumber);
         
         Date bdate;  
         try {
-            bdate = new SimpleDateFormat("yyyy-MM-dd").parse(jTable_unavailable_vehicle_.getValueAt(index, 3).toString());
+            bdate = new SimpleDateFormat("yyyy-MM-dd").parse(jTable_unavailable_vehicle_.getValueAt(index, 4).toString());
             jDateChooser_retrunmentDate.setDate(bdate);
         } catch (ParseException ex) {
             java.util.logging.Logger.getLogger(Form_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -424,10 +438,37 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     
     }//GEN-LAST:event_jButton_LastActionPerformed
 
-    private void jButton_confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_confirmActionPerformed
+    private void jButton_confirm_returnmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_confirm_returnmentActionPerformed
+        
+        String plateNumber = jTextField_plateNumber.getText().trim();
+        Date returnDate = jDateChooser_retrunmentDate.getDate();
 
+        if (plateNumber.isEmpty() || returnDate == null) {
+            JOptionPane.showMessageDialog(null, "Please fill in all the required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    }//GEN-LAST:event_jButton_confirmActionPerformed
+        int selectedRow = jTable_unavailable_vehicle_.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Please select a car to return!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Get car ID from selected row (assume it's in the first column)
+        int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
+
+        // Update the car's status to available
+        car.updateCarStatus(carId, true);
+
+        // Optional: Display a report
+        String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
+        jTextArea_Vehicle_report.setText(vehicleReport);
+
+        // Clear form fields
+        jTextField_plateNumber.setText("");
+        jDateChooser_retrunmentDate.setDate(null);
+        populateJtableWithBooking();
+    }//GEN-LAST:event_jButton_confirm_returnmentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -469,7 +510,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Last;
     private javax.swing.JButton jButton_Next;
     private javax.swing.JButton jButton_Previous;
-    private javax.swing.JButton jButton_confirm;
+    private javax.swing.JButton jButton_confirm_returnment;
     private com.toedter.calendar.JDateChooser jDateChooser_retrunmentDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
