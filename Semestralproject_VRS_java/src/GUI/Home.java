@@ -465,7 +465,8 @@ public class Home extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel_cars_logo2 = new javax.swing.JLabel();
         jLabel_customers_count = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable_Cars = new javax.swing.JTable();
         vehiclePanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jSpinner_Id = new javax.swing.JSpinner();
@@ -1040,8 +1041,28 @@ public class Home extends javax.swing.JFrame {
 
         homePanel.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 250, 170));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/finalhomepagebg.png"))); // NOI18N
-        homePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 590));
+        jTable_Cars.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable_Cars.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jTable_Cars.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTable_Cars.setSelectionBackground(new java.awt.Color(102, 102, 102));
+        jTable_Cars.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable_CarsMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(jTable_Cars);
+
+        homePanel.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 1030, 530));
 
         jPanel2.add(homePanel, "card2");
 
@@ -1388,7 +1409,7 @@ public class Home extends javax.swing.JFrame {
                                         .addComponent(jComboBox_Fuel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jComboBox_Color, 0, 180, Short.MAX_VALUE))))
                             .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 353, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, Short.MAX_VALUE)
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
                             .addComponent(jLabel17)
@@ -1658,7 +1679,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(brandPanelLayout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jLabel_imagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
                 .addGroup(brandPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, brandPanelLayout.createSequentialGroup()
                         .addComponent(jButton_First, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1855,7 +1876,7 @@ public class Home extends javax.swing.JFrame {
         locationPanelLayout.setHorizontalGroup(
             locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locationPanelLayout.createSequentialGroup()
-                .addContainerGap(527, Short.MAX_VALUE)
+                .addContainerGap(687, Short.MAX_VALUE)
                 .addGroup(locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locationPanelLayout.createSequentialGroup()
@@ -1895,7 +1916,7 @@ public class Home extends javax.swing.JFrame {
                                     .addComponent(jSpinner_id1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox_City, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(781, Short.MAX_VALUE)))
+                    .addContainerGap(941, Short.MAX_VALUE)))
         );
         locationPanelLayout.setVerticalGroup(
             locationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2118,15 +2139,15 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jTextField_fullname)
                     .addComponent(jTextField_phone)
                     .addComponent(jTextField_email)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                     .addGroup(customerPanelLayout.createSequentialGroup()
                         .addComponent(jSpinner_id2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 140, Short.MAX_VALUE))
+                        .addGap(0, 300, Short.MAX_VALUE))
                     .addComponent(jDateChooser_birthDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(752, 752, 752))
             .addGroup(customerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(customerPanelLayout.createSequentialGroup()
-                    .addContainerGap(558, Short.MAX_VALUE)
+                    .addContainerGap(718, Short.MAX_VALUE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(78, 78, 78)))
         );
@@ -2572,7 +2593,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         bookCarPanelLayout.setVerticalGroup(
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3298,8 +3319,13 @@ public class Home extends javax.swing.JFrame {
 
     if (jRadioButton_withDriver.isSelected()) {
         driver = "With Driver";
+        int addFee = 2500;      
+       totalPrice += addFee;
         driverName = jComboBox_DriverList.getSelectedItem().toString();
-
+            JOptionPane.showMessageDialog(null, "An additional fee of 2500 will be charged for renting with a driver.", 
+                                  "Driver Fee", JOptionPane.INFORMATION_MESSAGE);
+        
+        
         // Check if the driver name is valid
         Form_Drivers driverForm = new Form_Drivers();
         ArrayList<Classes.Drivers> driverList = driverForm.driver_list;
@@ -3429,6 +3455,19 @@ if (!isAvailable) {
 
         }
     }//GEN-LAST:event_jButton_Search_ActionPerformed
+
+    private void jTable_CarsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_CarsMouseClicked
+        // get the selected car image
+
+        //         int index = jTable_Cars.getSelectedRow();
+        //         int id = Integer.valueOf(jTable_Cars.getValueAt(index, 0).toString());
+        //         ArrayList<Car.CarImage> images = car.carImagesList(id);
+
+        int index = jTable_Cars.getSelectedRow();
+        int id = Integer.valueOf(jTable_Cars.getValueAt(index,0).toString());
+        ArrayList<Car.CarImage> images = car.carImagesList(id);
+        //   displayByteImage(jLabel_Car_Image.getWidth(), jLabel_Car_Image.getHeight(), images.get(id).getCar_img(), jLabel_Car_Image);
+    }//GEN-LAST:event_jTable_CarsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -3567,7 +3606,6 @@ if (!isAvailable) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_Brand_Id;
@@ -3619,6 +3657,7 @@ if (!isAvailable) {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSpinner jSpinner_Id;
     private javax.swing.JSpinner jSpinner_Passengers;
     private javax.swing.JSpinner jSpinner_Price;
@@ -3626,6 +3665,7 @@ if (!isAvailable) {
     private javax.swing.JSpinner jSpinner_id1;
     private javax.swing.JSpinner jSpinner_id2;
     private javax.swing.JTable jTable_Brands;
+    private javax.swing.JTable jTable_Cars;
     private javax.swing.JTable jTable_Customers_;
     private javax.swing.JTable jTable_Locations;
     private javax.swing.JTextArea jTextArea_Address;

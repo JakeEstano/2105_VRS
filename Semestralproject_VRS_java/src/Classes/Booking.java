@@ -122,8 +122,8 @@ public class Booking {
             JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
 
             // Update the label for available cars
-//            Car car = new Car();
-//            car.updateCarStatus(carId, false);
+            Car car = new Car();
+            car.updateCarStatus(carId, false);
         } else {
             JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
         }
