@@ -700,10 +700,10 @@ public class Form_Booking_Edit_Remove extends javax.swing.JFrame {
         int id = Integer.valueOf(jLabel_booking_id.getText());
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to delete this booking?" , "Confirm" , JOptionPane.YES_NO_OPTION);
         
-        if (confirm == JOptionPane.YES_OPTION)
-        {
-           booking.removeBooking(id);
-        }
+//        if (confirm == JOptionPane.YES_OPTION)
+//        {
+//           booking.removeBooking(id);
+//        }
     }//GEN-LAST:event_jButton_RemoveBooking_ActionPerformed
 
     private void jButton_BookingLIst_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookingLIst_ActionPerformed

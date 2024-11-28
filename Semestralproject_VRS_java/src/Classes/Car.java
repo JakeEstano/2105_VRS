@@ -303,49 +303,87 @@ public class Car {
         }
         return carsList;
     }
-    
-    
-    
-    // function to add new car    
-    public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
-                        String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,
-                        String _heated_seats, String _nav_sys, String _bluetooth, String _elec_window, String _gps){
+  
+        public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
+                    String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,
+                    String _heated_seats, String _nav_sys, String _bluetooth, String _elec_window, String _gps){
+    String insertQuery = "INSERT INTO `cars`(`brand`, `model`, `fuel`, `color`, `plateNum`, `passengers`, `gearbox`, `price`, `air_conditioning`, `air_bag`, `sunroof`, `heated_seats`, `nav_system`, `bluetooth`, `electric_windows`, `gps`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    PreparedStatement ps;
+   
+    try {
+        ps = DB.getConnection().prepareStatement(insertQuery);
+        ps.setInt(1, _brand);  // Ensure that _brand contains the correct ID value for the brand
+        ps.setString(2, _model);
+        ps.setString(3, _fuel);
+        ps.setString(4, _color);
+        ps.setString(5, _plateNum);
+        ps.setInt(6, _passengers);
+        ps.setString(7, _gearbox);
+        ps.setInt(8, _price);
+        ps.setString(9, _air_cond);
+        ps.setString(10, _airbag);
+        ps.setString(11, _sunroof);
+        ps.setString(12, _heated_seats);
+        ps.setString(13, _nav_sys);
+        ps.setString(14, _bluetooth);
+        ps.setString(15, _elec_window);
+        ps.setString(16, _gps);
         
-        String insertQuery = "INSERT INTO `cars`(`brand`, `model`, `fuel`, `color`, `plateNum`, `passengers`, `gearbox`, `price`, `air_conditioning`, `air_bag`, `sunroof`, `heated_seats`, `nav_system`, `bluetooth`, `electric_windows`, `gps`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        PreparedStatement ps;
-       
-        try {
-            
-            ps = DB.getConnection().prepareStatement(insertQuery);
-            ps.setInt(1, _brand);
-            ps.setString(2, _model);
-            ps.setString(3, _fuel);
-            ps.setString(4, _color);
-            ps.setString(5, _plateNum);
-            ps.setInt(6, _passengers);
-            ps.setString(7, _gearbox);
-            ps.setInt(8, _price);
-            ps.setString(9, _air_cond);
-            ps.setString(10, _airbag);
-            ps.setString(11, _sunroof);
-            ps.setString(12, _heated_seats);
-            ps.setString(13, _nav_sys);
-            ps.setString(14, _bluetooth);
-            ps.setString(15, _elec_window);
-            ps.setString(16, _gps);
-            
-            if(ps.executeUpdate()!=0){
-                JOptionPane.showMessageDialog(null , "The new Vehicle has been Added" , "Add Vehicle", 1);
-                
-            }
-            else{
-                JOptionPane.showMessageDialog(null , "Vehicle Not been Added" , "Add Vehicle", 2);
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+        if (ps.executeUpdate() != 0) {
+            JOptionPane.showMessageDialog(null , "The new Vehicle has been Added" , "Add Vehicle", 1);
+        } else {
+            JOptionPane.showMessageDialog(null , "Vehicle Not been Added" , "Add Vehicle", 2);
         }
+    } catch (SQLException ex) {
+        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
     }
+}
+
+  
+        
+        
+        
+    // ito ang default 
+    // function to add new car    
+//    public void addCar(int _brand, String _model, String _fuel, String _color, String _plateNum, int _passengers, 
+//                        String _gearbox, int _price, String _air_cond, String _airbag, String _sunroof,
+//                        String _heated_seats, String _nav_sys, String _bluetooth, String _elec_window, String _gps){
+//        
+//        String insertQuery = "INSERT INTO `cars`(`brand`, `model`, `fuel`, `color`, `plateNum`, `passengers`, `gearbox`, `price`, `air_conditioning`, `air_bag`, `sunroof`, `heated_seats`, `nav_system`, `bluetooth`, `electric_windows`, `gps`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+//        PreparedStatement ps;
+//       
+//        try {
+//            
+//            ps = DB.getConnection().prepareStatement(insertQuery);
+//            ps.setInt(1, _brand);
+//            ps.setString(2, _model);
+//            ps.setString(3, _fuel);
+//            ps.setString(4, _color);
+//            ps.setString(5, _plateNum);
+//            ps.setInt(6, _passengers);
+//            ps.setString(7, _gearbox);
+//            ps.setInt(8, _price);
+//            ps.setString(9, _air_cond);
+//            ps.setString(10, _airbag);
+//            ps.setString(11, _sunroof);
+//            ps.setString(12, _heated_seats);
+//            ps.setString(13, _nav_sys);
+//            ps.setString(14, _bluetooth);
+//            ps.setString(15, _elec_window);
+//            ps.setString(16, _gps);
+//            
+//            if(ps.executeUpdate()!=0){
+//                JOptionPane.showMessageDialog(null , "The new Vehicle has been Added" , "Add Vehicle", 1);
+//                
+//            }
+//            else{
+//                JOptionPane.showMessageDialog(null , "Vehicle Not been Added" , "Add Vehicle", 2);
+//            }
+//            
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
     
     
     // add car images
@@ -471,7 +509,6 @@ public class Car {
                     }
         
         //function to search Id
-        
         public Car getCarById(int car_id){
          String query = "SELECT * FROM `cars` WHERE `id` = "+ car_id ;
          ResultSet rs = getData(query);
@@ -479,14 +516,7 @@ public class Car {
          try {
              if (rs.next())
              {
-             /*
-             (int id, int brand, String model, String fuel, String color, 
-             String plateNum, int passengers, String gearbox, int price, 
-             String air_cond, String airbag, String sunroof, 
-             String heated_seats, String nav_sys, String bluetooth, 
-             String elec_window, String gps)
-             */
-             
+
              car = new Car(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),
                                     rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),
                                     rs.getInt(9),rs.getString(10),rs.getString(11), rs.getString(12),
@@ -495,13 +525,14 @@ public class Car {
              }
              else
              {
-                 JOptionPane.showMessageDialog(null , "ID not found!" , "Invalid ID", 2);
+                 //JOptionPane.showMessageDialog(null , "ID not found!" , "Invalid ID", 2);
              }
          } catch (SQLException ex) {
              Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
          }
          return car;
      }
+        
         
         public HashMap<Integer ,String> VehicleHashMap()
      {
@@ -548,144 +579,72 @@ public class Car {
          }
          return carsList;
      }
+        
         public boolean isCarAvailable(int carId, String startDate, String endDate) {
-        Car car = new Car();
-        ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
-
-        try {
-        // Check if the car status is available (status = true)
-        if (rs != null  && rs.next()) {
-            boolean isAvailable = rs.getBoolean("status");
-            if (!isAvailable) {
-                return false; // Car is not available if status is false
-            }
-        }
-
-        // Now check for any overlapping bookings
-        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
-
-        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
-        ps.setInt(1, carId); // Set car ID
-        ps.setString(2, startDate); // Start date of the new booking
-        ps.setString(3, endDate); // End date of the new booking
-        ps.setString(4, startDate); // Start date of the new booking
-        ps.setString(5, endDate); // End date of the new booking
-        ps.setString(6, startDate); // Start date of the new booking
-        ps.setString(7, endDate); // End date of the new booking
-
-        ResultSet bookingRS = ps.executeQuery();
-
-        // Check if any overlapping booking is found
-        return !bookingRS.next(); // Return true if no overlapping booking found, false otherwise
-
-    } catch (SQLException ex) {
-        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-    }
-
-    return false; // Default to unavailable if there was an issue fetching the status
-}
-
-        
-        
-        
-        
-//       public boolean isCarAvailable(int carId, String startDate, String endDate) {
-//    Car car = new Car();
-//    ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
-//
-//    try {
-//        // Check if the car status is available (status = true)
-//        if (rs != null && rs.next()) {
-//            boolean isAvailable = rs.getBoolean("status");
-//            if (!isAvailable) {
-//                return false;  // Car is not available if status is false
-//            }
-//        }
-//
-//        // Now check for any overlapping bookings
-//        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
-//
-//        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
-//        ps.setInt(1, carId); // Set car ID
-//        ps.setString(2, startDate); // Start date of the new booking
-//        ps.setString(3, endDate); // End date of the new booking
-//        ps.setString(4, startDate); // Start date of the new booking
-//        ps.setString(5, endDate); // End date of the new booking
-//        ps.setString(6, startDate); // Start date of the new booking
-//        ps.setString(7, endDate); // End date of the new booking
-//
-//        ResultSet bookingRS = ps.executeQuery();
-//        if (bookingRS.next()) {
-//            // If any overlapping booking is found, car is not available
-//            return false;
-//        }
-//
-//    } catch (SQLException ex) {
-//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-//    }
-//
-//    return true;  // Car is available if no overlap and the car is marked as available
-//}
-        
-        
-//                public boolean isCarAvailable(int carId, String startDate, String endDate) {
-//                Car car = new Car();
-//                ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
-//    
-//    try {
-//        // Check if the car status is available (status = true)
-//        if (rs != null && rs.next()) {
-//            boolean isAvailable = rs.getBoolean("status");
-//            if (!isAvailable) {
-//                return false;  // Car is not available if status is false
-//            }
-//        }
-//        
-//        // Now check for any overlapping bookings
-//        String checkOverlapQuery = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ((`start_date` BETWEEN ? AND ?) OR (`end_date` BETWEEN ? AND ?) OR (`start_date` <= ? AND `end_date` >= ?))";
-//        
-//        PreparedStatement ps = DB.getConnection().prepareStatement(checkOverlapQuery);
-//        ps.setInt(1, carId); // Set car ID
-//        ps.setString(2, startDate); // Start date of the new booking
-//        ps.setString(3, endDate); // End date of the new booking
-//        ps.setString(4, startDate); // Start date of the new booking
-//        ps.setString(5, endDate); // End date of the new booking
-//        ps.setString(6, startDate); // Start date of the new booking
-//        ps.setString(7, endDate); // End date of the new booking
-//
-//        ResultSet bookingRS = ps.executeQuery();
-//        if (bookingRS.next()) {
-//            // If any overlapping booking is found, car is not available
-//            return false;
-//        }
-//        
-//    } catch (SQLException ex) {
-//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-//    }
-//    
-//    return true;  // Car is available if no overlap and the car is marked as available
-//}
+    String query = "SELECT * FROM `reservation` r "
+                 + "WHERE r.car_id = ? AND ("
+                 + "(? BETWEEN r.start_date AND r.end_date) OR "
+                 + "(? BETWEEN r.start_date AND r.end_date) OR "
+                 + "(r.start_date BETWEEN ? AND ?) OR "
+                 + "(r.end_date BETWEEN ? AND ?))";
     
-    public void updateCarStatus(int carId, boolean newStatus) {
-    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
-    PreparedStatement ps;
-
-    try {
-        ps = DB.getConnection().prepareStatement(updateQuery);
-        ps.setBoolean(1, newStatus); // Set the new status
-        ps.setInt(2, carId); // Set the car ID
+    try (PreparedStatement ps = DB.getConnection().prepareStatement(query)) {
+        ps.setInt(1, carId);  // Set the car ID parameter
+        ps.setString(2, startDate);  // Set the start date
+        ps.setString(3, endDate);  // Set the end date
+        ps.setString(4, startDate);  // Check if the start date overlaps
+        ps.setString(5, endDate);  // Check if the start date overlaps
+        ps.setString(6, startDate);  // Check if the end date overlaps
+        ps.setString(7, endDate);  // Check if the end date overlaps
         
-        if (ps.executeUpdate() != 0) {
-            System.out.println("Car status updated successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Failed to update car status.", "Update Status", JOptionPane.ERROR_MESSAGE);
-        }
+        ResultSet rs = ps.executeQuery();
+        
+        // If no rows are returned, it means there is no overlap, so the car is available
+        return !rs.next();
     } catch (SQLException ex) {
         Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
     }
+    
+    return false;
 }
 
         
         
-        
+//        public boolean isCarAvailable(int carId, String startDate, String endDate) {
+//    String query = "SELECT * FROM `cars` c LEFT JOIN `reservation` r ON c.id = r.car_id "
+//                 + "WHERE c.id = ? AND c.vehicle_count > 0 AND ("
+//                 + "(? BETWEEN r.start_date AND r.end_date) OR "
+//                 + "(? BETWEEN r.start_date AND r.end_date) OR "
+//                 + "(r.start_date BETWEEN ? AND ?) OR "
+//                 + "(r.end_date BETWEEN ? AND ?))";
+//    try (PreparedStatement ps = DB.getConnection().prepareStatement(query)) {
+//        ps.setInt(1, carId);
+//        ps.setString(2, startDate);
+//        ps.setString(3, endDate);
+//        ps.setString(4, startDate);
+//        ps.setString(5, endDate);
+//        ps.setString(6, startDate);
+//        ps.setString(7, endDate);
+//        ResultSet rs = ps.executeQuery();
+//        return !rs.next(); // If no rows, car is available
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//    return false;
+//}
+
+    
+    public void updateCarStatus(int carId, boolean isAvailable) {
+    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+    try (PreparedStatement ps = DB.getConnection().prepareStatement(updateQuery)) {
+        ps.setBoolean(1, isAvailable); // Update car availability
+        ps.setInt(2, carId);
+        ps.executeUpdate();
+    } catch (SQLException ex) {
+        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+    
+    
 }

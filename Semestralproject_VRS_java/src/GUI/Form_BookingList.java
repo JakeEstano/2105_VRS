@@ -70,7 +70,7 @@ public class Form_BookingList extends javax.swing.JFrame {
     // Debugging: print the number of bookings fetched
     System.out.println("Number of bookings: " + booking_list.size());
 
-    String[] columnsName = {"Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name"};
+    String[] columnsName = {"Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name", "Plate Number"};
 
     // If there are no bookings, show a message and clear the table
     if (booking_list.isEmpty()) {
@@ -88,7 +88,7 @@ public class Form_BookingList extends javax.swing.JFrame {
         Car car = new Car();
         car = car.getCarById(booking.getCar_id());  // Assuming the booking has car_id
         String carModel = car != null ? car.getModel() : "Unknown";
-
+        String plateNumber = car != null ? car.getplateNum_() : "Unknown";
         // Get Customer Name (assuming you have a method to fetch the customer by ID)
         Customer customer = new Customer();
         customer = customer.getCustomerById(booking.getCustomer_id());  // Assuming the booking has customer_id
@@ -110,6 +110,7 @@ public class Form_BookingList extends javax.swing.JFrame {
         rows[i][4] = booking.getTotal_price();  // Total Price
         rows[i][5] = booking.getDriver();       // Driver (Self Drive / With Driver)
         rows[i][6] = driverName;   // Driver Name
+        rows[i][7] = plateNumber;
     }
 
     // Set table model with the updated rows

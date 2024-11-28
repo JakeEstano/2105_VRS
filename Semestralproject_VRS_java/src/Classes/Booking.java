@@ -99,65 +99,99 @@ public class Booking {
     }
     
     
-
-    Car car = new Car();
-    boolean isAvailable = car.isCarAvailable(car_id, start_date, end_date);  // Using the modified method
-     public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
+    public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
                           String driver, String driverName) {
-    // SQL query to insert booking data
+    boolean isAvailable = isCarAvailable(carId, startDate, endDate);
+    if (!isAvailable) {
+        JOptionPane.showMessageDialog(null, "Car is not available for the selected dates!");
+        return;
+    }
+
     String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
                        + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-    PreparedStatement ps;
-
-    try {
-        // Get database connection
-        ps = DB.getConnection().prepareStatement(insertQuery);
-
-        // Set the parameters in the query
+    try (PreparedStatement ps = DB.getConnection().prepareStatement(insertQuery)) {
         ps.setInt(1, carId);
         ps.setInt(2, customerId);
-        ps.setString(3, startDate);  
-        ps.setString(4, endDate);    
-        ps.setInt(5, totalPrice);   
-        ps.setString(6, driver);     
-        ps.setString(7, driverName); 
+        ps.setString(3, startDate);
+        ps.setString(4, endDate);
+        ps.setInt(5, totalPrice);
+        ps.setString(6, driver);
+        ps.setString(7, driverName);
 
-        // Execute the query and check the result
         if (ps.executeUpdate() != 0) {
             JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
-            
-            // After successful booking, update the car's status to "not available"
-            updateCarStatus(carId, false); 
+
+            // Update the label for available cars
+//            Car car = new Car();
+//            car.updateCarStatus(carId, false);
         } else {
             JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
         }
-
-    } catch (SQLException ex) {
-        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-        JOptionPane.showMessageDialog(null, "An error occurred while adding the booking: " + ex.getMessage(), "Add Booking", JOptionPane.ERROR_MESSAGE);
-    }
-}
-
-
-     
-     public void updateCarStatus(int carId, boolean status) {
-    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
-    PreparedStatement ps;
-
-    try {
-        ps = DB.getConnection().prepareStatement(updateQuery);
-        ps.setBoolean(1, status); // Set the status (true = available, false = not available)
-        ps.setInt(2, carId); // Set the car ID
-        
-        if (ps.executeUpdate() != 0) {
-            System.out.println("Car status updated successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Failed to update car status.", "Update Status", JOptionPane.ERROR_MESSAGE);
-        }
     } catch (SQLException ex) {
         Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
+
+    
+    
+    
+    
+    
+// OKAY NA TO
+//    public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 
+//                          String driver, String driverName) {
+//    // Check car availability
+//    boolean isAvailable = isCarAvailable(carId, startDate, endDate);
+//    if (!isAvailable) {
+//        JOptionPane.showMessageDialog(null, "Car is not available for the selected dates!");
+//        return;
+//    }
+//
+//    String insertQuery = "INSERT INTO `reservation`(`car_id`, `customer_id`, `start_date`, `end_date`, `total_price`, `driver`, `driverName`) "
+//                       + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+//    try (PreparedStatement ps = DB.getConnection().prepareStatement(insertQuery)) {
+//        ps.setInt(1, carId);
+//        ps.setInt(2, customerId);
+//        ps.setString(3, startDate);
+//        ps.setString(4, endDate);
+//        ps.setInt(5, totalPrice);
+//        ps.setString(6, driver);
+//        ps.setString(7, driverName);
+//
+//        if (ps.executeUpdate() != 0) {
+//            JOptionPane.showMessageDialog(null, "Booking added successfully!", "Add Booking", JOptionPane.INFORMATION_MESSAGE);
+//
+//            // Update car status to unavailable
+//            Car car = new Car();
+//            car.updateCarStatus(carId, false);
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Failed to add the booking. Please try again.", "Add Booking", JOptionPane.ERROR_MESSAGE);
+//        }
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//}
+
+
+//     
+//     public void updateCarStatus(int carId, boolean status) {
+//    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+//    PreparedStatement ps;
+//
+//    try {
+//        ps = DB.getConnection().prepareStatement(updateQuery);
+//        ps.setBoolean(1, status); // Set the status (true = available, false = not available)
+//        ps.setInt(2, carId); // Set the car ID
+//        
+//        if (ps.executeUpdate() != 0) {
+//            System.out.println("Car status updated successfully.");
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Failed to update car status.", "Update Status", JOptionPane.ERROR_MESSAGE);
+//        }
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//}
 
     
     
@@ -243,59 +277,33 @@ public class Booking {
 
 
      
-     
-     
-     
-     
-//public ArrayList<Booking> bookingList() {
-//    ArrayList<Booking> bookList = new ArrayList<>();
-//    ResultSet rs = getData("SELECT * FROM `reservation`");
-//    try {
-//        if (rs == null) {
-//            System.out.println("No data returned from the query.");
-//            return bookList;
-//        }
-//        while (rs.next()) {
-//            Booking booking = new Booking(rs.getInt(1),
-//                                            rs.getInt(2),
-//                                            rs.getInt(3),
-//                                            rs.getString(4),
-//                                            rs.getString(5),
-//                                            rs.getInt(6),
-//                                            rs.getString(7),
-//                                            rs.getString(8));
-//            bookList.add(booking);
-//        }
-//    } catch (SQLException ex) {
-//        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, "Error while retrieving bookings", ex);
-//        JOptionPane.showMessageDialog(null, "Error retrieving bookings: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-//    }
-//
-//    //System.out.println("Total bookings retrieved: " + bookList.size());
-//    return bookList;
-//    }
 
-    public void removeBooking(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+    
+    public boolean isCarAvailable(int carId, String startDate, String endDate) {
+    String query = "SELECT * FROM `reservation` WHERE `car_id` = ? AND ("
+                 + "(? BETWEEN `start_date` AND `end_date`) OR "
+                 + "(? BETWEEN `start_date` AND `end_date`) OR "
+                 + "(`start_date` BETWEEN ? AND ?) OR "
+                 + "(`end_date` BETWEEN ? AND ?))";
+    try (PreparedStatement ps = DB.getConnection().prepareStatement(query)) {
+        ps.setInt(1, carId);
+        ps.setString(2, startDate);
+        ps.setString(3, endDate);
+        ps.setString(4, startDate);
+        ps.setString(5, endDate);
+        ps.setString(6, startDate);
+        ps.setString(7, endDate);
+        ResultSet rs = ps.executeQuery();
+        return !rs.next(); // If no overlapping reservation exists, car is available
+    } catch (SQLException ex) {
+        Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
     }
-    
-    
+    return false;
+}
 
+  
 
-    
-    
-//     public boolean isCarAvailable(int carId) {
-//        Car car = new Car();
-//        ResultSet rs = car.getData("SELECT status FROM `cars` WHERE `id` = " + carId);
-//        try {
-//            if (rs != null && rs.next()) {
-//                return rs.getBoolean("status"); // Return car status (true if available, false if unavailable)
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Booking.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return false; // Default to unavailable if there was an issue fetching the status
-//    }
 }
 
 

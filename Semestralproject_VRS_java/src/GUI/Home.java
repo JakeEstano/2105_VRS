@@ -2120,10 +2120,9 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jTextField_email)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                     .addGroup(customerPanelLayout.createSequentialGroup()
-                        .addGroup(customerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSpinner_id2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser_birthDate, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jSpinner_id2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 140, Short.MAX_VALUE))
+                    .addComponent(jDateChooser_birthDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(752, 752, 752))
             .addGroup(customerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(customerPanelLayout.createSequentialGroup()
@@ -2207,7 +2206,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel_dropoff.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel_dropoff.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel_dropoff.setText("     End of Rent");
+        jLabel_dropoff.setText("     Return Date");
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -2215,7 +2214,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel_dropoff1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel_dropoff1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel_dropoff1.setText("     Start of Rent");
+        jLabel_dropoff1.setText("     Pick up Date");
 
         jButton_BookCar_.setBackground(new java.awt.Color(34, 47, 62));
         jButton_BookCar_.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -2662,40 +2661,11 @@ public class Home extends javax.swing.JFrame {
         customerPanel.setVisible(false);
     }//GEN-LAST:event_bookCarTabMouseClicked
 
-    private void jButton_Search_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_ActionPerformed
-        // Search by ID
-        int car_id = (int) jSpinner_Id.getValue();
-        Car new_car = car.getCarById(car_id);
-
-        jButton_Reset_ActionPerformed(null);
-
-        if (new_car != null)
-        {
-            jTextField_PlateNum.setText(new_car.getplateNum_());
-            jTextField_Model.setText(new_car.getModel());
-            jSpinner_Passengers.setValue(new_car.getPassengers());
-            jSpinner_Price.setValue(new_car.getPrice());
-
-            jComboBox_brand.setSelectedItem(Brandmap.get(new_car.getBrand()));
-//            jComboBox_Cars_.setSelectedItem(Vehiclemap.get(new_car.getModel()));
-            jComboBox_Fuel.setSelectedItem(new_car.getFuel());
-            jComboBox_Color.setSelectedItem(new_car.getColor());
-
-            if (new_car.getGearbox().equals("manual")){jRadioButton_Manual.setSelected(true);}
-            if (new_car.getAir_cond().equals("yes")){jRadioButton_Features_Aircond.setSelected(true);}
-            if (new_car.getAirbag().equals("yes")){jRadioButton_Features_AirBag.setSelected(true);}
-            if (new_car.getElec_window().equals("yes")){jRadioButton_Features_ElecWin.setSelected(true);}
-            if (new_car.getGps().equals("yes")){jRadioButton_Features_GPS.setSelected(true);}
-            if (new_car.getHeated_seats().equals("yes")){jRadioButton_Features_HeatedSeat.setSelected(true);}
-            if (new_car.getNav_sys().equals("yes")){jRadioButton_Features_NavSys.setSelected(true);}
-            if (new_car.getSunroof().equals("yes")){jRadioButton_Features_Sunroof.setSelected(true);}
-
-        }
-    }//GEN-LAST:event_jButton_Search_ActionPerformed
-
     private void jComboBox_brandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_brandActionPerformed
 
         // Get the selected brands id
+        // Initialize brand_id to a valid default value (or -1 to indicate no brand is selected).
+
         int brand_id = 0;
         for (Map.Entry<Integer, String> entry : Brandmap.entrySet())
         {
@@ -2731,7 +2701,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Add new Car
         // Car info
-        int brand = (int)(jSpinner_Id.getValue());
+        int brand = Integer.valueOf(jLabel_Brand_Id.getText());
         String model = jTextField_Model.getText();
         String fuel = jComboBox_Fuel.getSelectedItem().toString();
         String color = jComboBox_Color.getSelectedItem().toString();
@@ -2813,7 +2783,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_Reset_ActionPerformed
 
     private void jButton_Cars_List_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cars_List_ActionPerformed
-        // TODO add your handling code here:
+        Form_CarsList form_crslst = new Form_CarsList();
+        form_crslst.setVisible(true);
     }//GEN-LAST:event_jButton_Cars_List_ActionPerformed
 
     private void jButton_Remove_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Remove_MouseClicked
@@ -3340,6 +3311,13 @@ public class Home extends javax.swing.JFrame {
         driver = "Self Drive";
         driverName = ""; 
     }
+
+boolean isAvailable = car.isCarAvailable(car_id, pickup_date, dropoff_date);
+if (!isAvailable) {
+    JOptionPane.showMessageDialog(null, "The selected car is not available for the selected dates.");
+    return;
+}
+
     Booking booking = new Booking();
     booking.addNewBooking(
         car_id,              
@@ -3351,9 +3329,10 @@ public class Home extends javax.swing.JFrame {
         driverName          
     );
 
+
     JOptionPane.showMessageDialog(null, "Booking Successfully Added! Total Price: $" + totalPrice);
 
-} catch (Exception e) {
+}    catch (Exception e) {
     JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
 }
 
@@ -3419,6 +3398,37 @@ public class Home extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
     }
     }//GEN-LAST:event_jButton_Edit_refresh_total_PriceActionPerformed
+
+    private void jButton_Search_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_ActionPerformed
+        // Search by ID
+        int car_id = (int) jSpinner_Id.getValue();
+        Car new_car = car.getCarById(car_id);
+
+        jButton_Reset_ActionPerformed(null);
+
+        if (new_car != null)
+        {
+            jTextField_PlateNum.setText(new_car.getplateNum_());
+            jTextField_Model.setText(new_car.getModel());
+            jSpinner_Passengers.setValue(new_car.getPassengers());
+            jSpinner_Price.setValue(new_car.getPrice());
+
+            jComboBox_brand.setSelectedItem(Brandmap.get(new_car.getBrand()));
+            // jComboBox_Cars_.setSelectedItem(Vehiclemap.get(new_car.getModel()));
+            jComboBox_Fuel.setSelectedItem(new_car.getFuel());
+            jComboBox_Color.setSelectedItem(new_car.getColor());
+
+            if (new_car.getGearbox().equals("manual")){jRadioButton_Manual.setSelected(true);}
+            if (new_car.getAir_cond().equals("yes")){jRadioButton_Features_Aircond.setSelected(true);}
+            if (new_car.getAirbag().equals("yes")){jRadioButton_Features_AirBag.setSelected(true);}
+            if (new_car.getElec_window().equals("yes")){jRadioButton_Features_ElecWin.setSelected(true);}
+            if (new_car.getGps().equals("yes")){jRadioButton_Features_GPS.setSelected(true);}
+            if (new_car.getHeated_seats().equals("yes")){jRadioButton_Features_HeatedSeat.setSelected(true);}
+            if (new_car.getNav_sys().equals("yes")){jRadioButton_Features_NavSys.setSelected(true);}
+            if (new_car.getSunroof().equals("yes")){jRadioButton_Features_Sunroof.setSelected(true);}
+
+        }
+    }//GEN-LAST:event_jButton_Search_ActionPerformed
 
     /**
      * @param args the command line arguments

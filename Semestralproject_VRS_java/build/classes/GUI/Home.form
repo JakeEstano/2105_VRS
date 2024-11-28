@@ -2346,12 +2346,10 @@
                           <Component id="jTextField_email" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" pref="290" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSpinner_id2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser_birthDate" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jSpinner_id2" min="-2" pref="150" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="140" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="jDateChooser_birthDate" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="752" max="-2" attributes="0"/>
                   </Group>
@@ -2885,7 +2883,7 @@
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="     End of Rent"/>
+                    <Property name="text" type="java.lang.String" value="     Return Date"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel41">
@@ -2905,7 +2903,7 @@
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="     Start of Rent"/>
+                    <Property name="text" type="java.lang.String" value="     Pick up Date"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton_BookCar_">
