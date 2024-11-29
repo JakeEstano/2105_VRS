@@ -634,19 +634,40 @@ public class Car {
 //}
 
 
+                           // ito ay sa pag update ng kotse
+        public void updateCarStatus(int carId, boolean isAvailable) {
+    String updateCarQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+
+    try (PreparedStatement psCar = DB.getConnection().prepareStatement(updateCarQuery);
+         PreparedStatement ps = DB.getConnection().prepareStatement(updateCarQuery)) {
+
+        // Update the car's status to available (true) or unavailable (false)
+        psCar.setBoolean(1, isAvailable);  
+        psCar.setInt(2, carId);
+        psCar.executeUpdate();
 
 
-        //okay na ito!
-    public void updateCarStatus(int carId, boolean isAvailable) {
-    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
-    try (PreparedStatement ps = DB.getConnection().prepareStatement(updateQuery)) {
-        ps.setBoolean(1, isAvailable); // Update car availability
-        ps.setInt(2, carId);
-        ps.executeUpdate();
+        // Optional: log success or display a message
+        System.out.println("Car status updated and reservation removed successfully.");
+
     } catch (SQLException ex) {
+        // Handle exceptions (e.g., log the error)
         Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
+
+
+        //okay na ito!
+//    public void updateCarStatus(int carId, boolean isAvailable) {
+//    String updateQuery = "UPDATE `cars` SET `status` = ? WHERE `id` = ?";
+//    try (PreparedStatement ps = DB.getConnection().prepareStatement(updateQuery)) {
+//        ps.setBoolean(1, isAvailable); // Update car availability
+//        ps.setInt(2, carId);
+//        ps.executeUpdate();
+//    } catch (SQLException ex) {
+//        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+//}
     
     
     

@@ -301,6 +301,29 @@ public class Booking {
     }
     return false;
 }
+    
+    public void updateBookStatus(int id) {
+ 
+    String deleteReservationQuery = "DELETE FROM `reservation` WHERE `id` = ?";  // Delete the reservation linked to the car
+
+    try (PreparedStatement psCar = DB.getConnection().prepareStatement(deleteReservationQuery);
+         PreparedStatement ps = DB.getConnection().prepareStatement(deleteReservationQuery)) {
+
+        // Update the car's status to available (true) or unavailable (false)
+        
+
+        // Remove the reservation associated with this car
+        ps.setInt(1, id); //ITO ANG BABAGUHIN
+        ps.executeUpdate();  // Remove the reservation
+
+        // Optional: log success or display a message
+        System.out.println("Book status updated and reservation removed successfully.");
+
+    } catch (SQLException ex) {
+        // Handle exceptions (e.g., log the error)
+        Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
 
   
 

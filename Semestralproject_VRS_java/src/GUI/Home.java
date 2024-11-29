@@ -490,7 +490,6 @@ public class Home extends javax.swing.JFrame {
         jRadioButton_Features_ElecWin = new javax.swing.JRadioButton();
         jRadioButton_Features_GPS = new javax.swing.JRadioButton();
         jButton_Add_Car_ = new javax.swing.JButton();
-        jButton_Add_images_ = new javax.swing.JButton();
         jButton_Add_Brands_List_ = new javax.swing.JButton();
         jButton_Reset_ = new javax.swing.JButton();
         jButton_Cars_List_ = new javax.swing.JButton();
@@ -618,6 +617,7 @@ public class Home extends javax.swing.JFrame {
         jRadioButton_selfDrive = new javax.swing.JRadioButton();
         jComboBox_DriverList = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
+        jButton_BookingLIst_1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -934,7 +934,7 @@ public class Home extends javax.swing.JFrame {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel_cars_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
@@ -1002,7 +1002,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel_cars_logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1212,21 +1212,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton_Add_images_.setBackground(new java.awt.Color(255, 212, 60));
-        jButton_Add_images_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton_Add_images_.setText("Add Car Images");
-        jButton_Add_images_.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Add_images_.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton_Add_images_MouseClicked(evt);
-            }
-        });
-        jButton_Add_images_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_Add_images_ActionPerformed(evt);
-            }
-        });
-
         jButton_Add_Brands_List_.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Add_Brands_List_.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton_Add_Brands_List_.setText("Brands");
@@ -1337,30 +1322,8 @@ public class Home extends javax.swing.JFrame {
         vehiclePanelLayout.setHorizontalGroup(
             vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vehiclePanelLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(vehiclePanelLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jButton_Edit_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Remove_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Cars_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(vehiclePanelLayout.createSequentialGroup()
-                        .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Add_images_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton_Reset_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(vehiclePanelLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(vehiclePanelLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(vehiclePanelLayout.createSequentialGroup()
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(vehiclePanelLayout.createSequentialGroup()
@@ -1388,7 +1351,7 @@ public class Home extends javax.swing.JFrame {
                                         .addComponent(jComboBox_Fuel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jComboBox_Color, 0, 180, Short.MAX_VALUE))))
                             .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 521, Short.MAX_VALUE)
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
                             .addComponent(jLabel17)
@@ -1404,7 +1367,26 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jSpinner_Passengers, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextField_PlateNum, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
                             .addComponent(jSpinner_Price, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(110, 110, 110))))
+                        .addGap(110, 110, 110))
+                    .addGroup(vehiclePanelLayout.createSequentialGroup()
+                        .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(vehiclePanelLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton_Edit_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(vehiclePanelLayout.createSequentialGroup()
+                                        .addComponent(jButton_Remove_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton_Cars_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(vehiclePanelLayout.createSequentialGroup()
+                                        .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton_Reset_, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         vehiclePanelLayout.setVerticalGroup(
             vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1428,7 +1410,7 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel_Brand_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)
                             .addComponent(jComboBox_brand, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField_Model, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1448,7 +1430,6 @@ public class Home extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(vehiclePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton_Add_Car_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Add_images_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton_Add_Brands_List_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton_Reset_, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2561,6 +2542,17 @@ public class Home extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
+        jButton_BookingLIst_1.setBackground(new java.awt.Color(34, 47, 62));
+        jButton_BookingLIst_1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton_BookingLIst_1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton_BookingLIst_1.setText("Return List");
+        jButton_BookingLIst_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_BookingLIst_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_BookingLIst_1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout bookCarPanelLayout = new javax.swing.GroupLayout(bookCarPanel);
         bookCarPanel.setLayout(bookCarPanelLayout);
         bookCarPanelLayout.setHorizontalGroup(
@@ -2572,19 +2564,26 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jButton_BookingLIst_1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         bookCarPanelLayout.setVerticalGroup(
             bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bookCarPanelLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
                 .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bookCarPanelLayout.createSequentialGroup()
-                        .addComponent(jPanel_select_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addGroup(bookCarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bookCarPanelLayout.createSequentialGroup()
+                                .addComponent(jPanel_select_car, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel_select_customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel_rent_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bookCarPanelLayout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jButton_BookingLIst_1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPanel2.add(bookCarPanel, "card7");
@@ -2738,18 +2737,6 @@ public class Home extends javax.swing.JFrame {
                 airbags, sunroof, heated_seats, nav_sys, bluetooth, elec_win, gps);
         }
     }//GEN-LAST:event_jButton_Add_Car_ActionPerformed
-
-    private void jButton_Add_images_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Add_images_MouseClicked
-        // TODO add your handling code here:
-
-        Form_CarImages form_crimgs = new Form_CarImages();
-        form_crimgs.setVisible(true);
-    }//GEN-LAST:event_jButton_Add_images_MouseClicked
-
-    private void jButton_Add_images_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_images_ActionPerformed
-        // TODO add your handling code here:
-        // clear fields
-    }//GEN-LAST:event_jButton_Add_images_ActionPerformed
 
     private void jButton_Add_Brands_List_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Add_Brands_List_ActionPerformed
         // TODO add your handling code here:
@@ -3435,6 +3422,12 @@ if (!isAvailable) {
         }
     }//GEN-LAST:event_jButton_Search_ActionPerformed
 
+    private void jButton_BookingLIst_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BookingLIst_1ActionPerformed
+        // TODO add your handling code here:
+        Form_ReturnCars bookingList = new Form_ReturnCars();
+        bookingList.setVisible(true);
+    }//GEN-LAST:event_jButton_BookingLIst_1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3486,9 +3479,9 @@ if (!isAvailable) {
     private javax.swing.JButton jButton_Add2;
     private javax.swing.JButton jButton_Add_Brands_List_;
     private javax.swing.JButton jButton_Add_Car_;
-    private javax.swing.JButton jButton_Add_images_;
     private javax.swing.JButton jButton_BookCar_;
     private javax.swing.JButton jButton_BookingLIst_;
+    private javax.swing.JButton jButton_BookingLIst_1;
     private javax.swing.JButton jButton_Cars_List_;
     private javax.swing.JButton jButton_Clear;
     private javax.swing.JButton jButton_Clear1;

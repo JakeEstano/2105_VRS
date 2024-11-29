@@ -43,7 +43,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     // Debugging: print the number of bookings fetched
     System.out.println("Number of bookings: " + booking_list.size());
 
-    String[] columnsName = {"booking id", "Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name", "Plate Number"};
+    String[] columnsName = {"car id","booking id", "Car Model", "Customer Name", "Start Date", "End Date", "Total Price", "Driver", "Driver Name", "Plate Number"};
 
     // If there are no bookings, show a message and clear the table
     if (booking_list.isEmpty()) {
@@ -77,29 +77,21 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         }
 
         // Populate rows for the table
-        rows[i][0] = booking.getId();
-        rows[i][1] = carModel;           // Car Model
-        rows[i][2] = customerName;       // Customer Name
-        rows[i][3] = booking.getStart_date();   // Start Date
-        rows[i][4] = booking.getEnd_date();     // End Date
-        rows[i][5] = booking.getTotal_price();  // Total Price
-        rows[i][6] = booking.getDriver();       // Driver (Self Drive / With Driver)
-        rows[i][7] = driverName;   // Driver Name
-        rows[i][8] = plateNumber;
+        rows[i][0] = car.getId();
+        rows[i][1] = booking.getId();
+        rows[i][2] = carModel;           // Car Model
+        rows[i][3] = customerName;       // Customer Name
+        rows[i][4] = booking.getStart_date();   // Start Date
+        rows[i][5] = booking.getEnd_date();     // End Date
+        rows[i][6] = booking.getTotal_price();  // Total Price
+        rows[i][7] = booking.getDriver();       // Driver (Self Drive / With Driver)
+        rows[i][8] = driverName;   // Driver Name
+        rows[i][9] = plateNumber;
     }
     // Set table model with the updated rows
     jTable_unavailable_vehicle_.setModel(new DefaultTableModel(rows, columnsName));
 }   
-    
-    // Method in Form_ReturnCars class that updates car status after return
 
- 
-    
-//    private void updateCarStatus(int carId) {
-//        Car car = new Car();
-//        car.updateCarStatus(carId, true);  // Set status to available (true)
-//        JOptionPane.showMessageDialog(null, "Car status has been updated to available.", "Car Returned", JOptionPane.INFORMATION_MESSAGE);
-//    }
 
 
     /**
@@ -407,7 +399,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         String PlateNumber = jTable_unavailable_vehicle_.getValueAt(index, 7).toString();
         
         
-        int id = Integer.valueOf(jTable_unavailable_vehicle_.getValueAt(index, 0).toString());
+        int id = Integer.valueOf(jTable_unavailable_vehicle_.getValueAt(index, 1).toString());
         jSpinner_carId.setValue(id);
         
         jTextField_plateNumber.setText(PlateNumber);
@@ -440,6 +432,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
 
     private void jButton_confirm_returnmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_confirm_returnmentActionPerformed
         
+        
         String plateNumber = jTextField_plateNumber.getText().trim();
         Date returnDate = jDateChooser_retrunmentDate.getDate();
 
@@ -456,10 +449,12 @@ public class Form_ReturnCars extends javax.swing.JFrame {
 
         // Get car ID from selected row (assume it's in the first column)
         int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
-
+        int id = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 1).toString());
+        System.out.println(carId);
         // Update the car's status to available
         car.updateCarStatus(carId, true);
-
+        Booking book = new Booking();
+        book.updateBookStatus(id);
         // Optional: Display a report
         String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
         jTextArea_Vehicle_report.setText(vehicleReport);
