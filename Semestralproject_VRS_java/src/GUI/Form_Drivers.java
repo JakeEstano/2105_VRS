@@ -145,18 +145,16 @@ public class Form_Drivers extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1142, 592));
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
         jLabel4.setBackground(java.awt.Color.black);
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Drivers");
 
         jLabel_brands_logo.setBackground(java.awt.Color.black);
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -224,9 +222,8 @@ public class Form_Drivers extends javax.swing.JFrame {
 
         jTextField_fullname.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jButton_Previous.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Previous.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Previous.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Previous.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Previous.setText("<");
         jButton_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Previous.addActionListener(new java.awt.event.ActionListener() {
@@ -235,9 +232,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_First.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_First.setBackground(new java.awt.Color(255, 212, 60));
         jButton_First.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_First.setForeground(new java.awt.Color(255, 255, 255));
         jButton_First.setText("<<");
         jButton_First.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_First.addActionListener(new java.awt.event.ActionListener() {
@@ -246,9 +242,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Next.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Next.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Next.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Next.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Next.setText(">");
         jButton_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Next.addActionListener(new java.awt.event.ActionListener() {
@@ -257,9 +252,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Remove.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Remove.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Remove.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton_Remove.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Remove.setText("Remove");
         jButton_Remove.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Remove.addActionListener(new java.awt.event.ActionListener() {
@@ -268,9 +262,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Edit.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Edit.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Edit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton_Edit.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Edit.setText("Edit");
         jButton_Edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Edit.addActionListener(new java.awt.event.ActionListener() {
@@ -279,9 +272,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Add.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Add.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Add.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton_Add.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Add.setText("Add");
         jButton_Add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Add.addActionListener(new java.awt.event.ActionListener() {
@@ -290,9 +282,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Last.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Last.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Last.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Last.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Last.setText(">>");
         jButton_Last.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Last.addActionListener(new java.awt.event.ActionListener() {
@@ -301,9 +292,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Refresh.setBackground(new java.awt.Color(0, 0, 0));
+        jButton_Refresh.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Refresh.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton_Refresh.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Refresh.setText("Refresh");
         jButton_Refresh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -312,9 +302,8 @@ public class Form_Drivers extends javax.swing.JFrame {
             }
         });
 
-        jButton_Clear.setBackground(new java.awt.Color(0, 0, 0));
+        jButton_Clear.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Clear.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton_Clear.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Clear.setText("Clear");
         jButton_Clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Clear.addActionListener(new java.awt.event.ActionListener() {

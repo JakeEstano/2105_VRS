@@ -24,7 +24,7 @@ public class Booking {
     }
 
    public Booking(int id, int car_id, int customer_id, String start_date, String end_date, int total_price, String driver, String driverName){
-       this.id = id;
+    this.id = id;
     this.car_id = car_id;
     this.customer_id = customer_id;
     this.start_date = start_date;
@@ -97,6 +97,7 @@ public class Booking {
     public void setDriverName(String driverName) {
         this.driverName = driverName;
     }
+    
     
     
     public void addNewBooking(int carId, int customerId, String startDate, String endDate, int totalPrice, 

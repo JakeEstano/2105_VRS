@@ -5,6 +5,8 @@ import Classes.Brand;
 import Classes.Car;
 import Classes.Customer;
 import Classes.DB;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -25,13 +28,31 @@ import javax.swing.table.DefaultTableModel;
 
 public class Form_ReturnCars extends javax.swing.JFrame {
     
+    
     Classes.Booking booking = new Classes.Booking();
+    Booking book = new Booking();
     ArrayList<Classes.Booking> book_list = booking.bookingList();
     Car car = new Car();
     public Form_ReturnCars() {
         initComponents();
         populateJtableWithBooking();
         this.setLocationRelativeTo(null);
+        
+        // Assuming buttonGroup1 contains the radio buttons 'withDamageRadioButton' and 'withoutDamageRadioButton'
+        jRadioButton_with_Damage.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            // Show damage fee spinner when 'With Damage' is selected
+            jSpinner_damage_Fee.setVisible(true);
+            }
+        });
+
+        jRadioButton_without_Damage.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            // Hide damage fee spinner when 'Without Damage' is selected
+            jSpinner_damage_Fee.setVisible(false);
+            }
+        });
+
         
     }
 
@@ -91,6 +112,13 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     // Set table model with the updated rows
     jTable_unavailable_vehicle_.setModel(new DefaultTableModel(rows, columnsName));
 }   
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -103,6 +131,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -125,6 +154,9 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         jDateChooser_retrunmentDate = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_Vehicle_report = new javax.swing.JTextArea();
+        jRadioButton_without_Damage = new javax.swing.JRadioButton();
+        jRadioButton_with_Damage = new javax.swing.JRadioButton();
+        jSpinner_damage_Fee = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,18 +165,16 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1142, 592));
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(255, 212, 60));
 
         jLabel4.setBackground(java.awt.Color.black);
         jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Return Vehicle");
 
         jLabel_brands_logo.setBackground(java.awt.Color.black);
 
         jLabel_close1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel_close1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_close1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_close1.setText("X");
         jLabel_close1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -161,7 +191,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel_brands_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(372, 372, 372)
+                .addGap(317, 317, 317)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_close1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,9 +242,8 @@ public class Form_ReturnCars extends javax.swing.JFrame {
 
         jTextField_plateNumber.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jButton_Previous.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Previous.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Previous.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Previous.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Previous.setText("<");
         jButton_Previous.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Previous.addActionListener(new java.awt.event.ActionListener() {
@@ -223,9 +252,8 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             }
         });
 
-        jButton_First.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_First.setBackground(new java.awt.Color(255, 212, 60));
         jButton_First.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_First.setForeground(new java.awt.Color(255, 255, 255));
         jButton_First.setText("<<");
         jButton_First.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_First.addActionListener(new java.awt.event.ActionListener() {
@@ -234,9 +262,8 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Next.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Next.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Next.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Next.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Next.setText(">");
         jButton_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Next.addActionListener(new java.awt.event.ActionListener() {
@@ -245,9 +272,8 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             }
         });
 
-        jButton_Last.setBackground(new java.awt.Color(204, 102, 0));
+        jButton_Last.setBackground(new java.awt.Color(255, 212, 60));
         jButton_Last.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton_Last.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Last.setText(">>");
         jButton_Last.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Last.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +282,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
             }
         });
 
-        jButton_confirm_returnment.setBackground(new java.awt.Color(0, 0, 0));
+        jButton_confirm_returnment.setBackground(new java.awt.Color(255, 212, 60));
         jButton_confirm_returnment.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_confirm_returnment.setForeground(new java.awt.Color(255, 255, 255));
         jButton_confirm_returnment.setText("Confirm Returnment");
@@ -274,6 +300,24 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         jTextArea_Vehicle_report.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         jTextArea_Vehicle_report.setRows(5);
         jScrollPane2.setViewportView(jTextArea_Vehicle_report);
+
+        buttonGroup1.add(jRadioButton_without_Damage);
+        jRadioButton_without_Damage.setText("Withouot Damage");
+        jRadioButton_without_Damage.setOpaque(false);
+        jRadioButton_without_Damage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton_without_DamageActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton_with_Damage);
+        jRadioButton_with_Damage.setText("With Damage");
+        jRadioButton_with_Damage.setOpaque(false);
+        jRadioButton_with_Damage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton_with_DamageActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -293,17 +337,24 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                             .addComponent(jTextField_plateNumber)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jSpinner_carId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 3, Short.MAX_VALUE))
                             .addComponent(jDateChooser_retrunmentDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jRadioButton_without_Damage)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton_with_Damage, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinner_damage_Fee)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -319,6 +370,10 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton_Last, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(78, 78, 78))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,8 +381,15 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton_Last, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_First, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -343,16 +405,16 @@ public class Form_ReturnCars extends javax.swing.JFrame {
                             .addComponent(jDateChooser_retrunmentDate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton_without_Damage)
+                            .addComponent(jRadioButton_with_Damage)
+                            .addComponent(jSpinner_damage_Fee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_Last, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_First, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(124, 124, 124))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)))
+                .addComponent(jButton_confirm_returnment, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -396,7 +458,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
         
         int index = jTable_unavailable_vehicle_.getSelectedRow();
         
-        String PlateNumber = jTable_unavailable_vehicle_.getValueAt(index, 7).toString();
+        String PlateNumber = jTable_unavailable_vehicle_.getValueAt(index, 9).toString();
         
         
         int id = Integer.valueOf(jTable_unavailable_vehicle_.getValueAt(index, 1).toString());
@@ -432,38 +494,242 @@ public class Form_ReturnCars extends javax.swing.JFrame {
 
     private void jButton_confirm_returnmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_confirm_returnmentActionPerformed
         
-        
+       
         String plateNumber = jTextField_plateNumber.getText().trim();
-        Date returnDate = jDateChooser_retrunmentDate.getDate();
+Date returnDate = jDateChooser_retrunmentDate.getDate();
 
-        if (plateNumber.isEmpty() || returnDate == null) {
-            JOptionPane.showMessageDialog(null, "Please fill in all the required fields!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+if (plateNumber.isEmpty() || returnDate == null) {
+    JOptionPane.showMessageDialog(null, "Please fill in all the required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
 
-        int selectedRow = jTable_unavailable_vehicle_.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Please select a car to return!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+int selectedRow = jTable_unavailable_vehicle_.getSelectedRow();
+if (selectedRow == -1) {
+    JOptionPane.showMessageDialog(null, "Please select a car to return!", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
 
-        // Get car ID from selected row (assume it's in the first column)
-        int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
-        int id = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 1).toString());
-        System.out.println(carId);
-        // Update the car's status to available
-        car.updateCarStatus(carId, true);
-        Booking book = new Booking();
-        book.updateBookStatus(id);
-        // Optional: Display a report
-        String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
-        jTextArea_Vehicle_report.setText(vehicleReport);
+// Get car ID from selected row (assume it's in the first column)
+int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
+int id = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 1).toString());
+System.out.println(carId);
 
-        // Clear form fields
-        jTextField_plateNumber.setText("");
-        jDateChooser_retrunmentDate.setDate(null);
-        populateJtableWithBooking();
+// Check if the "Without Damage" radio button is selected
+if (jRadioButton_without_Damage.isSelected()) {
+    // Update car status to available
+    car.updateCarStatus(carId, true);  // Assuming car.updateCarStatus() method marks the car as available
+    book.updateBookStatus(id);  // Assuming updateBookStatus() method updates booking status to "returned"
+    
+    // Optional: Display a report indicating successful return
+    String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
+    jTextArea_Vehicle_report.setText(vehicleReport);  // Display the report
+    
+    // Clear the form fields
+    jTextField_plateNumber.setText("");
+    jDateChooser_retrunmentDate.setDate(null);
+    populateJtableWithBooking();  // Repopulate the table to reflect non-damaged cars
+} else {
+    // Handle the case where the car is returned with damage
+    int damageFee = (int) jSpinner_damage_Fee.getValue();  // Get damage fee entered by user
+    int totalPrice = 0;
+    
+    // Add the damage fee to the total price
+    double TotalPrice = booking.getTotal_price() + damageFee;  // Update total price (including the damage fee)
+    booking.setTotal_price(totalPrice);  // Set the updated price
+    
+    // Optional: Display a damage report
+    String damageReport = "Car with plate number: " + plateNumber + " has been returned with damage. Damage fee: " + damageFee + ".";
+    jTextArea_Vehicle_report.setText(damageReport);  // Display the damage report
+    
+    // Update the car's status to unavailable (damaged or under maintenance)
+    car.updateCarStatus(carId, false);  // Mark the car as damaged (unavailable)
+
+    // Add the damaged car's details to the "Damaged Cars" table
+    Form_DamagedCars dmgcrs = new Form_DamagedCars();
+    dmgcrs.addToDamagedCarsTable(carId, plateNumber, damageFee);  // Add damaged car data to the damaged cars table
+    
+    // Clear the form fields
+    jTextField_plateNumber.setText("");
+    jDateChooser_retrunmentDate.setDate(null);
+    jSpinner_damage_Fee.setValue(0);  // Reset the damage fee spinner
+    populateJtableWithBooking();  // Repopulate the table with non-damaged cars
+}
+
+
+// Method to add car to the damaged cars table
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        // OKAY TO
+//        String plateNumber = jTextField_plateNumber.getText().trim();
+//Date returnDate = jDateChooser_retrunmentDate.getDate();
+//
+//if (plateNumber.isEmpty() || returnDate == null) {
+//    JOptionPane.showMessageDialog(null, "Please fill in all the required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+//    return;
+//}
+//
+//int selectedRow = jTable_unavailable_vehicle_.getSelectedRow();
+//if (selectedRow == -1) {
+//    JOptionPane.showMessageDialog(null, "Please select a car to return!", "Error", JOptionPane.ERROR_MESSAGE);
+//    return;
+//}
+//
+//// Get car ID from selected row (assume it's in the first column)
+//int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
+//int id = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 1).toString());
+//System.out.println(carId);
+//
+//// Update the car's status to available
+//if (jRadioButton_without_Damage.isSelected()){
+//    // Update car status to available
+//    
+//    int confirm = JOptionPane.showConfirmDialog(null, "Are you sure You want to Return this Vehicle?" , "Confirm" , JOptionPane.YES_NO_OPTION);
+//        if (confirm == JOptionPane.YES_OPTION){
+//            
+//            car.updateCarStatus(carId, true);
+//    book.updateBookStatus(id);
+//    
+//    // Optional: Display a report
+//    String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
+//    jTextArea_Vehicle_report.setText(vehicleReport);
+//    
+//    // Clear form fields
+//    jTextField_plateNumber.setText("");
+//    jDateChooser_retrunmentDate.setDate(null);
+//    populateJtableWithBooking();
+//            
+//            
+//        }
+//    
+//    
+//    
+//    
+//} else {
+//    
+//    JOptionPane.showMessageDialog(null, "Please Fill the form!", "Error", JOptionPane.ERROR_MESSAGE);
+//    // Handle damage report
+//    int damageFee = (int) jSpinner_damage_Fee.getValue();
+//    
+//    // Add the damage fee to the booking's total price
+//    damageFee += booking.getTotal_price();
+//    
+//    // Update booking with the new total price (including damage fee)
+//    booking.setTotal_price(damageFee);
+//    
+//    // Optional: Display a damage report
+//    String damageReport = "Car with plate number: " + plateNumber + " has been returned with damage. Damage fee: " + damageFee + ".";
+//    jTextArea_Vehicle_report.setText(damageReport);
+//    
+//    // Update the car's status to unavailable or under maintenance (if needed)
+//    car.updateCarStatus(carId, false);
+//    
+//    // Optionally, update the booking or vehicle records in the database if necessary
+//    // You might want to update the database here (e.g., setting status, updating payment)
+//    // For example: car.updateCarStatusInDB(carId, false);
+//    
+//    // Clear form fields
+//    jTextField_plateNumber.setText("");
+//    jDateChooser_retrunmentDate.setDate(null);
+//    jSpinner_damage_Fee.setValue(0); // Reset damage fee spinner
+//    //populateJtableWithBooking();
+//}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        String plateNumber = jTextField_plateNumber.getText().trim();
+//        Date returnDate = jDateChooser_retrunmentDate.getDate();
+//
+//        if (plateNumber.isEmpty() || returnDate == null) {
+//            JOptionPane.showMessageDialog(null, "Please fill in all the required fields!", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+//
+//        int selectedRow = jTable_unavailable_vehicle_.getSelectedRow();
+//        if (selectedRow == -1) {
+//            JOptionPane.showMessageDialog(null, "Please select a car to return!", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+//
+//    
+//        // Get car ID from selected row (assume it's in the first column)
+//        int carId = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 0).toString());
+//        int id = Integer.parseInt(jTable_unavailable_vehicle_.getValueAt(selectedRow, 1).toString());
+//        System.out.println(carId);
+//        // Update the car's status to available
+//        
+//        if (jRadioButton_without_Damage.isSelected()){
+//        car.updateCarStatus(carId, true);
+//        book.updateBookStatus(id);
+//        
+//        
+//        // Optional: Display a report
+//        String vehicleReport = "Car with plate number: " + plateNumber + " has been returned successfully.";
+//        jTextArea_Vehicle_report.setText(vehicleReport);
+//        
+//        // Clear form fields
+//        jTextField_plateNumber.setText("");
+//        jDateChooser_retrunmentDate.setDate(null);
+//        populateJtableWithBooking();
+//        }
+//        else {
+//  
+//            int damageFee = (int)(jSpinner_damage_Fee.getValue());
+//            
+//            damageFee += booking.getTotal_price();
+//            // JOptionPane.showMessageDialog(null, "Fill up Vehicle Report/ Status", "Error", JOptionPane.ERROR_MESSAGE);
+//        } 
+//        
+//        
+        
+        
+        
+        
+                
+//        int index = jTable_unavailable_vehicle_.getSelectedRow();
+//        
+//   
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//    String pickup_date = dateFormat.format(jTable_unavailable_vehicle_.getValueAt(index, 3).toString());
+//    String dropoff_date = dateFormat.format(jTable_unavailable_vehicle_.getValueAt(index, 4).toString());
+//
+//    Date pickupDate = dateFormat.parse(pickup_date);
+//    Date dropoffDate = dateFormat.parse(dropoff_date);
+//        long diffInMillis = dropoffDate.getTime() - pickupDate.getTime();
+//        long diffInDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
+//    if (diffInDays <= 0) {
+//        JOptionPane.showMessageDialog(null, "Invalid rental period. Drop-off date must be after the pick-up date.");
+//        return;
+//    }
+        
+
+    
     }//GEN-LAST:event_jButton_confirm_returnmentActionPerformed
+
+    private void jRadioButton_without_DamageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_without_DamageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton_without_DamageActionPerformed
+
+    private void jRadioButton_with_DamageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton_with_DamageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton_with_DamageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -501,6 +767,7 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton_First;
     private javax.swing.JButton jButton_Last;
     private javax.swing.JButton jButton_Next;
@@ -517,9 +784,12 @@ public class Form_ReturnCars extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioButton_with_Damage;
+    private javax.swing.JRadioButton jRadioButton_without_Damage;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner_carId;
+    private javax.swing.JSpinner jSpinner_damage_Fee;
     private javax.swing.JTable jTable_unavailable_vehicle_;
     private javax.swing.JTextArea jTextArea_Vehicle_report;
     private javax.swing.JTextField jTextField_plateNumber;

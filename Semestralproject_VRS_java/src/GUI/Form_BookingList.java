@@ -181,7 +181,6 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
         jLabel_close1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_booking_ = new javax.swing.JTable();
-        jButton_Select_Booking_ = new javax.swing.JButton();
         jTextField_searchCustomer = new javax.swing.JTextField();
         jButton_Search_customerName = new javax.swing.JButton();
         jButton_resetTable = new javax.swing.JButton();
@@ -220,9 +219,9 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel_brands_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(254, 254, 254)
+                .addGap(296, 296, 296)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 368, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_close1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -255,14 +254,6 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
         });
         jScrollPane1.setViewportView(jTable_booking_);
 
-        jButton_Select_Booking_.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton_Select_Booking_.setText("Select Boooking");
-        jButton_Select_Booking_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_Select_Booking_ActionPerformed(evt);
-            }
-        });
-
         jButton_Search_customerName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton_Search_customerName.setText("Search ");
         jButton_Search_customerName.addActionListener(new java.awt.event.ActionListener() {
@@ -291,16 +282,15 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 908, Short.MAX_VALUE)
-                    .addComponent(jButton_Select_Booking_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jTextField_searchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton_Search_customerName)
                         .addGap(18, 18, 18)
                         .addComponent(jButton_resetTable)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,11 +301,9 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
                     .addComponent(jTextField_searchCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_Search_customerName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(jButton_resetTable, javax.swing.GroupLayout.PREFERRED_SIZE, 32, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jButton_Select_Booking_, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(66, 66, 66))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -361,23 +349,6 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
         // get the selected customer
 
     }//GEN-LAST:event_jTable_booking_MouseClicked
-
-    private void jButton_Select_Booking_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Select_Booking_ActionPerformed
-        // get the selected customer booking
-        int index = jTable_booking_.getSelectedRow();
-        String id = jTable_booking_.getValueAt(index, 0).toString();
-        String car_id = jTable_booking_.getValueAt(index, 1).toString();
-        String customer_id = jTable_booking_.getValueAt(index, 5).toString();
-        String start_date = jTable_booking_.getValueAt(index, 0).toString();
-        String end_date = jTable_booking_.getValueAt(index, 1).toString();
-        String total_price = jTable_booking_.getValueAt(index, 5).toString();
-        String driver = jTable_booking_.getValueAt(index, 1).toString();
-        String driverName = jTable_booking_.getValueAt(index, 5).toString();
-
-        Form_Booking_Edit_Remove.displayBooking(id, car_id, customer_id, start_date, end_date, total_price, driver, driverName);
-
-        this.dispose();
-    }//GEN-LAST:event_jButton_Select_Booking_ActionPerformed
 
     private void jButton_Search_customerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Search_customerNameActionPerformed
         // TODO add your handling code here:
@@ -442,7 +413,6 @@ private void populateJTableWithFilteredResults(ArrayList<Classes.Booking> filter
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Search_customerName;
-    private javax.swing.JButton jButton_Select_Booking_;
     private javax.swing.JButton jButton_resetTable;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_brands_logo;

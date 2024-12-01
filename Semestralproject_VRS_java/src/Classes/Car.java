@@ -337,6 +337,7 @@ public class Car {
     } catch (SQLException ex) {
         Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
     }
+
 }
 
   
